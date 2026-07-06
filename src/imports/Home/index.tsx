@@ -2,7 +2,7 @@ import svgPaths from "./svg-6xzm3rm8tn";
 import imgMobileMockup from "./b3c2d0d39ef8d164ef4f6b454cd7ea3eadde1799.png";
 import imgMobileMockup1 from "./43e7918bdb5051d2c77508d8ffa0fcd5b8185746.png";
 import imgScreenInsertDesignsHere from "./4c3bf707eed0712579fbc19d8f48018d5c4ee230.png";
-import imgIPhone15 from "./1eae9e92522eb69069378dc9f39a54ce5789276b.png";
+import imgIPhone15 from "./3a0ca32f84ec842dd6b0cb4828d2a91c5a0a71b4.png";
 import imgScreenInsertDesignsHere1 from "./3a0ca32f84ec842dd6b0cb4828d2a91c5a0a71b4.png";
 import imgRectangle from "./9e45d10569ee726de6756e67abd23e635d276fce.png";
 import imgScreenInsertDesignsHere2 from "./97b01c1ad5125d8dca70471f580fc161e2f8fab0.png";
