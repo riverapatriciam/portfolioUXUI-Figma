@@ -35,3 +35,51 @@
       50% { transform: translateY(6px); }
     }
   }
+
+/* Case study card blur-motion blobs (Ellipse 14/15 from Figma) */
+@property --blur-motion-rotate-a {
+  syntax: '<angle>';
+  initial-value: 1.571rad;
+  inherits: false;
+}
+@property --blur-motion-rotate-b {
+  syntax: '<angle>';
+  initial-value: -3.142rad;
+  inherits: false;
+}
+
+.blur-motion-a {
+  height: 110px;
+  width: 120px;
+  filter: blur(26px);
+  transform: rotate(var(--blur-motion-rotate-a));
+  animation:
+    blur-motion-a-rotate 5s ease-in-out infinite alternate,
+    blur-motion-a-shape 5s ease-in-out infinite alternate;
+}
+.blur-motion-b {
+  height: 130px;
+  width: 120px;
+  filter: blur(26px);
+  transform: rotate(var(--blur-motion-rotate-b));
+  animation:
+    blur-motion-b-rotate 5s ease-in-out infinite alternate,
+    blur-motion-b-shape 5s ease-in-out infinite alternate;
+}
+
+@keyframes blur-motion-a-rotate {
+  0% { --blur-motion-rotate-a: 1.571rad; }
+  100% { --blur-motion-rotate-a: 3.142rad; }
+}
+@keyframes blur-motion-a-shape {
+  0% { height: 110px; width: 120px; translate: 0 0; }
+  100% { height: 95px; width: 95px; translate: 0 42px; }
+}
+@keyframes blur-motion-b-rotate {
+  0% { --blur-motion-rotate-b: -3.142rad; }
+  100% { --blur-motion-rotate-b: -6.283rad; }
+}
+@keyframes blur-motion-b-shape {
+  0% { height: 130px; width: 120px; translate: 0 0; }
+  100% { height: 170px; width: 170px; translate: 0 -56px; }
+}

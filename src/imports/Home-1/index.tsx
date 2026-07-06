@@ -4,11 +4,8 @@ import svgPaths from "./svg-qr77o6k7nf";
 import imgMobileMockupLuh from "./b3c2d0d39ef8d164ef4f6b454cd7ea3eadde1799.png";
 import imgMobileMockupLuh1 from "./43e7918bdb5051d2c77508d8ffa0fcd5b8185746.png";
 import imgScreenInsertDesignsHere from "./4c3bf707eed0712579fbc19d8f48018d5c4ee230.png";
-import imgMockupLuh from "./1eae9e92522eb69069378dc9f39a54ce5789276b.png";
 import imgScreenInsertDesignsHere1 from "./3a0ca32f84ec842dd6b0cb4828d2a91c5a0a71b4.png";
-import imgMokupAf from "./9e45d10569ee726de6756e67abd23e635d276fce.png";
 import imgScreenInsertDesignsHere2 from "./97b01c1ad5125d8dca70471f580fc161e2f8fab0.png";
-import imgMockupCovee from "./8a5f99a72f0e7e3a8723d24c8d35854d0a922d76.png";
 import imgProfilePhoto from "./6c3788d3a7dd46350fe3b7ad9766a2b91e9d3616.png";
 import { Container } from "@/app/components/layout/Grid";
 
@@ -16,6 +13,14 @@ export type CaseStudyId = "luh" | "as" | "cove";
 
 const CV_PDF_URL = "/cv/Patricia-Rivera-CV-EN.pdf";
 const CV_DOWNLOAD_NAME = "Patricia Rivera - CV.pdf";
+
+const VIDEO_LUH_URL = "/videos/level-up-habits-preview.mp4";
+const VIDEO_AS_URL = "/videos/after-story-preview.mp4";
+const VIDEO_COVE_URL = "/videos/cove-preview.mp4";
+
+const IMG_MOCKUP_LUH = "/img/Mockup-luh.svg"
+const IMG_MOCKUP_AF = "/img/Mockup-AF.svg"
+const IMG_MOCKUP_COVE = "/img/Mockup-cove.svg"
 
 /* ============================== Icons ============================== */
 
@@ -71,9 +76,17 @@ function GradientText({ children, className = "" }: { children: ReactNode; class
   );
 }
 
-function TagPill({ children }: { children: ReactNode }) {
+function TagPill({
+  children,
+  textSize = "text-[13px] md:text-[14px]",
+}: {
+  children: ReactNode;
+  textSize?: string;
+}) {
   return (
-    <span className="relative shrink-0 whitespace-nowrap rounded-[40px] border-3 border-[#fad89e] bg-[#b488eb] px-[14px] py-[8px] text-[13px] font-medium text-[#fff3ff] md:text-[14px]">
+    <span
+      className={`relative shrink-0 whitespace-nowrap rounded-[40px] border-3 border-[#fad89e] bg-[#b488eb] px-[14px] py-[8px] font-medium text-[#fff3ff] ${textSize}`}
+    >
       {children}
     </span>
   );
@@ -453,44 +466,76 @@ function SkillsMarquee() {
 /* ============================== Case studies ============================== */
 
 /**
- * Two overlapping phone mockups, matching the design: a small phone (with its
- * own screenshot) sits front-left over a larger background device mockup.
- * Positions are percentages of the big mockup's box, derived from the
- * original Figma pixel layout so the overlap holds at every breakpoint.
+ * Two overlapping phone mockups, matching the design: a small straight-on
+ * "vertical" phone (with its own screen/video) sits front-left over a larger
+ * tilted background device mockup. Both devices are literal Figma pixel
+ * sizes at every breakpoint (mobile/tablet/desktop each have their own),
+ * laid out as a flex row with the tilted one pulled left via negative
+ * margin to overlap the vertical one by the exact amount Figma specifies.
  */
 function DualPhoneMockup({
   title,
   bigImg,
-  bigAspect,
   smallFrameImgs,
   smallScreenImg,
-  smallLeftPct,
-  smallTopPct,
-  smallWidthPct,
+  smallScreenVideo,
 }: {
   title: string;
   bigImg: string;
-  bigAspect: number;
   smallFrameImgs: string[];
   smallScreenImg: string;
-  smallLeftPct: number;
-  smallTopPct: number;
-  smallWidthPct: number;
+  smallScreenVideo?: string;
 }) {
   return (
-    <div className="relative w-full" style={{ aspectRatio: bigAspect }}>
-      <img alt={title} className="absolute inset-0 size-full object-contain" src={bigImg} />
-      <div
-        className="absolute aspect-[194/398]"
-        style={{ left: `${smallLeftPct}%`, top: `${smallTopPct}%`, width: `${smallWidthPct}%` }}
-      >
-        {smallFrameImgs.map((src, i) => (
-          <img key={i} alt="" className="absolute inset-0 size-full object-cover" src={src} />
-        ))}
-        <div className="absolute inset-[1.9%_4.5%]">
-          <img alt="" className="block size-full object-cover" src={smallScreenImg} />
+    <div className="relative flex items-end">
+      <img
+        alt={title}
+        className="order-2 -ml-[8px] h-[150px] w-[128px] shrink-0 object-cover md:-ml-[56px] md:h-[282px] md:w-[224px] lg:-ml-[38px] lg:h-[384px] lg:w-[308px]"
+        src={bigImg}
+      />
+      <div className="relative z-10 order-1 ml-[20px] h-[162px] w-[78px] shrink-0 md:ml-[32px] md:h-[298px] md:w-[144px] lg:ml-[70px] lg:h-[398px] lg:w-[194px]">
+        {smallFrameImgs[0] && (
+          <img alt="" className="absolute inset-0 size-full object-cover" src={smallFrameImgs[0]} />
+        )}
+        <div className="absolute inset-[1.9%_4.5%] overflow-hidden">
+          {smallScreenVideo ? (
+            <video
+              className="block size-full object-cover"
+              src={smallScreenVideo}
+              poster={smallScreenImg}
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          ) : (
+            <img alt="" className="block size-full object-cover" src={smallScreenImg} />
+          )}
         </div>
+        {/* Front bezel layer — sits over the screen/video so its rounded frame masks the video's straight rectangular edges. */}
+        {smallFrameImgs[1] && (
+          <img alt="" className="pointer-events-none absolute inset-0 size-full object-cover" src={smallFrameImgs[1]} />
+        )}
       </div>
+    </div>
+  );
+}
+
+/**
+ * Ambient blurred gradient blobs behind the mockup — same behavior at every
+ * breakpoint. The blobs' own keyframes (`.blur-motion-a/b` in tailwind.css)
+ * animate between fixed pixel sizes tuned for the desktop mockup box, so this
+ * wrapper is scaled down at smaller breakpoints to match the mockup's own
+ * (much smaller) footprint rather than resizing the keyframes themselves.
+ */
+function BlurMotionBackdrop() {
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 -z-10 origin-center scale-[0.41] md:scale-[0.75] lg:scale-100"
+    >
+      <div className="blur-motion-a absolute left-[6%] top-[2%] rounded-full bg-gradient-to-r from-[#fad89e] to-[#f29bfd] opacity-70" />
+      <div className="blur-motion-b absolute bottom-[4%] right-[8%] rounded-full bg-gradient-to-r from-[#fad89e] to-[#f29bfd] opacity-70" />
     </div>
   );
 }
@@ -504,12 +549,9 @@ function CaseStudyCard({
   tags,
   duration,
   mockupImg,
-  mockupAspect,
   mobileFrameImgs,
   mobileScreenImg,
-  smallLeftPct,
-  smallTopPct,
-  smallWidthPct,
+  mobileScreenVideo,
   onViewWork,
 }: {
   title: string;
@@ -518,49 +560,70 @@ function CaseStudyCard({
   tags: string[];
   duration: string;
   mockupImg: string;
-  mockupAspect: number;
   mobileFrameImgs: string[];
   mobileScreenImg: string;
-  smallLeftPct: number;
-  smallTopPct: number;
-  smallWidthPct: number;
+  mobileScreenVideo?: string;
   onViewWork: () => void;
 }) {
   return (
-    <div className="relative overflow-hidden rounded-[32px] border-2 border-[#fad89e] bg-[rgba(229,217,230,0.24)] p-[24px] backdrop-blur-[15px] md:rounded-[40px] md:p-[32px] lg:p-[40px]">
-      <span className="absolute right-0 top-0 rounded-bl-[20px] bg-[#f7aef8] px-[16px] py-[10px] text-[14px] text-[#543976] md:text-[16px]">
+    <div className="relative mx-auto h-[416px] w-full max-w-[400px] overflow-hidden rounded-[20px] border border-[#fad89e] bg-[rgba(229,217,230,0.24)] p-[16px] backdrop-blur-[7.5px] md:h-[408px] md:max-w-[746px] md:rounded-[30px] md:border-[1.5px] md:p-[32px] md:backdrop-blur-[11.25px] lg:h-[588px] lg:max-w-[1096px] lg:rounded-[40px] lg:border-2 lg:p-[40px] lg:backdrop-blur-[15px]">
+      <span className="absolute right-0 top-0 rounded-bl-[20px] bg-[#f7aef8] px-[16px] py-[10px] text-[0.875rem] text-[#543976] md:text-[0.75rem] lg:text-[16px]">
         {duration}
       </span>
 
-      <div className="flex flex-col items-center gap-[24px] lg:flex-row lg:items-center lg:gap-[40px]">
-        <div className="w-full max-w-[300px] shrink-0 md:max-w-[380px] lg:w-[45%] lg:max-w-none">
-          <DualPhoneMockup
-            title={title}
-            bigImg={mockupImg}
-            bigAspect={mockupAspect}
-            smallFrameImgs={mobileFrameImgs}
-            smallScreenImg={mobileScreenImg}
-            smallLeftPct={smallLeftPct}
-            smallTopPct={smallTopPct}
-            smallWidthPct={smallWidthPct}
-          />
+      <div className="flex h-full flex-col justify-center gap-[12px] md:flex-row md:items-center md:justify-normal md:gap-[20px] lg:gap-[40px]">
+        {/* Base only: mockup + title/description sit side by side as a compact
+            row, with Role/tags/button below — the mobile card's fixed height
+            doesn't fit the fully stacked layout. md/lg: this wrapper becomes
+            `contents` (removes itself from layout) so its two children fall
+            back into the tablet/desktop side-by-side column flow, where the
+            title/description shown below take over instead — both tablet and
+            desktop mockups are tall enough to want a full-height column next
+            to a full-height text column, not a compact stacked block. */}
+        <div className="flex flex-row items-center gap-[8px] md:contents">
+          <div className="relative shrink-0">
+            <BlurMotionBackdrop />
+            <DualPhoneMockup
+              title={title}
+              bigImg={mockupImg}
+              smallFrameImgs={mobileFrameImgs}
+              smallScreenImg={mobileScreenImg}
+              smallScreenVideo={mobileScreenVideo}
+            />
+          </div>
+
+          <div className="flex flex-1 flex-col gap-[4px] text-left md:hidden">
+            {/* 1.25rem + font-extrabold clears the WCAG "large text" bold threshold
+                (14pt/~18.66px), so the #9b72ce purple only needs 3:1 contrast here
+                instead of 4.5:1 — at a smaller size/weight it wouldn't pass AA. */}
+            <h3 className="line-clamp-2 text-[1.25rem] font-extrabold leading-[1.2] text-[#9b72ce]">{title}</h3>
+            <p className="line-clamp-2 text-[0.75rem] italic leading-[1.3] text-[#543976]">{description}</p>
+          </div>
         </div>
 
-        <div className="flex w-full flex-col items-center gap-[12px] text-center lg:w-[55%] lg:items-start lg:text-left">
-          <h3 className="text-[26px] font-extrabold text-[#9b72ce] md:text-[28px] lg:text-[32px]">{title}</h3>
-          <p className="text-[16px] italic text-[#543976] md:text-[18px]">{description}</p>
+        <div className="flex w-full flex-col items-center gap-[8px] text-center md:w-auto md:flex-1 md:items-start md:gap-[12px] md:text-left">
+          <h3 className="hidden text-[26px] font-extrabold text-[#9b72ce] md:block md:text-[1.5rem] lg:text-[32px]">{title}</h3>
+          <p className="hidden text-[16px] italic text-[#543976] md:block md:text-[0.875rem] lg:text-[18px]">{description}</p>
           {meta.map((m) => (
-            <p key={m.label} className="text-[16px] md:text-[18px]">
-              <span className="text-[#9b72ce]">{m.label}: </span>
+            <p key={m.label} className="text-[0.75rem] md:text-[18px]">
+              {/* #9b72ce only clears AA contrast at large/bold sizes (see title above) —
+                  this label is small and regular-weight at every breakpoint, so it uses
+                  the darker #543976 instead, which passes 4.5:1 at any size. */}
+              <span className="text-[#543976]">{m.label}: </span>
               <span className="text-[#543976]">{m.value}</span>
             </p>
           ))}
-          <div className="flex flex-wrap justify-center gap-[10px] lg:justify-start">
+          <div className="flex flex-wrap justify-center gap-[8px] md:justify-start md:gap-[10px]">
             {tags.map((t) => (
-              <TagPill key={t}>{t}</TagPill>
+              <TagPill key={t} textSize="text-[0.8125rem] md:text-[0.75rem] lg:text-[14px]">
+                {t}
+              </TagPill>
             ))}
           </div>
-          <GradientButton className="mt-[8px] text-[16px]" onClick={onViewWork}>
+          <GradientButton
+            className="mt-[4px] text-[0.8125rem] md:absolute md:bottom-[20px] md:right-[22px] md:mt-0 md:text-[0.75rem] lg:bottom-[36px] lg:right-[28px] lg:text-[16px]"
+            onClick={onViewWork}
+          >
             View work ➤
           </GradientButton>
         </div>
@@ -583,13 +646,10 @@ function CaseStudiesSection({ onOpenCaseStudy }: { onOpenCaseStudy: (id: CaseStu
             meta={[{ label: "Role", value: "Solo UX/UI Designer" }]}
             tags={["UX Research", "UI Design", "Design Thinking"]}
             duration="2 weeks"
-            mockupImg={imgMockupLuh}
-            mockupAspect={638 / 479}
+            mockupImg={IMG_MOCKUP_LUH}
             mobileFrameImgs={[imgMobileMockupLuh, imgMobileMockupLuh1]}
             mobileScreenImg={imgScreenInsertDesignsHere}
-            smallLeftPct={0}
-            smallTopPct={7.1}
-            smallWidthPct={30.4}
+            mobileScreenVideo={VIDEO_LUH_URL}
             onViewWork={() => onOpenCaseStudy("luh")}
           />
           <CaseStudyCard
@@ -598,13 +658,10 @@ function CaseStudiesSection({ onOpenCaseStudy }: { onOpenCaseStudy: (id: CaseStu
             meta={[{ label: "Role", value: "Solo UX/UI Designer" }]}
             tags={["UX Research", "UI Design", "Design Thinking"]}
             duration="3 weeks"
-            mockupImg={imgMokupAf}
-            mockupAspect={683 / 479}
+            mockupImg={IMG_MOCKUP_AF}
             mobileFrameImgs={[imgMobileMockupLuh, imgMobileMockupLuh1]}
             mobileScreenImg={imgScreenInsertDesignsHere1}
-            smallLeftPct={2.34}
-            smallTopPct={10.65}
-            smallWidthPct={28.4}
+            mobileScreenVideo={VIDEO_AS_URL}
             onViewWork={() => onOpenCaseStudy("as")}
           />
           <CaseStudyCard
@@ -616,13 +673,10 @@ function CaseStudiesSection({ onOpenCaseStudy }: { onOpenCaseStudy: (id: CaseStu
             ]}
             tags={["Prototyping", "UI Design", "Design Sprint"]}
             duration="1 week"
-            mockupImg={imgMockupCovee}
-            mockupAspect={683 / 479}
+            mockupImg={IMG_MOCKUP_COVE}
             mobileFrameImgs={[imgMobileMockupLuh, imgMobileMockupLuh1]}
             mobileScreenImg={imgScreenInsertDesignsHere2}
-            smallLeftPct={2.49}
-            smallTopPct={7.3}
-            smallWidthPct={28.4}
+            mobileScreenVideo={VIDEO_COVE_URL}
             onViewWork={() => onOpenCaseStudy("cove")}
           />
         </div>
