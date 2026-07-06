@@ -1,3 +1,5 @@
+import { useEffect, useId, useRef, useState, type ReactNode, type SVGProps } from "react";
+import { ChevronDown, ChevronUp, MoreVertical, X } from "lucide-react";
 import svgPaths from "./svg-qr77o6k7nf";
 import imgMobileMockupLuh from "./b3c2d0d39ef8d164ef4f6b454cd7ea3eadde1799.png";
 import imgMobileMockupLuh1 from "./43e7918bdb5051d2c77508d8ffa0fcd5b8185746.png";
@@ -7,1077 +9,925 @@ import imgScreenInsertDesignsHere1 from "./3a0ca32f84ec842dd6b0cb4828d2a91c5a0a7
 import imgMokupAf from "./9e45d10569ee726de6756e67abd23e635d276fce.png";
 import imgScreenInsertDesignsHere2 from "./97b01c1ad5125d8dca70471f580fc161e2f8fab0.png";
 import imgMockupCovee from "./8a5f99a72f0e7e3a8723d24c8d35854d0a922d76.png";
-import imgGeminiGeneratedImageTe4Cpvte4Cpvte4C1 from "./6c3788d3a7dd46350fe3b7ad9766a2b91e9d3616.png";
+import imgProfilePhoto from "./6c3788d3a7dd46350fe3b7ad9766a2b91e9d3616.png";
+import { Container } from "@/app/components/layout/Grid";
 
-function Frame18() {
+export type CaseStudyId = "luh" | "as" | "cove";
+
+const CV_PDF_URL = "/cv/Patricia-Rivera-CV-EN.pdf";
+const CV_DOWNLOAD_NAME = "Patricia Rivera - CV.pdf";
+
+/* ============================== Icons ============================== */
+
+function CvIcon({ className = "" }: { className?: string }) {
   return (
-    <div className="content-stretch flex gap-[20px] items-center justify-end relative shrink-0">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="Text-btn">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[18px] whitespace-nowrap">Projects</p>
-      </div>
-      <button className="content-stretch cursor-pointer flex items-center justify-center overflow-clip relative shrink-0" data-name="Text-btn">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[18px] text-left whitespace-nowrap">About</p>
-      </button>
-      <button className="content-stretch cursor-pointer flex items-center justify-center overflow-clip relative shrink-0" data-name="Text-btn">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[18px] text-left whitespace-nowrap">Contact</p>
-      </button>
-    </div>
+    <svg className={className} fill="none" preserveAspectRatio="none" viewBox="0 0 21 27">
+      <path d={svgPaths.p3613df80} fill="currentColor" />
+      <path clipRule="evenodd" d={svgPaths.p2d758d80} fill="currentColor" fillRule="evenodd" />
+      <path d={svgPaths.p23f5a380} fill="currentColor" />
+      <path clipRule="evenodd" d={svgPaths.pbc957c0} fill="currentColor" fillRule="evenodd" />
+    </svg>
   );
 }
 
-function MobileMockupLuh() {
+function ChatMailIcon({ className = "" }: { className?: string }) {
   return (
-    <div className="absolute h-[398px] left-[12px] top-[83px] w-[194px]" data-name="Mobile mockup-luh">
-      <div aria-hidden className="absolute inset-0 pointer-events-none">
-        <img alt="" className="absolute max-w-none object-cover size-full" src={imgMobileMockupLuh} />
-        <img alt="" className="absolute max-w-none object-cover size-full" src={imgMobileMockupLuh1} />
-      </div>
-      <div className="absolute inset-[1.88%_4.48%_1.88%_4.41%]" data-name="Screen **Insert Designs here**">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" height="383.015" src={imgScreenInsertDesignsHere} width="176.759" />
-      </div>
-    </div>
+    <svg className={className} fill="none" preserveAspectRatio="none" viewBox="0 0 24.003 25.5">
+      <path d={svgPaths.p112a9400} fill="currentColor" />
+    </svg>
   );
 }
 
-function Frame19() {
+function LinkedinIcon({ className = "" }: { className?: string }) {
   return (
-    <div className="bg-[#b488eb] content-stretch flex items-center justify-center p-[10px] relative rounded-[40px] shrink-0 w-[110px]">
-      <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">UX Research</p>
-    </div>
+    <svg className={className} fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
+      <path d={svgPaths.p5472600} fill="#3E2859" />
+    </svg>
   );
 }
 
-function Frame20() {
+function WhatsappIcon({ className = "" }: { className?: string }) {
   return (
-    <div className="bg-[#b488eb] content-stretch flex items-center justify-center p-[10px] relative rounded-[40px] shrink-0 w-[110px]">
-      <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">UI Design</p>
-    </div>
+    <svg className={className} fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
+      <path d={svgPaths.pf262880} fill="#3E2859" />
+    </svg>
   );
 }
 
-function Frame21() {
+function MapIcon({ className = "" }: { className?: string }) {
   return (
-    <div className="bg-[#b488eb] content-stretch flex items-center justify-center p-[10px] relative rounded-[40px] shrink-0">
-      <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">Design Thinking</p>
-    </div>
+    <svg className={className} fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
+      <path d={svgPaths.p4acd200} fill="#FFF3FF" />
+      <path d={svgPaths.pfecb800} fill="#FFF3FF" />
+    </svg>
   );
 }
 
-function Frame22() {
+/* ============================== Shared bits ============================== */
+
+function GradientText({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <div className="absolute content-stretch flex items-center justify-between left-[462px] top-[311px] w-[384px]">
-      <Frame19 />
-      <Frame20 />
-      <Frame21 />
-    </div>
+    <span className={`bg-gradient-to-r bg-clip-text text-transparent ${className}`}>{children}</span>
   );
 }
 
-function Frame23() {
+function TagPill({ children }: { children: ReactNode }) {
   return (
-    <div className="absolute bg-[#f7aef8] content-stretch flex h-[39px] items-center justify-center left-[757px] p-[10px] rounded-bl-[20px] top-0 w-[145px]">
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[16px] whitespace-nowrap">2 weeks</p>
-    </div>
+    <span className="relative shrink-0 whitespace-nowrap rounded-[40px] border-3 border-[#fad89e] bg-[#b488eb] px-[14px] py-[8px] text-[13px] font-medium text-[#fff3ff] md:text-[14px]">
+      {children}
+    </span>
   );
 }
 
-function CardLuh() {
+function GradientButton({
+  children,
+  className = "",
+  onClick,
+  href,
+  download,
+}: {
+  children: ReactNode;
+  className?: string;
+  onClick?: () => void;
+  href?: string;
+  download?: string;
+}) {
+  const classes = `inline-flex cursor-pointer items-center justify-center gap-[10px] rounded-[40px] border-2 border-transparent bg-gradient-to-r from-[#fad89e] to-[#f29bfd] px-[20px] py-[10px] text-[#543976] shadow-[0_0_4px_0_rgba(0,0,0,0.04),0_4px_8px_0_rgba(0,0,0,0.06)] transition-[border-color,box-shadow] duration-200 hover:border-[#ff99b9] hover:shadow-[0_0_4px_0_rgba(0,0,0,0.04),0_8px_16px_0_rgba(0,0,0,0.08)] ${className}`;
+
+  if (href) {
+    return (
+      <a href={href} download={download} onClick={onClick} className={classes}>
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <div className="absolute backdrop-blur-[15px] bg-[rgba(229,217,230,0.24)] border-2 border-[#fad89e] border-solid h-[588px] left-[60px] overflow-clip rounded-[40px] top-[918px] w-[904px]" data-name="Card-luh">
-      <div className="absolute content-stretch flex flex-col gap-[170px] items-start left-[149px] top-[21px] w-[147px]" data-name="Blur-motion">
-        <div className="h-[135px] relative shrink-0 w-full">
-          <div className="absolute inset-[-38.52%_-35.37%]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 251 239">
-              <g filter="url(#filter0_f_9_387)" id="Ellipse 15">
-                <ellipse cx="125.5" cy="119.5" fill="url(#paint0_linear_9_387)" rx="73.5" ry="67.5" />
-              </g>
-              <defs>
-                <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="239" id="filter0_f_9_387" width="251" x="0" y="0">
-                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                  <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                  <feGaussianBlur result="effect1_foregroundBlur_9_387" stdDeviation="26" />
-                </filter>
-                <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_9_387" x1="52" x2="199" y1="119.5" y2="119.5">
-                  <stop stopColor="#FAD89E" />
-                  <stop offset="1" stopColor="#F29BFD" />
-                </linearGradient>
-              </defs>
-            </svg>
+    <button onClick={onClick} className={classes}>
+      {children}
+    </button>
+  );
+}
+
+/* ============================== Nav ============================== */
+
+const NAV_LINKS: { label: string; href: string }[] = [
+  { label: "Projects", href: "#case-studies" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
+];
+
+const PROJECT_LINKS: { id: CaseStudyId; label: string }[] = [
+  { id: "luh", label: "Level Up Habits" },
+  { id: "as", label: "After Story" },
+  { id: "cove", label: "Cove" },
+];
+
+function NavBar({ onOpenCaseStudy }: { onOpenCaseStudy: (id: CaseStudyId) => void }) {
+  const [open, setOpen] = useState(false);
+  const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const [projectsOpen, setProjectsOpen] = useState(false);
+  const projectsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!projectsOpen) return;
+    function handleClickOutside(e: MouseEvent) {
+      if (projectsRef.current && !projectsRef.current.contains(e.target as Node)) {
+        setProjectsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [projectsOpen]);
+
+  useEffect(() => {
+    if (!open) return;
+    function handleClickOutside(e: MouseEvent) {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) setMobileProjectsOpen(false);
+  }, [open]);
+
+  return (
+    <header className="sticky top-0 z-30 pt-[16px] md:pt-0">
+      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-[12px] pl-[20px] pr-[20px] md:pl-0 md:pr-[44px] lg:pr-[60px]">
+        <div className="flex h-[82px] w-full items-center justify-between gap-[16px] rounded-full bg-[#d7b8ff] px-[20px] py-[6px] md:w-[632px] md:rounded-[0_46px_10px_82px] md:py-[10px] md:pl-[44px] md:pr-[20px] lg:w-[932px] lg:[border-radius:0_46px_10px_150px/0_46px_10px_82px] lg:pl-[60px] lg:pr-[20px]">
+          <div className="group flex shrink-0 cursor-default items-center gap-[2px] text-[20px] font-bold lg:text-[24px]">
+            <GradientText className="inline-block from-[#fad89e] to-[#f29bfd] text-shadow-[0px_0px_30px_#f29bfd] transition-transform duration-300 group-hover:rotate-[25deg]">❋</GradientText>
+            <GradientText className="inline-block from-[#5102a0] to-[#fe85ea] whitespace-nowrap transition-transform duration-300 group-hover:scale-[1.08]">Patricia Rivera</GradientText>
           </div>
-        </div>
-        <div className="h-[135px] relative shrink-0 w-full">
-          <div className="absolute inset-[-38.52%_-35.37%]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 251 239">
-              <g filter="url(#filter0_f_9_387)" id="Ellipse 15">
-                <ellipse cx="125.5" cy="119.5" fill="url(#paint0_linear_9_387)" rx="73.5" ry="67.5" />
-              </g>
-              <defs>
-                <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="239" id="filter0_f_9_387" width="251" x="0" y="0">
-                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                  <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                  <feGaussianBlur result="effect1_foregroundBlur_9_387" stdDeviation="26" />
-                </filter>
-                <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_9_387" x1="52" x2="199" y1="119.5" y2="119.5">
-                  <stop stopColor="#FAD89E" />
-                  <stop offset="1" stopColor="#F29BFD" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <MobileMockupLuh />
-      <div className="absolute h-[479px] left-[12px] top-[49px] w-[638px]" data-name="Mockup-luh">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgMockupLuh} />
-      </div>
-      <Frame22 />
-      <p className="[word-break:break-word] absolute font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold leading-[1.5] left-[462px] text-[#9b72ce] text-[32px] top-[95px] whitespace-nowrap">Level Up Habits</p>
-      <p className="[word-break:break-word] absolute font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[0] left-[462px] text-[0px] text-black top-[241px] whitespace-nowrap">
-        <span className="leading-[1.5] text-[#9b72ce] text-[18px]">{`Role: `}</span>
-        <span className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] text-[#543976] text-[18px]">Solo UX/UI Designer</span>
-      </p>
-      <p className="[word-break:break-word] absolute font-['Inter:Italic',sans-serif] font-normal italic leading-[1.5] left-[462px] text-[#543976] text-[18px] top-[165px] w-[374px]">Helping people with ADHD build habits through AI-powered gamification.</p>
-      <Frame23 />
-      <div className="absolute bg-gradient-to-r content-stretch drop-shadow-[0px_0px_2px_rgba(0,0,0,0.04),0px_4px_4px_rgba(0,0,0,0.06)] flex from-[#fad89e] gap-[10px] items-center justify-center left-[720px] px-[20px] py-[10px] rounded-[40px] to-[#f29bfd] top-[506px]" data-name="Button">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#543976] text-[16px] text-center whitespace-nowrap">View work ➤</p>
-      </div>
-    </div>
-  );
-}
 
-function MobileMockupAf() {
-  return (
-    <div className="absolute h-[398px] left-[27px] top-[91px] w-[194px]" data-name="Mobile mockup-AF">
-      <div aria-hidden className="absolute inset-0 pointer-events-none">
-        <img alt="" className="absolute max-w-none object-cover size-full" src={imgMobileMockupLuh} />
-        <img alt="" className="absolute max-w-none object-cover size-full" src={imgMobileMockupLuh1} />
-      </div>
-      <div className="absolute inset-[1.88%_4.48%_1.88%_4.41%]" data-name="Screen **Insert Designs here**">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" height="383.015" src={imgScreenInsertDesignsHere1} width="176.759" />
-      </div>
-    </div>
-  );
-}
-
-function Frame25() {
-  return (
-    <div className="bg-[#b488eb] content-stretch flex items-center justify-center p-[10px] relative rounded-[40px] shrink-0 w-[110px]">
-      <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">UX Research</p>
-    </div>
-  );
-}
-
-function Frame26() {
-  return (
-    <div className="bg-[#b488eb] content-stretch flex items-center justify-center p-[10px] relative rounded-[40px] shrink-0 w-[110px]">
-      <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">UI Design</p>
-    </div>
-  );
-}
-
-function Frame27() {
-  return (
-    <div className="bg-[#b488eb] content-stretch flex items-center justify-center p-[10px] relative rounded-[40px] shrink-0">
-      <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">Design Thinking</p>
-    </div>
-  );
-}
-
-function Frame24() {
-  return (
-    <div className="absolute content-stretch flex items-center justify-between left-[486px] top-[326px] w-[384px]">
-      <Frame25 />
-      <Frame26 />
-      <Frame27 />
-    </div>
-  );
-}
-
-function Frame28() {
-  return (
-    <div className="absolute bg-[#f7aef8] content-stretch flex h-[39px] items-center justify-center left-[761px] p-[10px] rounded-bl-[20px] top-[-2px] w-[145px]">
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[16px] whitespace-nowrap">3 weeks</p>
-    </div>
-  );
-}
-
-function CardAf() {
-  return (
-    <div className="absolute backdrop-blur-[15px] bg-[rgba(229,217,230,0.24)] border-2 border-[#fad89e] border-solid h-[588px] left-[60px] overflow-clip rounded-[40px] top-[1546px] w-[904px]" data-name="Card-AF">
-      <div className="absolute content-stretch flex flex-col gap-[170px] items-start left-[149px] top-[21px] w-[147px]" data-name="Blur-motion">
-        <div className="h-[135px] relative shrink-0 w-full">
-          <div className="absolute inset-[-38.52%_-35.37%]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 251 239">
-              <g filter="url(#filter0_f_9_387)" id="Ellipse 15">
-                <ellipse cx="125.5" cy="119.5" fill="url(#paint0_linear_9_387)" rx="73.5" ry="67.5" />
-              </g>
-              <defs>
-                <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="239" id="filter0_f_9_387" width="251" x="0" y="0">
-                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                  <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                  <feGaussianBlur result="effect1_foregroundBlur_9_387" stdDeviation="26" />
-                </filter>
-                <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_9_387" x1="52" x2="199" y1="119.5" y2="119.5">
-                  <stop stopColor="#FAD89E" />
-                  <stop offset="1" stopColor="#F29BFD" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-        </div>
-        <div className="h-[135px] relative shrink-0 w-full">
-          <div className="absolute inset-[-38.52%_-35.37%]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 251 239">
-              <g filter="url(#filter0_f_9_387)" id="Ellipse 15">
-                <ellipse cx="125.5" cy="119.5" fill="url(#paint0_linear_9_387)" rx="73.5" ry="67.5" />
-              </g>
-              <defs>
-                <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="239" id="filter0_f_9_387" width="251" x="0" y="0">
-                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                  <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                  <feGaussianBlur result="effect1_foregroundBlur_9_387" stdDeviation="26" />
-                </filter>
-                <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_9_387" x1="52" x2="199" y1="119.5" y2="119.5">
-                  <stop stopColor="#FAD89E" />
-                  <stop offset="1" stopColor="#F29BFD" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <MobileMockupAf />
-      <div className="absolute h-[479px] left-[11px] top-[40px] w-[683px]" data-name="Mokup-AF">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgMokupAf} />
-      </div>
-      <Frame24 />
-      <p className="[word-break:break-word] absolute font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold leading-[1.5] left-[463px] text-[#9b72ce] text-[32px] top-[83px] whitespace-nowrap">AfterStory</p>
-      <p className="[word-break:break-word] absolute font-['Inter:Italic',sans-serif] font-normal italic leading-[1.5] left-[463px] text-[#543976] text-[18px] top-[153px] w-[374px]">Helping anime and manga fans discover stories tailored to their tastes</p>
-      <Frame28 />
-      <div className="absolute bg-gradient-to-r content-stretch drop-shadow-[0px_0px_2px_rgba(0,0,0,0.04),0px_4px_4px_rgba(0,0,0,0.06)] flex from-[#fad89e] gap-[10px] items-center justify-center left-[720px] px-[20px] py-[10px] rounded-[40px] to-[#f29bfd] top-[506px]" data-name="Button">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#543976] text-[16px] text-center whitespace-nowrap">View work ➤</p>
-      </div>
-      <p className="[word-break:break-word] absolute font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[0] left-[463px] text-[0px] text-black top-[231px] whitespace-nowrap">
-        <span className="leading-[1.5] text-[#9b72ce] text-[18px]">{`Role: `}</span>
-        <span className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] text-[#543976] text-[18px]">Solo UX/UI Designer</span>
-      </p>
-    </div>
-  );
-}
-
-function MobileMockupCove() {
-  return (
-    <div className="absolute h-[398px] left-[28px] top-[110px] w-[194px]" data-name="Mobile mockup-cove">
-      <div aria-hidden className="absolute inset-0 pointer-events-none">
-        <img alt="" className="absolute max-w-none object-cover size-full" src={imgMobileMockupLuh} />
-        <img alt="" className="absolute max-w-none object-cover size-full" src={imgMobileMockupLuh1} />
-      </div>
-      <div className="absolute inset-[1.88%_4.48%_1.88%_4.41%]" data-name="Screen **Insert Designs here**">
-        <img alt="" className="absolute block inset-0 max-w-none size-full" height="383.015" src={imgScreenInsertDesignsHere2} width="176.759" />
-      </div>
-    </div>
-  );
-}
-
-function Frame30() {
-  return (
-    <div className="bg-[#b488eb] content-stretch flex items-center justify-center p-[10px] relative rounded-[40px] shrink-0 w-[110px]">
-      <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">Prototyping</p>
-    </div>
-  );
-}
-
-function Frame31() {
-  return (
-    <div className="bg-[#b488eb] content-stretch flex items-center justify-center p-[10px] relative rounded-[40px] shrink-0 w-[110px]">
-      <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">UI Design</p>
-    </div>
-  );
-}
-
-function Frame32() {
-  return (
-    <div className="bg-[#b488eb] content-stretch flex items-center justify-center p-[10px] relative rounded-[40px] shrink-0">
-      <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">Design Sprint</p>
-    </div>
-  );
-}
-
-function Frame29() {
-  return (
-    <div className="absolute content-stretch flex items-center justify-between left-[492px] top-[347px] w-[384px]">
-      <Frame30 />
-      <Frame31 />
-      <Frame32 />
-    </div>
-  );
-}
-
-function Frame33() {
-  return (
-    <div className="absolute bg-[#f7aef8] content-stretch flex h-[39px] items-center justify-center left-[756px] p-[10px] rounded-bl-[20px] top-[-2px] w-[145px]">
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[16px] whitespace-nowrap">1 week</p>
-    </div>
-  );
-}
-
-function CardCove() {
-  return (
-    <div className="absolute backdrop-blur-[15px] bg-[rgba(229,217,230,0.24)] border-2 border-[#fad89e] border-solid h-[588px] left-[60px] overflow-clip rounded-[40px] top-[2174px] w-[904px]" data-name="Card-cove">
-      <div className="absolute content-stretch flex flex-col gap-[170px] items-start left-[149px] top-[21px] w-[147px]" data-name="Blur-motion">
-        <div className="h-[135px] relative shrink-0 w-full">
-          <div className="absolute inset-[-38.52%_-35.37%]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 251 239">
-              <g filter="url(#filter0_f_9_387)" id="Ellipse 15">
-                <ellipse cx="125.5" cy="119.5" fill="url(#paint0_linear_9_387)" rx="73.5" ry="67.5" />
-              </g>
-              <defs>
-                <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="239" id="filter0_f_9_387" width="251" x="0" y="0">
-                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                  <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                  <feGaussianBlur result="effect1_foregroundBlur_9_387" stdDeviation="26" />
-                </filter>
-                <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_9_387" x1="52" x2="199" y1="119.5" y2="119.5">
-                  <stop stopColor="#FAD89E" />
-                  <stop offset="1" stopColor="#F29BFD" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-        </div>
-        <div className="h-[135px] relative shrink-0 w-full">
-          <div className="absolute inset-[-38.52%_-35.37%]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 251 239">
-              <g filter="url(#filter0_f_9_387)" id="Ellipse 15">
-                <ellipse cx="125.5" cy="119.5" fill="url(#paint0_linear_9_387)" rx="73.5" ry="67.5" />
-              </g>
-              <defs>
-                <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="239" id="filter0_f_9_387" width="251" x="0" y="0">
-                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                  <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                  <feGaussianBlur result="effect1_foregroundBlur_9_387" stdDeviation="26" />
-                </filter>
-                <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_9_387" x1="52" x2="199" y1="119.5" y2="119.5">
-                  <stop stopColor="#FAD89E" />
-                  <stop offset="1" stopColor="#F29BFD" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <MobileMockupCove />
-      <div className="absolute h-[479px] left-[11px] top-[75px] w-[683px]" data-name="Mockup-covee">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgMockupCovee} />
-      </div>
-      <Frame29 />
-      <p className="[word-break:break-word] absolute font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold leading-[1.5] left-[461px] text-[#9b72ce] text-[32px] top-[41px] whitespace-nowrap">Cove</p>
-      <p className="[word-break:break-word] absolute font-['Inter:Italic',sans-serif] font-normal italic leading-[1.5] left-[461px] text-[#543976] text-[18px] top-[102px] w-[374px]">Designing a mental health support platform focused on reducing anxiety and stress through professional guidance and crisis assistance.</p>
-      <Frame33 />
-      <div className="absolute bg-gradient-to-r content-stretch drop-shadow-[0px_0px_2px_rgba(0,0,0,0.04),0px_4px_4px_rgba(0,0,0,0.06)] flex from-[#fad89e] gap-[10px] items-center justify-center left-[720px] px-[20px] py-[10px] rounded-[40px] to-[#f29bfd] top-[506px]" data-name="Button">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#543976] text-[16px] text-center whitespace-nowrap">View work ➤</p>
-      </div>
-      <p className="[word-break:break-word] absolute font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[0] left-[461px] text-[#9b72ce] text-[18px] top-[265px] whitespace-nowrap">
-        <span className="leading-[1.5]">{`Role: `}</span>
-        <span className="leading-[1.5] text-[#543976]">{`UI Designer & Prototype Lead`}</span>
-      </p>
-      <p className="[word-break:break-word] absolute font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[0] left-[461px] text-[#9b72ce] text-[18px] top-[223px] whitespace-nowrap">
-        <span className="leading-[1.5]">{`Team: `}</span>
-        <span className="leading-[1.5] text-[#543976]">4 Designer</span>
-      </p>
-    </div>
-  );
-}
-
-function Frame34() {
-  return (
-    <div className="absolute backdrop-blur-[31px] bg-[rgba(229,217,230,0.24)] content-stretch flex flex-col items-center justify-center left-[60px] p-[20px] rounded-[20px] top-[2919px] w-[442px]">
-      <div aria-hidden className="absolute border-4 border-[#fad89e] border-solid inset-0 pointer-events-none rounded-[20px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]" />
-      <div className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#543976] text-[0px] w-full whitespace-pre-wrap">
-        <p className="mb-0 text-[18px]">
-          <span className="leading-[1.5]">{`Hi, I'm `}</span>
-          <span className="bg-clip-text bg-gradient-to-r from-[#fe85ea] leading-[1.5] text-[transparent] to-[#5102a0]">
-            Patricia 🌸
-            <br aria-hidden />
-            <br aria-hidden />
-          </span>
-        </p>
-        <p className="mb-0 text-[18px]">
-          <span className="leading-[1.5]">After working as a Frontend Developer, I discovered that what I truly enjoy is</span>
-          <span className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Bold',sans-serif] font-bold from-[#fe85ea] leading-[1.5] text-[transparent] to-[#5102a0]">{` designing experience`}</span>
-          <span className="leading-[1.5]">s, not just building them.</span>
-        </p>
-        <p className="leading-[1.5] mb-0 text-[18px]">​</p>
-        <p className="text-[18px]">
-          <span className="leading-[1.5]">Today, I focus on</span>
-          <span className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Bold',sans-serif] font-bold from-[#fe85ea] leading-[1.5] text-[transparent] to-[#5102a0]">{` UX/UI Desig`}</span>
-          <span className="leading-[1.5]">n, combining creativity, empathy, and problem-solving to create products people love using.</span>
-        </p>
-      </div>
-    </div>
-  );
-}
-
-function Frame35() {
-  return (
-    <div className="content-stretch flex flex-col gap-[3px] items-center relative shrink-0 w-[211px]">
-      <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.1] relative shrink-0 text-[44px] text-[transparent] to-[#5102a0] whitespace-nowrap">+4</p>
-      <p className="font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] min-w-full relative shrink-0 text-[#6b4a94] text-[14px] w-[min-content]">years of experience in digital product development and frontend engineering</p>
-    </div>
-  );
-}
-
-function Frame36() {
-  return (
-    <div className="content-stretch flex flex-col gap-[3px] items-center relative shrink-0 w-[211px]">
-      <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.1] relative shrink-0 text-[44px] text-[transparent] to-[#5102a0] whitespace-nowrap">3</p>
-      <p className="font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] min-w-full relative shrink-0 text-[#6b4a94] text-[14px] w-[min-content]">Case studies where challenge my UX/UI skills</p>
-    </div>
-  );
-}
-
-function Frame37() {
-  return (
-    <div className="content-stretch flex flex-col gap-[3px] items-center relative shrink-0 w-[211px]">
-      <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.1] relative shrink-0 text-[44px] text-[transparent] to-[#5102a0] whitespace-nowrap">+6</p>
-      <p className="font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] min-w-full relative shrink-0 text-[#6b4a94] text-[14px] w-[min-content]">diferents digital projects as a frontend developer and Web UI developer</p>
-    </div>
-  );
-}
-
-function Frame40() {
-  return (
-    <div className="[word-break:break-word] absolute content-stretch flex gap-[100px] items-start left-[91px] text-center top-[3766px]">
-      <Frame35 />
-      <Frame36 />
-      <Frame37 />
-    </div>
-  );
-}
-
-function Frame2() {
-  return (
-    <div className="content-stretch flex flex-col gap-[14px] items-start relative shrink-0">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#3e2859] text-[32px]">Web UI Developer</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#543976] text-[18px]">August 2023 - May 2026</p>
-    </div>
-  );
-}
-
-function Frame3() {
-  return (
-    <div className="content-stretch flex flex-col gap-[14px] items-start relative shrink-0">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#3e2859] text-[32px]">Frontend Developer</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#543976] text-[18px]">June 2022 - August 2023</p>
-    </div>
-  );
-}
-
-function Frame4() {
-  return (
-    <div className="content-stretch flex flex-col gap-[14px] items-start relative shrink-0">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#3e2859] text-[32px]">HR Operation Lead</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#543976] text-[18px]">May 2018 - Dec 2021</p>
-    </div>
-  );
-}
-
-function Frame5() {
-  return (
-    <div className="content-stretch flex flex-col gap-[14px] items-start relative shrink-0">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#3e2859] text-[32px]">System analyst</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#543976] text-[18px]">Dec 2015 - May 2018</p>
-    </div>
-  );
-}
-
-function Frame1() {
-  return (
-    <div className="[word-break:break-word] content-stretch flex flex-col gap-[102px] items-start leading-[1.5] relative self-stretch shrink-0 whitespace-nowrap">
-      <Frame2 />
-      <Frame3 />
-      <Frame4 />
-      <Frame5 />
-    </div>
-  );
-}
-
-function Frame13() {
-  return (
-    <div className="relative shrink-0 size-[48px]">
-      <div className="absolute inset-[-2.08%]">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 50 50">
-          <g id="Frame 70">
-            <rect fill="var(--fill-0, #FFF3FF)" height="48" rx="24" width="48" x="1" y="1" />
-            <rect height="48" rx="24" stroke="url(#paint0_linear_9_384)" strokeDasharray="7 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" width="48" x="1" y="1" />
-            <circle cx="25" cy="25" fill="url(#paint1_linear_9_384)" id="Ellipse 3" r="18" />
-          </g>
-          <defs>
-            <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_9_384" x1="1" x2="49" y1="25" y2="25">
-              <stop stopColor="#FCBFD5" />
-              <stop offset="1" stopColor="#8D75FA" />
-            </linearGradient>
-            <linearGradient gradientUnits="userSpaceOnUse" id="paint1_linear_9_384" x1="7" x2="43" y1="25" y2="25">
-              <stop stopColor="#FCBFD5" />
-              <stop offset="1" stopColor="#8D75FA" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-function Frame14() {
-  return (
-    <div className="relative shrink-0 size-[48px]">
-      <div className="absolute inset-[-2.08%]">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 50 50">
-          <g id="Frame 70">
-            <rect fill="var(--fill-0, #FFF3FF)" height="48" rx="24" width="48" x="1" y="1" />
-            <rect height="48" rx="24" stroke="url(#paint0_linear_9_384)" strokeDasharray="7 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" width="48" x="1" y="1" />
-            <circle cx="25" cy="25" fill="url(#paint1_linear_9_384)" id="Ellipse 3" r="18" />
-          </g>
-          <defs>
-            <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_9_384" x1="1" x2="49" y1="25" y2="25">
-              <stop stopColor="#FCBFD5" />
-              <stop offset="1" stopColor="#8D75FA" />
-            </linearGradient>
-            <linearGradient gradientUnits="userSpaceOnUse" id="paint1_linear_9_384" x1="7" x2="43" y1="25" y2="25">
-              <stop stopColor="#FCBFD5" />
-              <stop offset="1" stopColor="#8D75FA" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-function Frame15() {
-  return (
-    <div className="relative shrink-0 size-[48px]">
-      <div className="absolute inset-[-2.08%]">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 50 50">
-          <g id="Frame 70">
-            <rect fill="var(--fill-0, #FFF3FF)" height="48" rx="24" width="48" x="1" y="1" />
-            <rect height="48" rx="24" stroke="url(#paint0_linear_9_384)" strokeDasharray="7 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" width="48" x="1" y="1" />
-            <circle cx="25" cy="25" fill="url(#paint1_linear_9_384)" id="Ellipse 3" r="18" />
-          </g>
-          <defs>
-            <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_9_384" x1="1" x2="49" y1="25" y2="25">
-              <stop stopColor="#FCBFD5" />
-              <stop offset="1" stopColor="#8D75FA" />
-            </linearGradient>
-            <linearGradient gradientUnits="userSpaceOnUse" id="paint1_linear_9_384" x1="7" x2="43" y1="25" y2="25">
-              <stop stopColor="#FCBFD5" />
-              <stop offset="1" stopColor="#8D75FA" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-function Frame16() {
-  return (
-    <div className="relative shrink-0 size-[48px]">
-      <div className="absolute inset-[-2.08%]">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 50 50">
-          <g id="Frame 70">
-            <rect fill="var(--fill-0, #FFF3FF)" height="48" rx="24" width="48" x="1" y="1" />
-            <rect height="48" rx="24" stroke="url(#paint0_linear_9_384)" strokeDasharray="7 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" width="48" x="1" y="1" />
-            <circle cx="25" cy="25" fill="url(#paint1_linear_9_384)" id="Ellipse 3" r="18" />
-          </g>
-          <defs>
-            <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_9_384" x1="1" x2="49" y1="25" y2="25">
-              <stop stopColor="#FCBFD5" />
-              <stop offset="1" stopColor="#8D75FA" />
-            </linearGradient>
-            <linearGradient gradientUnits="userSpaceOnUse" id="paint1_linear_9_384" x1="7" x2="43" y1="25" y2="25">
-              <stop stopColor="#FCBFD5" />
-              <stop offset="1" stopColor="#8D75FA" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-function Frame7() {
-  return (
-    <div className="content-stretch flex flex-col h-full items-start justify-between relative shrink-0">
-      <Frame13 />
-      <Frame14 />
-      <Frame15 />
-      <Frame16 />
-    </div>
-  );
-}
-
-function Frame6() {
-  return (
-    <div className="content-stretch flex gap-[10px] h-[621px] items-start relative shrink-0">
-      <div className="-translate-x-1/2 absolute flex h-[685px] items-center justify-center left-[calc(50%+0.25px)] top-0 w-0">
-        <div className="flex-none rotate-90">
-          <div className="h-0 relative w-[685px]">
-            <div className="absolute inset-[-3px_0_0_0]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 685 3">
-                <line id="Line 4" stroke="url(#paint0_linear_9_373)" strokeDasharray="6 6" strokeWidth="3" x2="685" y1="1.5" y2="1.5" />
-                <defs>
-                  <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_9_373" x1="0" x2="685" y1="3.5" y2="3.5">
-                    <stop stopColor="#FE85EA" />
-                    <stop offset="1" stopColor="#5102A0" />
-                  </linearGradient>
-                </defs>
-              </svg>
+          <nav className="hidden items-center gap-[20px] md:flex">
+            <div ref={projectsRef} className="relative">
+              <button
+                type="button"
+                aria-haspopup="menu"
+                aria-expanded={projectsOpen}
+                onClick={() => setProjectsOpen((v) => !v)}
+                className="font-normal text-[18px] text-[#543976] whitespace-nowrap transition-colors duration-200 hover:text-[#9b72ce]"
+              >
+                Projects
+              </button>
+              {projectsOpen && (
+                <div
+                  role="menu"
+                  className="absolute left-0 top-[calc(100%+12px)] z-40 w-[240px] overflow-hidden rounded-2xl border border-[#ff99b9] bg-[#fff3ff] shadow-[0_0_25px_0_rgba(0,0,0,0.05)]"
+                >
+                  {PROJECT_LINKS.map((p) => (
+                    <button
+                      key={p.id}
+                      type="button"
+                      role="menuitem"
+                      onClick={() => {
+                        setProjectsOpen(false);
+                        onOpenCaseStudy(p.id);
+                      }}
+                      className="block w-full px-[20px] py-[14px] text-left text-[16px] text-[#543976] transition-colors hover:bg-[#fed5ff]"
+                    >
+                      {p.label}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
+            {NAV_LINKS.filter((l) => l.label !== "Projects").map((l) => (
+              <a
+                key={l.label}
+                href={l.href}
+                className="font-normal text-[18px] text-[#543976] whitespace-nowrap transition-colors duration-200 hover:text-[#9b72ce]"
+              >
+                {l.label}
+              </a>
+            ))}
+          </nav>
+
+          <div ref={mobileMenuRef} className="relative shrink-0 md:hidden">
+            <button
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              onClick={() => setOpen((v) => !v)}
+              className="flex size-[36px] items-center justify-center rounded-full bg-[#fff3ff] text-[#543976]"
+            >
+              {open ? <X size={20} /> : <MoreVertical size={20} />}
+            </button>
+
+            {open && (
+              <div
+                role="menu"
+                className="absolute right-0 top-[calc(100%+12px)] z-40 w-[260px] overflow-hidden rounded-2xl border border-[#ff99b9] bg-[#fff3ff] shadow-[0_0_25px_0_rgba(0,0,0,0.05)]"
+              >
+                <button
+                  type="button"
+                  aria-expanded={mobileProjectsOpen}
+                  onClick={() => setMobileProjectsOpen((v) => !v)}
+                  className="flex w-full items-center justify-between px-[20px] py-[14px] text-left text-[16px] text-[#543976] transition-colors hover:bg-[#fed5ff]"
+                >
+                  Projects
+                  {mobileProjectsOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                </button>
+
+                {mobileProjectsOpen && (
+                  <>
+                    <div className="h-px bg-[#ff99b9]/30" />
+                    {PROJECT_LINKS.map((p) => (
+                      <button
+                        key={p.id}
+                        type="button"
+                        onClick={() => {
+                          setOpen(false);
+                          onOpenCaseStudy(p.id);
+                        }}
+                        className="block w-full px-[36px] py-[12px] text-left text-[16px] text-[#543976] transition-colors hover:bg-[#fed5ff]"
+                      >
+                        {p.label}
+                      </button>
+                    ))}
+                    <div className="h-px bg-[#ff99b9]/30" />
+                  </>
+                )}
+
+                <a
+                  href="#about"
+                  onClick={() => setOpen(false)}
+                  className="block px-[20px] py-[14px] text-[16px] text-[#543976] transition-colors hover:bg-[#fed5ff]"
+                >
+                  About me
+                </a>
+                <a
+                  href="#contact"
+                  onClick={() => setOpen(false)}
+                  className="block px-[20px] py-[14px] text-[16px] text-[#543976] transition-colors hover:bg-[#fed5ff]"
+                >
+                  Contact
+                </a>
+                <a
+                  href={CV_PDF_URL}
+                  download={CV_DOWNLOAD_NAME}
+                  onClick={() => setOpen(false)}
+                  className="block w-full px-[20px] py-[14px] text-left text-[16px] text-[#543976] transition-colors hover:bg-[#fed5ff]"
+                >
+                  Download CV
+                </a>
+              </div>
+            )}
           </div>
         </div>
+
+        <div className="hidden md:block lg:hidden">
+          <a
+            href={CV_PDF_URL}
+            download={CV_DOWNLOAD_NAME}
+            aria-label="Download CV"
+            className="flex size-[56px] items-center justify-center rounded-full bg-gradient-to-r from-[#fad89e] to-[#f29bfd] text-[#543976] drop-shadow-[0px_0px_2px_rgba(0,0,0,0.04),0px_4px_4px_rgba(0,0,0,0.06)]"
+          >
+            <CvIcon className="size-[24px]" />
+          </a>
+        </div>
+
+        <div className="hidden lg:block">
+          <GradientButton href={CV_PDF_URL} download={CV_DOWNLOAD_NAME}>
+            Download CV
+            <CvIcon className="size-[24px]" />
+          </GradientButton>
+        </div>
       </div>
-      <Frame7 />
-    </div>
+    </header>
   );
 }
 
-function Frame9() {
-  return (
-    <div className="content-stretch flex flex-col gap-[14px] items-start relative shrink-0">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#3e2859] text-[32px] whitespace-nowrap">Globant | Iberia | Openbank</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#543976] text-[18px] w-[444px]">Bridged design and development by translating UI concepts into scalable and user-friendly web experiences</p>
-    </div>
-  );
+/* ============================== Hero ============================== */
+
+function scrollToCaseStudies() {
+  document.getElementById("case-studies")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-function Frame10() {
-  return (
-    <div className="content-stretch flex flex-col gap-[14px] items-start relative shrink-0">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#3e2859] text-[32px] whitespace-nowrap">Venpend</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#543976] text-[18px] w-[444px]">Developed intuitive interfaces while gaining a deeper understanding of usability, accessibility, and user-centered thinking.</p>
-    </div>
-  );
+const HERO_CURVE_MOBILE =
+  "M785 -1C652.662 4.02065 427.293 146.77 370.747 331.768C314.201 516.766 376.163 722.34 529.076 737.275C658.085 749.875 731.386 652.508 731.386 516.766C731.386 381.024 650.049 243.799 539.129 199.463C428.209 155.126 33.7764 -2.95445 -19 906";
+const HERO_CURVE_TABLET =
+  "M964.234 3.99878C806.178 7.86252 537.011 117.718 469.476 260.087C401.94 402.456 475.944 560.659 658.574 572.153C812.655 581.85 900.201 506.919 900.201 402.456C900.201 297.993 803.057 192.389 670.581 158.269C538.104 124.148 67.0173 2.49469 3.98438 701.999";
+const HERO_CURVE_DESKTOP =
+  "M1440 -3C1202.98 2.6849 799.332 164.32 698.055 373.794C596.778 583.269 707.755 816.041 981.63 832.952C1212.69 847.22 1343.97 736.97 1343.97 583.269C1343.97 429.568 1198.3 274.187 999.634 223.985C800.971 173.782 94.5248 -5.21301 0 1024";
+
+/** Animates a path drawing itself along its own trace, from start to end. */
+function DrawPath(props: SVGProps<SVGPathElement>) {
+  const ref = useRef<SVGPathElement>(null);
+
+  useEffect(() => {
+    const path = ref.current;
+    if (!path) return;
+    const length = path.getTotalLength();
+    path.style.strokeDasharray = `${length}`;
+    path.style.strokeDashoffset = `${length}`;
+    const animation = path.animate(
+      [{ strokeDashoffset: length }, { strokeDashoffset: 0 }],
+      { duration: 2200, easing: "ease-in-out", fill: "forwards" },
+    );
+    return () => animation.cancel();
+  }, []);
+
+  return <path ref={ref} {...props} />;
 }
 
-function Frame11() {
+/**
+ * Decorative background curve for the first screen (nav + hero combined).
+ * Rendered at the page root, behind everything, flush to the viewport
+ * edges with no margin — its bounds are always exactly the viewport width
+ * and 100dvh tall (nav + hero), clipped beyond that.
+ */
+function HeroCurve() {
   return (
-    <div className="content-stretch flex flex-col gap-[14px] items-start relative shrink-0">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#3e2859] text-[32px] whitespace-nowrap">Improving</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#543976] text-[18px] w-[444px]">Improved employee experiences through process optimization, stakeholder management, and problem-solving</p>
-    </div>
-  );
-}
+    <div className="pointer-events-none absolute inset-x-0 top-0 h-[100dvh] overflow-hidden" aria-hidden>
+      <svg className="mx-auto block h-[907px] w-[804px] md:hidden" fill="none" preserveAspectRatio="none" viewBox="0 0 440 907">
+        <DrawPath d={HERO_CURVE_MOBILE} stroke="url(#hero-curve-mobile)" strokeWidth="8" />
+        <defs>
+          <linearGradient gradientUnits="userSpaceOnUse" id="hero-curve-mobile" x1="-19" x2="785" y1="452.5" y2="452.5">
+            <stop stopColor="#E9A8FF" />
+            <stop offset="1" stopColor="#0FF5E5" />
+          </linearGradient>
+        </defs>
+      </svg>
 
-function Frame12() {
-  return (
-    <div className="content-stretch flex flex-col gap-[14px] items-start relative shrink-0">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#3e2859] text-[32px] whitespace-nowrap">Esvenca</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#543976] text-[18px] w-[444px]">Connected business goals and technical requirements, building a foundation in problem-solving and systems thinking</p>
-    </div>
-  );
-}
+      <svg className="hidden h-[698px] w-full md:block lg:hidden" fill="none" preserveAspectRatio="none" viewBox="0 0 774 703">
+        <DrawPath d={HERO_CURVE_TABLET} stroke="url(#hero-curve-tablet)" strokeWidth="8" />
+        <defs>
+          <linearGradient gradientUnits="userSpaceOnUse" id="hero-curve-tablet" x1="3.98438" x2="964.234" y1="352.999" y2="352.999">
+            <stop stopColor="#E9A8FF" />
+            <stop offset="1" stopColor="#0FF5E5" />
+          </linearGradient>
+        </defs>
+      </svg>
 
-function Frame8() {
-  return (
-    <div className="[word-break:break-word] content-stretch flex flex-col gap-[48px] items-start leading-[1.5] relative shrink-0">
-      <Frame9 />
-      <Frame10 />
-      <Frame11 />
-      <Frame12 />
-    </div>
-  );
-}
-
-function Frame() {
-  return (
-    <div className="absolute content-stretch flex items-start justify-between left-[112px] top-[3930px] w-[840px]">
-      <Frame1 />
-      <Frame6 />
-      <Frame8 />
-    </div>
-  );
-}
-
-function Frame17() {
-  return (
-    <div className="[word-break:break-word] absolute bg-[#c79aff] content-stretch flex font-['Momo_Trust_Sans:Medium',sans-serif] font-medium h-[47px] items-center justify-end left-0 px-[60px] py-[6px] text-[14px] top-[5329px] w-[1024px]">
-      <p className="flex-[1_0_0] leading-[1.5] min-w-px relative text-[#fff3ff]">© 2026 Patricia Rivera. All rights reserved.</p>
-      <p className="leading-[0] relative shrink-0 text-[#e8d6ff] text-right w-[452px]">
-        <span className="leading-[1.5]">{`Designed & Built with `}</span>
-        <span className="bg-clip-text bg-gradient-to-r from-[#ff99b9] leading-[1.5] text-[transparent] to-[#fff08f]">passion</span>
-      </p>
-    </div>
-  );
-}
-
-function FormkitLinkedin() {
-  return (
-    <div className="relative shrink-0 size-[30px]" data-name="formkit:linkedin">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
-        <g id="formkit:linkedin">
-          <path d={svgPaths.p5472600} fill="var(--fill-0, #3E2859)" id="Vector" />
-        </g>
+      <svg className="mx-auto hidden h-[1027px] w-[1440px] lg:block" fill="none" preserveAspectRatio="none" viewBox="0 0 1440 1025">
+        <DrawPath d={HERO_CURVE_DESKTOP} stroke="url(#hero-curve-desktop)" strokeWidth="8" />
+        <defs>
+          <linearGradient gradientUnits="userSpaceOnUse" id="hero-curve-desktop" x1="0" x2="1440" y1="510.5" y2="510.5">
+            <stop stopColor="#E9A8FF" />
+            <stop offset="1" stopColor="#0FF5E5" />
+          </linearGradient>
+        </defs>
       </svg>
     </div>
   );
 }
 
-function IcBaselineWhatsapp() {
+function Hero() {
   return (
-    <div className="relative shrink-0 size-[30px]" data-name="ic:baseline-whatsapp">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
-        <g id="ic:baseline-whatsapp">
-          <path d={svgPaths.pf262880} fill="var(--fill-0, #3E2859)" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function Frame38() {
-  return (
-    <div className="absolute bg-[#c79aff] content-stretch flex h-[89px] items-start justify-between left-0 px-[60px] py-[20px] top-[5240px] w-[1024px]">
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Bold',sans-serif] font-bold leading-[1.5] relative shrink-0 text-[#3e2859] text-[18px] whitespace-nowrap">UX/UI Designer | Product Designer</p>
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium','Noto_Sans_Symbols2:Regular',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#ffd6a5] text-[24px] whitespace-nowrap">✦</p>
-      <FormkitLinkedin />
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium','Noto_Sans_Symbols2:Regular',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#ffd6a5] text-[24px] whitespace-nowrap">✦</p>
-      <IcBaselineWhatsapp />
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium','Noto_Sans_Symbols2:Regular',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#ffd6a5] text-[24px] whitespace-nowrap">✦</p>
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#3e2859] text-[18px] whitespace-nowrap">riverapatriciam20@gmail.com</p>
-    </div>
-  );
-}
-
-function BxMap() {
-  return (
-    <div className="relative shrink-0 size-[24px]" data-name="bx:map">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-        <g id="bx:map">
-          <path d={svgPaths.p4acd200} fill="var(--fill-0, #FFF3FF)" id="Vector" />
-          <path d={svgPaths.pfecb800} fill="var(--fill-0, #FFF3FF)" id="Vector_2" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function City() {
-  return (
-    <div className="absolute content-stretch flex gap-[10px] items-center justify-center left-[calc(37.5%+31px)] px-[20px] py-[10px] rounded-[99999px] top-[4718px]" data-name="City">
-      <div aria-hidden className="absolute border-3 border-[#ff99b9] border-solid inset-0 pointer-events-none rounded-[99999px]" />
-      <BxMap />
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#fff3ff] text-[18px] text-center whitespace-nowrap">Madrid, Spain</p>
-    </div>
-  );
-}
-
-function ButtonContainer() {
-  return (
-    <div className="absolute content-stretch flex gap-[20px] items-center left-[242px] top-[226px]" data-name="Button container">
-      <div className="bg-gradient-to-r content-stretch drop-shadow-[0px_0px_2px_rgba(0,0,0,0.04),0px_4px_4px_rgba(0,0,0,0.06)] flex from-[#fad89e] gap-[10px] h-[56px] items-center justify-center px-[20px] py-[10px] relative rounded-[40px] shrink-0 to-[#f29bfd]" data-name="Button">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#543976] text-[24px] text-center whitespace-nowrap">Get in touch</p>
-        <div className="overflow-clip relative shrink-0 size-[30px]" data-name="chat-mail-icn">
-          <div className="absolute inset-[5%_10%_10%_9.99%]" data-name="Vector">
-            <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24.003 25.5">
-              <path d={svgPaths.p112a9400} fill="var(--fill-0, #543976)" id="Vector" />
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div className="content-stretch drop-shadow-[0px_0px_2px_rgba(0,0,0,0.04),0px_4px_4px_rgba(0,0,0,0.06)] flex gap-[10px] h-[56px] items-center justify-center px-[20px] py-[10px] relative rounded-[40px] shrink-0" data-name="Button">
-        <div aria-hidden className="absolute border-4 border-[#fad89e] border-solid inset-0 pointer-events-none rounded-[40px]" />
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#ffd6a5] text-[24px] text-center whitespace-nowrap">Download CV</p>
-        <div className="overflow-clip relative shrink-0 size-[30px]" data-name="cv-icn">
-          <div className="absolute inset-[5%_15%]" data-name="Vector">
-            <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 21 27">
-              <g id="Vector">
-                <path d={svgPaths.p3613df80} fill="var(--fill-0, #FFD6A5)" />
-                <path clipRule="evenodd" d={svgPaths.p2d758d80} fill="var(--fill-0, #FFD6A5)" fillRule="evenodd" />
-                <path d={svgPaths.p23f5a380} fill="var(--fill-0, #FFD6A5)" />
-                <path clipRule="evenodd" d={svgPaths.pbc957c0} fill="var(--fill-0, #FFD6A5)" fillRule="evenodd" />
-              </g>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Frame39() {
-  return (
-    <div className="absolute backdrop-blur-[32px] bg-[rgba(229,217,230,0.24)] h-[366px] left-[42px] overflow-clip rounded-[20px] top-[4830px] w-[940px]">
-      <ButtonContainer />
-      <p className="-translate-x-1/2 [word-break:break-word] absolute bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#ff99b9] leading-[1.1] left-[470px] text-[52px] text-[transparent] text-center text-shadow-[4px_6px_6px_rgba(73,73,73,0.25)] to-[#fff08f] top-[55px] w-[904px]">{`Let's build meaningful products together`}</p>
-    </div>
-  );
-}
-
-export default function Home() {
-  return (
-    <div className="bg-[#fff3ff] relative size-full" data-name="Home">
-      <div className="absolute bg-[#825db1] h-[567px] left-0 top-[4673px] w-[1024px]" />
-      <div className="absolute h-[6297px] left-[-420px] top-[666px] w-[1886px]">
-        <div className="absolute inset-[0_-0.21%]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1894 6299.7">
-            <path d={svgPaths.p166d6480} id="Vector 371" stroke="url(#paint0_linear_9_375)" strokeWidth="8" />
-            <defs>
-              <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_9_375" x1="3.996" x2="1890" y1="3148.91" y2="3148.91">
-                <stop stopColor="#E9A8FF" />
-                <stop offset="1" stopColor="#0FF5E5" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-      </div>
-      <div className="absolute h-[698px] left-[64px] top-[70px] w-[960.25px]">
-        <div className="absolute inset-[-0.57%_0_0_-0.41%]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 964.332 702.358">
-            <path d={svgPaths.p10151d00} id="Vector 369" stroke="url(#paint0_linear_9_391)" strokeWidth="8" />
-            <defs>
-              <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_9_391" x1="3.98386" x2="964.234" y1="352.999" y2="352.999">
-                <stop stopColor="#E9A8FF" />
-                <stop offset="1" stopColor="#0FF5E5" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-      </div>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold leading-[0] left-[514px] text-[#3e2859] text-[52px] text-center top-[248px] w-[900px]">
-        <span className="leading-[1.1]">{`Design products with `}</span>
-        <span className="bg-clip-text bg-gradient-to-r from-[#fe85ea] leading-[1.1] text-[transparent] to-[#5102a0]">empathy</span>
-        <span className="leading-[1.1]">, strategy, and technical understanding</span>
-      </p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] left-[514.5px] text-[#6b4a94] text-[24px] text-center top-[449px] w-[799px]">My journey helps me create experiences that work for both users and businesses.</p>
-      <button className="absolute bg-gradient-to-r content-stretch cursor-pointer drop-shadow-[0px_0px_2px_rgba(0,0,0,0.04),0px_4px_4px_rgba(0,0,0,0.06)] flex from-[#fad89e] gap-[10px] items-center justify-center left-[calc(37.5%+71px)] px-[20px] py-[10px] rounded-[40px] to-[#f29bfd] top-[622px]" data-name="Button">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#543976] text-[16px] text-center whitespace-nowrap">View work</p>
-      </button>
-      <div className="absolute bg-[#d7b8ff] content-stretch flex h-[81px] items-center justify-between left-0 pl-[110px] pr-[20px] py-[10px] rounded-bl-[99999px] rounded-br-[999px] rounded-tr-[999px] top-0 w-[631px]" data-name="Nav-bar">
-        <div className="[word-break:break-word] content-stretch flex font-bold gap-[2px] items-center justify-center relative shrink-0 text-[24px] text-[transparent]" data-name="Home-btn">
-          <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Bold','Noto_Sans_Symbols2:Regular',sans-serif] from-[#fad89e] h-full leading-[normal] relative shrink-0 text-shadow-[0px_0px_30px_#f29bfd] to-[#f29bfd] w-[21px]">❋</p>
-          <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Bold',sans-serif] from-[#5102a0] leading-[1.5] relative shrink-0 to-[#fe85ea] whitespace-nowrap">Patricia Rivera</p>
-        </div>
-        <Frame18 />
-      </div>
-      <div className="absolute bg-[#d7b8ff] content-stretch flex items-center left-0 overflow-x-auto overflow-y-clip p-[10px] top-[721px] w-[1024px]" data-name="Skills">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#452746] text-[0px] whitespace-pre">
-          <span className="bg-clip-text bg-gradient-to-r from-[#ff99b9] leading-[1.5] text-[18px] text-[transparent] to-[#fff08f]">✦</span>
-          <span className="leading-[1.5] text-[18px]">{` `}</span>
-          <span className="font-['Momo_Trust_Sans:Bold','Noto_Sans_Symbols2:Regular',sans-serif] font-bold leading-[1.5] text-[18px]">UX/UI Designer</span>
-          <span className="leading-[1.5] text-[18px]">{` `}</span>
-          <span className="bg-clip-text bg-gradient-to-r from-[#ff99b9] leading-[1.5] text-[18px] text-[transparent] to-[#fff08f]">✧</span>
-          <span className="leading-[1.5] text-[18px]">{` `}</span>
-          <span className="font-['Momo_Trust_Sans:Bold','Noto_Sans_Symbols2:Regular',sans-serif] font-bold leading-[1.5] text-[18px]">Product Designer</span>
-          <span className="leading-[1.5] text-[18px]">{` `}</span>
-          <span className="bg-clip-text bg-gradient-to-r from-[#ff99b9] leading-[1.5] text-[18px] text-[transparent] to-[#fff08f]">✦</span>
-          <span className="leading-[1.5] text-[18px]">{` Figma `}</span>
-          <span className="bg-clip-text bg-gradient-to-r from-[#ff99b9] leading-[1.5] text-[18px] text-[transparent] to-[#fff08f]">✧</span>
-          <span className="leading-[1.5] text-[18px]">{` HTML/CSS `}</span>
-          <span className="bg-clip-text bg-gradient-to-r from-[#ff99b9] leading-[1.5] text-[18px] text-[transparent] to-[#fff08f]">✦</span>
-          <span className="leading-[1.5] text-[18px]">{` Typescript `}</span>
-          <span className="bg-clip-text bg-gradient-to-r from-[#ff99b9] leading-[1.5] text-[18px] text-[transparent] to-[#fff08f]">✧</span>
-          <span className="leading-[1.5] text-[18px]">{` Research`}</span>
-          <span className="leading-[1.5] text-[18px]">{` `}</span>
-          <span className="bg-clip-text bg-gradient-to-r from-[#ff99b9] leading-[1.5] text-[18px] text-[transparent] to-[#fff08f]">✦</span>
-          <span className="leading-[1.5] text-[18px]">{` `}</span>
-          <span className="font-['Momo_Trust_Sans:Bold','Noto_Sans_Symbols2:Regular',sans-serif] font-bold leading-[1.5] text-[18px]">UX/UI Designer</span>
-          <span className="font-['Momo_Trust_Sans:Bold','Noto_Sans_Symbols2:Regular',sans-serif] font-bold leading-[1.5] text-[18px]">{` `}</span>
-          <span className="bg-clip-text bg-gradient-to-r from-[#ff99b9] leading-[1.5] text-[18px] text-[transparent] to-[#fff08f]">✧</span>
-          <span className="leading-[1.5] text-[18px]">{` `}</span>
-          <span className="font-['Momo_Trust_Sans:Bold','Noto_Sans_Symbols2:Regular',sans-serif] font-bold leading-[1.5] text-[18px]">Product Designer</span>
-          <span className="leading-[1.5] text-[18px]">{` `}</span>
-          <span className="bg-clip-text bg-gradient-to-r from-[#ff99b9] leading-[1.5] text-[18px] text-[transparent] to-[#fff08f]">✦</span>
-          <span className="leading-[1.5] text-[18px]">{` Figma `}</span>
-          <span className="bg-clip-text bg-gradient-to-r from-[#ff99b9] leading-[1.5] text-[18px] text-[transparent] to-[#fff08f]">✧</span>
-          <span className="leading-[1.5] text-[18px]">{` HTML/CSS `}</span>
-          <span className="bg-clip-text bg-gradient-to-r from-[#ff99b9] leading-[1.5] text-[18px] text-[transparent] to-[#fff08f]">✦</span>
-          <span className="leading-[1.5] text-[18px]">{`  Typescript `}</span>
-          <span className="bg-clip-text bg-gradient-to-r from-[#ff99b9] leading-[1.5] text-[18px] text-[transparent] to-[#fff08f]">✧</span>
-          <span className="leading-[1.5] text-[18px]">{` Research`}</span>
+    <section className="relative flex flex-1 flex-col overflow-hidden">
+      <Container className="relative flex flex-1 flex-col items-center justify-center gap-[20px] py-[48px] text-center md:gap-[28px] lg:gap-[32px]">
+        <h1 className="max-w-[900px] text-[32px] font-extrabold leading-[1.15] text-[#3e2859] md:text-[42px] lg:text-[52px] lg:leading-[1.1]">
+          Design products with{" "}
+          <GradientText className="from-[#fe85ea] to-[#5102a0]">empathy</GradientText>, strategy, and
+          technical understanding
+        </h1>
+        <p className="max-w-[320px] text-[16px] text-[#6b4a94] md:max-w-[560px] md:text-[20px] lg:max-w-[800px] lg:text-[24px]">
+          My journey helps me create experiences that work for both users and businesses.
         </p>
+        <GradientButton onClick={scrollToCaseStudies} className="text-[16px]">
+          View work
+        </GradientButton>
+        <button
+          type="button"
+          aria-label="Scroll to case studies"
+          onClick={scrollToCaseStudies}
+          className="cursor-pointer text-[#9b72ce]"
+        >
+          <ChevronDown className="animate-bounce-soft size-[28px]" aria-hidden />
+        </button>
+      </Container>
+
+      <SkillsMarquee />
+    </section>
+  );
+}
+
+/* ============================== Skills marquee ============================== */
+
+const SKILLS: string[] = ["UX/UI Designer", "Product Designer", "Figma", "HTML/CSS", "Typescript", "Research"];
+const SEO_SKILLS = new Set(["UX/UI Designer", "Product Designer"]);
+
+function SkillsTrack({ ariaHidden = false }: { ariaHidden?: boolean }) {
+  return (
+    <p
+      aria-hidden={ariaHidden || undefined}
+      className="flex shrink-0 items-center gap-[8px] whitespace-nowrap px-[8px] text-[18px] leading-[150%]"
+    >
+      {SKILLS.map((skill, i) => (
+        <span key={i} className="flex items-center gap-[8px]">
+          <GradientText className="from-[#ff99b9] to-[#fff08f]">{i % 2 === 0 ? "✦" : "✧"}</GradientText>
+          <span className={`text-[#452746] ${SEO_SKILLS.has(skill) ? "font-bold" : "font-normal"}`}>{skill}</span>
+        </span>
+      ))}
+    </p>
+  );
+}
+
+// Repeats per half: the marquee spans the full viewport width (no max-width
+// cap), so a single SkillsTrack (~800px) isn't wide enough to cover wide
+// desktop screens without the loop exposing empty background near the seam.
+// Each half must stay wider than any realistic viewport.
+const MARQUEE_REPEATS = 5;
+
+function SkillsMarquee() {
+  return (
+    <div className="relative flex h-[70px] w-full shrink-0 items-center gap-[10px] overflow-hidden bg-[#d7b8ff] p-[10px]">
+      <div className="flex w-max shrink-0 animate-loop-left items-center hover:[animation-play-state:paused]">
+        {Array.from({ length: MARQUEE_REPEATS }, (_, i) => (
+          <SkillsTrack key={`a${i}`} />
+        ))}
+        {Array.from({ length: MARQUEE_REPEATS }, (_, i) => (
+          <SkillsTrack key={`b${i}`} ariaHidden />
+        ))}
       </div>
-      <div className="absolute bg-gradient-to-r content-stretch drop-shadow-[0px_0px_2px_rgba(0,0,0,0.04),0px_4px_4px_rgba(0,0,0,0.06)] flex from-[#fad89e] gap-[10px] items-center justify-center left-[calc(75%+20px)] px-[20px] py-[10px] rounded-[40px] to-[#f29bfd] top-[23px]" data-name="Button">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#543976] text-[16px] text-center whitespace-nowrap">Download CV</p>
-        <div className="overflow-clip relative shrink-0 size-[24px]" data-name="cv-icn">
-          <div className="absolute inset-[5%_15%]" data-name="Vector">
-            <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16.8 21.6">
-              <g id="Vector">
-                <path d={svgPaths.p1bf5ba00} fill="var(--fill-0, #543976)" />
-                <path clipRule="evenodd" d={svgPaths.p32d89c70} fill="var(--fill-0, #543976)" fillRule="evenodd" />
-                <path d={svgPaths.p3be3de00} fill="var(--fill-0, #543976)" />
-                <path clipRule="evenodd" d={svgPaths.p3cbde100} fill="var(--fill-0, #543976)" fillRule="evenodd" />
-              </g>
-            </svg>
+    </div>
+  );
+}
+
+/* ============================== Case studies ============================== */
+
+/**
+ * Two overlapping phone mockups, matching the design: a small phone (with its
+ * own screenshot) sits front-left over a larger background device mockup.
+ * Positions are percentages of the big mockup's box, derived from the
+ * original Figma pixel layout so the overlap holds at every breakpoint.
+ */
+function DualPhoneMockup({
+  title,
+  bigImg,
+  bigAspect,
+  smallFrameImgs,
+  smallScreenImg,
+  smallLeftPct,
+  smallTopPct,
+  smallWidthPct,
+}: {
+  title: string;
+  bigImg: string;
+  bigAspect: number;
+  smallFrameImgs: string[];
+  smallScreenImg: string;
+  smallLeftPct: number;
+  smallTopPct: number;
+  smallWidthPct: number;
+}) {
+  return (
+    <div className="relative w-full" style={{ aspectRatio: bigAspect }}>
+      <img alt={title} className="absolute inset-0 size-full object-contain" src={bigImg} />
+      <div
+        className="absolute aspect-[194/398]"
+        style={{ left: `${smallLeftPct}%`, top: `${smallTopPct}%`, width: `${smallWidthPct}%` }}
+      >
+        {smallFrameImgs.map((src, i) => (
+          <img key={i} alt="" className="absolute inset-0 size-full object-cover" src={src} />
+        ))}
+        <div className="absolute inset-[1.9%_4.5%]">
+          <img alt="" className="block size-full object-cover" src={smallScreenImg} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type CaseStudyMeta = { label: string; value: string };
+
+function CaseStudyCard({
+  title,
+  description,
+  meta,
+  tags,
+  duration,
+  mockupImg,
+  mockupAspect,
+  mobileFrameImgs,
+  mobileScreenImg,
+  smallLeftPct,
+  smallTopPct,
+  smallWidthPct,
+  onViewWork,
+}: {
+  title: string;
+  description: string;
+  meta: CaseStudyMeta[];
+  tags: string[];
+  duration: string;
+  mockupImg: string;
+  mockupAspect: number;
+  mobileFrameImgs: string[];
+  mobileScreenImg: string;
+  smallLeftPct: number;
+  smallTopPct: number;
+  smallWidthPct: number;
+  onViewWork: () => void;
+}) {
+  return (
+    <div className="relative overflow-hidden rounded-[32px] border-2 border-[#fad89e] bg-[rgba(229,217,230,0.24)] p-[24px] backdrop-blur-[15px] md:rounded-[40px] md:p-[32px] lg:p-[40px]">
+      <span className="absolute right-0 top-0 rounded-bl-[20px] bg-[#f7aef8] px-[16px] py-[10px] text-[14px] text-[#543976] md:text-[16px]">
+        {duration}
+      </span>
+
+      <div className="flex flex-col items-center gap-[24px] lg:flex-row lg:items-center lg:gap-[40px]">
+        <div className="w-full max-w-[300px] shrink-0 md:max-w-[380px] lg:w-[45%] lg:max-w-none">
+          <DualPhoneMockup
+            title={title}
+            bigImg={mockupImg}
+            bigAspect={mockupAspect}
+            smallFrameImgs={mobileFrameImgs}
+            smallScreenImg={mobileScreenImg}
+            smallLeftPct={smallLeftPct}
+            smallTopPct={smallTopPct}
+            smallWidthPct={smallWidthPct}
+          />
+        </div>
+
+        <div className="flex w-full flex-col items-center gap-[12px] text-center lg:w-[55%] lg:items-start lg:text-left">
+          <h3 className="text-[26px] font-extrabold text-[#9b72ce] md:text-[28px] lg:text-[32px]">{title}</h3>
+          <p className="text-[16px] italic text-[#543976] md:text-[18px]">{description}</p>
+          {meta.map((m) => (
+            <p key={m.label} className="text-[16px] md:text-[18px]">
+              <span className="text-[#9b72ce]">{m.label}: </span>
+              <span className="text-[#543976]">{m.value}</span>
+            </p>
+          ))}
+          <div className="flex flex-wrap justify-center gap-[10px] lg:justify-start">
+            {tags.map((t) => (
+              <TagPill key={t}>{t}</TagPill>
+            ))}
+          </div>
+          <GradientButton className="mt-[8px] text-[16px]" onClick={onViewWork}>
+            View work ➤
+          </GradientButton>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function CaseStudiesSection({ onOpenCaseStudy }: { onOpenCaseStudy: (id: CaseStudyId) => void }) {
+  return (
+    <section id="case-studies" className="scroll-mt-[98px] py-[60px] md:scroll-mt-[82px] md:py-[80px] lg:py-[100px]">
+      <Container>
+        <h2 className="mb-[32px] text-center text-[32px] font-extrabold md:mb-[40px] md:text-[42px] lg:mb-[48px] lg:text-[52px]">
+          <GradientText className="from-[#fe85ea] to-[#5102a0]">Case studies</GradientText>
+        </h2>
+        <div className="flex flex-col gap-[32px] md:gap-[40px]">
+          <CaseStudyCard
+            title="Level Up Habits"
+            description="Helping people with ADHD build habits through AI-powered gamification."
+            meta={[{ label: "Role", value: "Solo UX/UI Designer" }]}
+            tags={["UX Research", "UI Design", "Design Thinking"]}
+            duration="2 weeks"
+            mockupImg={imgMockupLuh}
+            mockupAspect={638 / 479}
+            mobileFrameImgs={[imgMobileMockupLuh, imgMobileMockupLuh1]}
+            mobileScreenImg={imgScreenInsertDesignsHere}
+            smallLeftPct={0}
+            smallTopPct={7.1}
+            smallWidthPct={30.4}
+            onViewWork={() => onOpenCaseStudy("luh")}
+          />
+          <CaseStudyCard
+            title="AfterStory"
+            description="Helping anime and manga fans discover stories tailored to their tastes"
+            meta={[{ label: "Role", value: "Solo UX/UI Designer" }]}
+            tags={["UX Research", "UI Design", "Design Thinking"]}
+            duration="3 weeks"
+            mockupImg={imgMokupAf}
+            mockupAspect={683 / 479}
+            mobileFrameImgs={[imgMobileMockupLuh, imgMobileMockupLuh1]}
+            mobileScreenImg={imgScreenInsertDesignsHere1}
+            smallLeftPct={2.34}
+            smallTopPct={10.65}
+            smallWidthPct={28.4}
+            onViewWork={() => onOpenCaseStudy("as")}
+          />
+          <CaseStudyCard
+            title="Cove"
+            description="Designing a mental health support platform focused on reducing anxiety and stress through professional guidance and crisis assistance."
+            meta={[
+              { label: "Team", value: "4 Designer" },
+              { label: "Role", value: "UI Designer & Prototype Lead" },
+            ]}
+            tags={["Prototyping", "UI Design", "Design Sprint"]}
+            duration="1 week"
+            mockupImg={imgMockupCovee}
+            mockupAspect={683 / 479}
+            mobileFrameImgs={[imgMobileMockupLuh, imgMobileMockupLuh1]}
+            mobileScreenImg={imgScreenInsertDesignsHere2}
+            smallLeftPct={2.49}
+            smallTopPct={7.3}
+            smallWidthPct={28.4}
+            onViewWork={() => onOpenCaseStudy("cove")}
+          />
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+/* ============================== About ============================== */
+
+const SKILL_PILLS = [
+  "Product Designer",
+  "UX/UI Design",
+  "Web UI design",
+  "Design system",
+  "Token Studio",
+  "Supernova",
+  "Research",
+  "Wireframe",
+  "Prototyping",
+  "Typescript",
+  "IA Agents",
+];
+
+/** Scattered floating layout, only meaningful at desktop canvas width. */
+const SCATTERED_PILLS: { label: string; top: number; left: number }[] = [
+  { label: "Figma", top: 708, left: 94 },
+  { label: "UX/UI Design", top: 383, left: 38 },
+  { label: "Web UI design", top: 448, left: 13 },
+  { label: "Research", top: 23, left: 462 },
+  { label: "Typescript", top: 216, left: 609 },
+  { label: "IA Agents", top: 281, left: 596 },
+  { label: "Supernova", top: 643, left: 45 },
+  { label: "Wireframe", top: 82, left: 535 },
+  { label: "Product Designer", top: 318, left: 52 },
+  { label: "Token Studio", top: 578, left: 7 },
+  { label: "Design system", top: 513, left: 0 },
+  { label: "Prototyping", top: 151, left: 577 },
+];
+
+function AboutSection() {
+  return (
+    <section id="about" className="py-[60px] md:py-[80px] lg:py-[100px]">
+      <Container className="flex flex-col items-center gap-[32px] lg:flex-row lg:items-center lg:gap-[60px]">
+        <h2 className="text-center text-[32px] font-extrabold md:text-[42px] lg:hidden">
+          <GradientText className="from-[#fe85ea] to-[#5102a0]">About me</GradientText>
+        </h2>
+
+        <div className="w-full max-w-[440px] rounded-[20px] border-4 border-[#fad89e] bg-[rgba(229,217,230,0.24)] p-[24px] text-[16px] text-[#543976] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] backdrop-blur-[31px] md:text-[18px] lg:order-1 lg:w-[442px]">
+          <p>
+            Hi, I'm <GradientText className="from-[#fe85ea] to-[#5102a0]">Patricia 🌸</GradientText>
+          </p>
+          <p className="mt-[16px]">
+            After working as a Frontend Developer, I discovered that what I truly enjoy is
+            <GradientText className="from-[#fe85ea] to-[#5102a0] font-bold"> designing experiences</GradientText>,
+            not just building them.
+          </p>
+          <p className="mt-[16px]">
+            Today, I focus on
+            <GradientText className="from-[#fe85ea] to-[#5102a0] font-bold"> UX/UI Design</GradientText>, combining
+            creativity, empathy, and problem-solving to create products people love using.
+          </p>
+        </div>
+
+        <div className="relative w-full max-w-[440px] lg:order-2 lg:w-[699px] lg:max-w-none">
+          <h2 className="mb-[24px] hidden text-center text-[42px] font-extrabold lg:block lg:text-[52px] lg:text-left">
+            <GradientText className="from-[#fe85ea] to-[#5102a0]">About me</GradientText>
+          </h2>
+
+          <div className="relative mx-auto w-full max-w-[380px] lg:mx-0 lg:w-[519px]">
+            <img alt="Patricia Rivera" className="w-full rounded-[20px] object-cover" src={imgProfilePhoto} />
+
+            {/* Scattered floating pills — desktop only, positioned relative to the 519px-wide photo */}
+            <div className="pointer-events-none absolute inset-0 hidden lg:block">
+              {SCATTERED_PILLS.map((p) => (
+                <div
+                  key={p.label}
+                  className="pointer-events-auto absolute"
+                  style={{ top: p.top - 71, left: p.left }}
+                >
+                  <TagPill>{p.label}</TagPill>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Same skills, flowing tag list — base/tablet only */}
+          <div className="mt-[20px] flex flex-wrap justify-center gap-[10px] lg:hidden">
+            {SKILL_PILLS.map((label) => (
+              <TagPill key={label}>{label}</TagPill>
+            ))}
           </div>
         </div>
-      </div>
-      <CardLuh />
-      <p className="-translate-x-1/2 [word-break:break-word] absolute bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.1] left-[calc(25%+256px)] text-[52px] text-[transparent] text-center to-[#5102a0] top-[822px] whitespace-nowrap">Case studies</p>
-      <CardAf />
-      <p className="[word-break:break-word] absolute bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.1] left-[calc(37.5%+4px)] text-[52px] text-[transparent] to-[#5102a0] top-[2822px] whitespace-nowrap">About me</p>
-      <CardCove />
-      <div className="absolute flex h-[638.52px] items-center justify-center left-[calc(12.5%+75px)] top-[3144px] w-[487.869px]">
-        <div className="-rotate-30 flex-none">
-          <div className="content-stretch flex flex-col gap-[170px] h-[618.079px] items-start relative w-[206.495px]" data-name="Blur-motion">
-            <div className="h-[135px] relative shrink-0 w-full">
-              <div className="absolute inset-[-38.52%_-25.18%]">
-                <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 310.495 239">
-                  <g filter="url(#filter0_f_9_371)" id="Ellipse 15">
-                    <ellipse cx="155.247" cy="119.5" fill="url(#paint0_linear_9_371)" rx="103.247" ry="67.5" />
-                  </g>
-                  <defs>
-                    <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="239" id="filter0_f_9_371" width="310.495" x="0" y="0">
-                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                      <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                      <feGaussianBlur result="effect1_foregroundBlur_9_371" stdDeviation="26" />
-                    </filter>
-                    <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_9_371" x1="52" x2="258.495" y1="119.5" y2="119.5">
-                      <stop stopColor="#FAD89E" />
-                      <stop offset="1" stopColor="#F29BFD" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+      </Container>
+    </section>
+  );
+}
+
+/* ============================== Stats ============================== */
+
+const STATS: { value: string; label: string }[] = [
+  { value: "+4", label: "years of experience in digital product development and frontend engineering" },
+  { value: "3", label: "Case studies where challenge my UX/UI skills" },
+  { value: "+6", label: "diferents digital projects as a frontend developer and Web UI developer" },
+];
+
+function StatsRow() {
+  return (
+    <section className="pb-[60px] md:pb-[80px] lg:pb-[100px]">
+      <Container className="flex flex-wrap justify-center gap-x-[48px] gap-y-[32px] lg:gap-x-[100px]">
+        {STATS.map((s) => (
+          <div key={s.label} className="flex w-[180px] flex-col items-center gap-[3px] text-center md:w-[211px]">
+            <GradientText className="from-[#fe85ea] to-[#5102a0] text-[36px] font-extrabold leading-[1.1] md:text-[44px]">
+              {s.value}
+            </GradientText>
+            <p className="text-[13px] font-medium text-[#6b4a94] md:text-[14px]">{s.label}</p>
+          </div>
+        ))}
+      </Container>
+    </section>
+  );
+}
+
+/* ============================== Timeline ============================== */
+
+const TIMELINE: { role: string; period: string; company: string; desc: string }[] = [
+  {
+    role: "Web UI Developer",
+    period: "August 2023 - May 2026",
+    company: "Globant | Iberia | Openbank",
+    desc: "Bridged design and development by translating UI concepts into scalable and user-friendly web experiences",
+  },
+  {
+    role: "Frontend Developer",
+    period: "June 2022 - August 2023",
+    company: "Venpend",
+    desc: "Developed intuitive interfaces while gaining a deeper understanding of usability, accessibility, and user-centered thinking.",
+  },
+  {
+    role: "HR Operation Lead",
+    period: "May 2018 - Dec 2021",
+    company: "Improving",
+    desc: "Improved employee experiences through process optimization, stakeholder management, and problem-solving",
+  },
+  {
+    role: "System analyst",
+    period: "Dec 2015 - May 2018",
+    company: "Esvenca",
+    desc: "Connected business goals and technical requirements, building a foundation in problem-solving and systems thinking",
+  },
+];
+
+function TimelineDot() {
+  const uid = useId();
+  const ringId = `dot-ring-${uid}`;
+  const fillId = `dot-fill-${uid}`;
+  return (
+    <svg className="size-[40px] shrink-0 lg:size-[48px]" fill="none" preserveAspectRatio="none" viewBox="0 0 50 50">
+      <rect fill="#FFF3FF" height="48" rx="24" width="48" x="1" y="1" />
+      <rect height="48" rx="24" stroke={`url(#${ringId})`} strokeDasharray="7 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" width="48" x="1" y="1" />
+      <circle cx="25" cy="25" fill={`url(#${fillId})`} r="18" />
+      <defs>
+        <linearGradient gradientUnits="userSpaceOnUse" id={ringId} x1="1" x2="49" y1="25" y2="25">
+          <stop stopColor="#FCBFD5" />
+          <stop offset="1" stopColor="#8D75FA" />
+        </linearGradient>
+        <linearGradient gradientUnits="userSpaceOnUse" id={fillId} x1="7" x2="43" y1="25" y2="25">
+          <stop stopColor="#FCBFD5" />
+          <stop offset="1" stopColor="#8D75FA" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}
+
+function TimelineSection() {
+  return (
+    <section className="pb-[60px] md:pb-[80px] lg:pb-[100px]">
+      <Container>
+        {/* Base/tablet: single stacked column */}
+        <div className="flex flex-col gap-[10px] lg:hidden">
+          {TIMELINE.map((item, i) => (
+            <div key={item.role} className="flex gap-[16px]">
+              <div className="flex flex-col items-center">
+                <TimelineDot />
+                {i < TIMELINE.length - 1 && (
+                  <div className="w-0 flex-1 border-l-2 border-dashed border-[#8D75FA]" />
+                )}
+              </div>
+              <div className="flex flex-col gap-[6px] pb-[32px]">
+                <p className="text-[22px] font-extrabold text-[#3e2859] md:text-[28px]">{item.role}</p>
+                <p className="text-[15px] text-[#543976] md:text-[16px]">{item.period}</p>
+                <p className="mt-[6px] text-[18px] font-extrabold text-[#3e2859] md:text-[22px]">{item.company}</p>
+                <p className="text-[15px] text-[#543976] md:text-[16px]">{item.desc}</p>
               </div>
             </div>
-            <div className="h-[135px] relative shrink-0 w-full">
-              <div className="absolute inset-[-38.52%_-25.18%]">
-                <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 310.495 239">
-                  <g filter="url(#filter0_f_9_371)" id="Ellipse 15">
-                    <ellipse cx="155.247" cy="119.5" fill="url(#paint0_linear_9_371)" rx="103.247" ry="67.5" />
-                  </g>
-                  <defs>
-                    <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="239" id="filter0_f_9_371" width="310.495" x="0" y="0">
-                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                      <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                      <feGaussianBlur result="effect1_foregroundBlur_9_371" stdDeviation="26" />
-                    </filter>
-                    <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_9_371" x1="52" x2="258.495" y1="119.5" y2="119.5">
-                      <stop stopColor="#FAD89E" />
-                      <stop offset="1" stopColor="#F29BFD" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+          ))}
+        </div>
+
+        {/* Desktop: three columns (dates | dotted line+dots | descriptions) */}
+        <div className="hidden lg:flex lg:items-stretch lg:gap-[24px]">
+          <div className="flex flex-col justify-between gap-[24px]">
+            {TIMELINE.map((item) => (
+              <div key={item.role} className="flex flex-col gap-[14px]">
+                <p className="text-[32px] font-extrabold text-[#3e2859]">{item.role}</p>
+                <p className="text-[18px] text-[#543976]">{item.period}</p>
               </div>
-            </div>
+            ))}
+          </div>
+          <div className="relative flex flex-col items-center justify-between">
+            <div className="absolute bottom-0 top-0 w-0 border-l-2 border-dashed border-[#8D75FA]" />
+            {TIMELINE.map((item) => (
+              <TimelineDot key={item.role} />
+            ))}
+          </div>
+          <div className="flex flex-col justify-between gap-[24px]">
+            {TIMELINE.map((item) => (
+              <div key={item.role} className="flex flex-col gap-[14px]">
+                <p className="text-[32px] font-extrabold text-[#3e2859]">{item.company}</p>
+                <p className="max-w-[444px] text-[18px] text-[#543976]">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-      <div className="absolute flex h-[456.169px] items-center justify-center left-[calc(50%+46px)] top-[3400px] w-[341.628px]">
-        <div className="flex-none rotate-[28.95deg]">
-          <div className="content-stretch flex flex-col gap-[170px] items-start relative w-[147px]" data-name="Blur-motion">
-            <div className="h-[135px] relative shrink-0 w-full">
-              <div className="absolute inset-[-38.52%_-35.37%]">
-                <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 251 239">
-                  <g filter="url(#filter0_f_9_387)" id="Ellipse 15">
-                    <ellipse cx="125.5" cy="119.5" fill="url(#paint0_linear_9_387)" rx="73.5" ry="67.5" />
-                  </g>
-                  <defs>
-                    <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="239" id="filter0_f_9_387" width="251" x="0" y="0">
-                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                      <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                      <feGaussianBlur result="effect1_foregroundBlur_9_387" stdDeviation="26" />
-                    </filter>
-                    <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_9_387" x1="52" x2="199" y1="119.5" y2="119.5">
-                      <stop stopColor="#FAD89E" />
-                      <stop offset="1" stopColor="#F29BFD" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-            </div>
-            <div className="h-[135px] relative shrink-0 w-full">
-              <div className="absolute inset-[-38.52%_-35.37%]">
-                <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 251 239">
-                  <g filter="url(#filter0_f_9_387)" id="Ellipse 15">
-                    <ellipse cx="125.5" cy="119.5" fill="url(#paint0_linear_9_387)" rx="73.5" ry="67.5" />
-                  </g>
-                  <defs>
-                    <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="239" id="filter0_f_9_387" width="251" x="0" y="0">
-                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                      <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                      <feGaussianBlur result="effect1_foregroundBlur_9_387" stdDeviation="26" />
-                    </filter>
-                    <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_9_387" x1="52" x2="199" y1="119.5" y2="119.5">
-                      <stop stopColor="#FAD89E" />
-                      <stop offset="1" stopColor="#F29BFD" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-            </div>
+      </Container>
+    </section>
+  );
+}
+
+/* ============================== Contact + Footer ============================== */
+
+function ContactSection() {
+  return (
+    <section id="contact" className="relative bg-[#825db1] pb-[40px] pt-[60px] md:pt-[80px]">
+      <Container>
+        <div className="flex justify-center">
+          <div className="flex items-center gap-[10px] rounded-full border-3 border-[#ff99b9] px-[20px] py-[10px]">
+            <MapIcon className="size-[24px]" />
+            <span className="text-[16px] text-[#fff3ff] md:text-[18px]">Madrid, Spain</span>
           </div>
         </div>
+
+        <div className="relative mt-[32px] overflow-hidden rounded-[20px] bg-[rgba(229,217,230,0.24)] px-[24px] py-[40px] backdrop-blur-[32px] md:px-[40px] md:py-[55px]">
+          <h2 className="text-center text-[30px] font-extrabold leading-[1.15] [text-shadow:4px_6px_6px_rgba(73,73,73,0.25)] md:text-[40px] lg:text-[52px] lg:leading-[1.1]">
+            <GradientText className="from-[#ff99b9] to-[#fff08f]">
+              Let's build meaningful products together
+            </GradientText>
+          </h2>
+          <div className="mt-[32px] flex flex-col items-center justify-center gap-[20px] sm:flex-row">
+            <GradientButton className="w-full text-[20px] sm:w-auto md:text-[24px]">
+              Get in touch
+              <ChatMailIcon className="size-[26px] text-[#543976] md:size-[30px]" />
+            </GradientButton>
+            <a
+              href={CV_PDF_URL}
+              download={CV_DOWNLOAD_NAME}
+              className="inline-flex w-full items-center justify-center gap-[10px] rounded-[40px] border-4 border-[#fad89e] px-[20px] py-[10px] text-[20px] text-[#ffd6a5] drop-shadow-[0px_0px_2px_rgba(0,0,0,0.04),0px_4px_4px_rgba(0,0,0,0.06)] sm:w-auto md:text-[24px]"
+            >
+              Download CV
+              <CvIcon className="size-[26px] text-[#ffd6a5] md:size-[30px]" />
+            </a>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="bg-[#c79aff]">
+      <Container className="flex flex-wrap items-center justify-center gap-x-[24px] gap-y-[12px] py-[20px] text-center md:justify-between">
+        <p className="text-[16px] font-bold text-[#3e2859] md:text-[18px]">UX/UI Designer | Product Designer</p>
+        <div className="flex items-center gap-[16px]">
+          <LinkedinIcon className="size-[26px] md:size-[30px]" />
+          <WhatsappIcon className="size-[26px] md:size-[30px]" />
+          <span className="text-[14px] font-medium text-[#3e2859] md:text-[18px]">riverapatriciam20@gmail.com</span>
+        </div>
+      </Container>
+      <Container className="flex flex-col items-center justify-between gap-[8px] border-t border-white/20 py-[14px] text-center text-[12px] font-medium md:flex-row md:text-[14px]">
+        <p className="text-[#fff3ff]">© 2026 Patricia Rivera. All rights reserved.</p>
+        <p className="text-[#e8d6ff]">
+          Designed & Built with <GradientText className="from-[#ff99b9] to-[#fff08f]">passion</GradientText>
+        </p>
+      </Container>
+    </footer>
+  );
+}
+
+/* ============================== Page ============================== */
+
+export default function Home({ onOpenCaseStudy }: { onOpenCaseStudy: (id: CaseStudyId) => void }) {
+  return (
+    <div className="relative w-full overflow-x-clip bg-[#fff3ff]" data-name="Home">
+      <HeroCurve />
+      <NavBar onOpenCaseStudy={onOpenCaseStudy} />
+      <div className="flex min-h-[calc(100dvh-98px)] flex-col md:min-h-[calc(100dvh-82px)]">
+        <Hero />
       </div>
-      <div className="absolute h-[778px] left-[calc(12.5%+103px)] top-[2936px] w-[699px]" data-name="Profile">
-        <div className="absolute bg-[#b488eb] content-stretch flex items-center justify-center left-[94px] p-[10px] rounded-[40px] top-[708px]" data-name="Pill">
-          <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-          <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">Figma</p>
-        </div>
-        <div className="absolute bg-[#b488eb] content-stretch flex items-center justify-center left-[38px] p-[10px] rounded-[40px] top-[383px]" data-name="Pill">
-          <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-          <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">UX/UI Design</p>
-        </div>
-        <div className="absolute bg-[#b488eb] content-stretch flex items-center justify-center left-[13px] p-[10px] rounded-[40px] top-[448px]" data-name="Pill">
-          <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-          <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">Web UI design</p>
-        </div>
-        <div className="absolute bg-[#b488eb] content-stretch flex items-center justify-center left-[462px] p-[10px] rounded-[40px] top-[23px]" data-name="Pill">
-          <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-          <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">Research</p>
-        </div>
-        <div className="absolute bg-[#b488eb] content-stretch flex items-center justify-center left-[609px] p-[10px] rounded-[40px] top-[216px]" data-name="Pill">
-          <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-          <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">Typescript</p>
-        </div>
-        <div className="absolute bg-[#b488eb] content-stretch flex items-center justify-center left-[596px] p-[10px] rounded-[40px] top-[281px]" data-name="Pill">
-          <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-          <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">IA Agents</p>
-        </div>
-        <div className="absolute bg-[#b488eb] content-stretch flex items-center justify-center left-[45px] p-[10px] rounded-[40px] top-[643px]" data-name="Pill">
-          <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-          <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">Supernova</p>
-        </div>
-        <div className="absolute bg-[#b488eb] content-stretch flex items-center justify-center left-[535px] p-[10px] rounded-[40px] top-[82px]" data-name="Pill">
-          <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-          <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">Wireframe</p>
-        </div>
-        <div className="absolute bg-[#b488eb] content-stretch flex items-center justify-center left-[52px] p-[10px] rounded-[40px] top-[318px]" data-name="Pill">
-          <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-          <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">Product Designer</p>
-        </div>
-        <div className="absolute bg-[#b488eb] content-stretch flex items-center justify-center left-[7px] p-[10px] rounded-[40px] top-[578px]" data-name="Pill">
-          <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-          <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">Token Studio</p>
-        </div>
-        <div className="absolute bg-[#b488eb] content-stretch flex items-center justify-center left-0 p-[10px] rounded-[40px] top-[513px]" data-name="Pill">
-          <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-          <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">Design system</p>
-        </div>
-        <div className="absolute bg-[#b488eb] content-stretch flex items-center justify-center left-[577px] p-[10px] rounded-[40px] top-[151px]" data-name="Pill">
-          <div aria-hidden className="absolute border-3 border-[#fad89e] border-solid inset-[-3px] pointer-events-none rounded-[43px]" />
-          <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#fff3ff] text-[14px] whitespace-nowrap">Prototyping</p>
-        </div>
-        <div className="absolute h-[778px] left-[169px] top-0 w-[519px]" data-name="Gemini_Generated_Image_te4cpvte4cpvte4c 1">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgGeminiGeneratedImageTe4Cpvte4Cpvte4C1} />
-        </div>
-      </div>
-      <Frame34 />
-      <Frame40 />
-      <Frame />
-      <Frame17 />
-      <Frame38 />
-      <City />
-      <Frame39 />
+      <CaseStudiesSection onOpenCaseStudy={onOpenCaseStudy} />
+      <AboutSection />
+      <StatsRow />
+      <TimelineSection />
+      <ContactSection />
+      <Footer />
     </div>
   );
 }
