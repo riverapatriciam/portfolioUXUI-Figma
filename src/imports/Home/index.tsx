@@ -8,6 +8,7 @@ import imgRectangle from "./9e45d10569ee726de6756e67abd23e635d276fce.png";
 import imgScreenInsertDesignsHere2 from "./97b01c1ad5125d8dca70471f580fc161e2f8fab0.png";
 import imgIPhone16 from "./8a5f99a72f0e7e3a8723d24c8d35854d0a922d76.png";
 import imgGeminiGeneratedImageTe4Cpvte4Cpvte4C1 from "./6c3788d3a7dd46350fe3b7ad9766a2b91e9d3616.png";
+import React from "react";
 
 function Frame18() {
   return (
@@ -57,8 +58,8 @@ function DesignProductsWithEmpathyStrategyAndTechnicalUnderstanding() {
         </div>
         <Frame18 />
       </div>
-      <div className="absolute bg-[#d7b8ff] content-stretch flex items-center left-0 overflow-x-auto overflow-y-clip p-[10px] top-[721px] w-[1024px]" data-name="Skills">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#452746] text-[0px] whitespace-pre">
+      <div className="absolute bg-[#d7b8ff] content-stretch flex items-center left-0 w-full overflow-hidden p-[10px] top-[721px]" data-name="Skills">
+        <p className="animate-loop-left hover:[animation-play-state:paused] [word-break:break-word] font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#452746] text-[0px] whitespace-pre">
           <span className="bg-clip-text bg-gradient-to-r from-[#ff99b9] leading-[1.5] text-[18px] text-[transparent] to-[#fff08f]">✦</span>
           <span className="leading-[1.5] text-[18px]">{` `}</span>
           <span className="font-['Momo_Trust_Sans:Bold','Noto_Sans_Symbols2:Regular',sans-serif] font-bold leading-[1.5] text-[18px]">UX/UI Designer</span>

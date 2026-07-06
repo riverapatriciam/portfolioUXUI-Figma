@@ -1,4 +1,37 @@
-@import 'tailwindcss' source(none);
+@import 'tailwindcss';
 @source '../**/*.{js,ts,jsx,tsx}';
 
 @import 'tw-animate-css';
+
+@font-face {
+  font-family: "Momo Trust Sans";
+  src: url('/fonts/MomoTrustSans-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* Tablet activates here, styled for an 834px canvas (8 col / 44 margin / 22 gutter) */
+  --breakpoint-md: 744px;
+  /* Desktop activates here, styled for a 1440px canvas (12 col / 60 margin / 24 gutter) */
+  --breakpoint-lg: 1200px;
+
+  --font-sans: "Momo Trust Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme inline {
+    --animate-loop-left: loop-left 60s linear infinite;
+
+    @keyframes loop-left {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    --animate-bounce-soft: bounce-soft 1.8s ease-in-out infinite;
+
+    @keyframes bounce-soft {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+  }
