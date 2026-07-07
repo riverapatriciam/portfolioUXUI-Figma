@@ -1,5 +1,5 @@
-import { useEffect, useId, useRef, useState, type ReactNode, type SVGProps } from "react";
-import { ChevronDown, ChevronUp, MoreVertical, X } from "lucide-react";
+import { useEffect, useRef, useState, type ReactNode, type SVGProps } from "react";
+import { ChevronDown, ChevronUp, MoreVertical, Sparkle, X } from "lucide-react";
 import svgPaths from "./svg-qr77o6k7nf";
 import imgMobileMockupLuh from "./b3c2d0d39ef8d164ef4f6b454cd7ea3eadde1799.png";
 import imgMobileMockupLuh1 from "./43e7918bdb5051d2c77508d8ffa0fcd5b8185746.png";
@@ -13,6 +13,9 @@ export type CaseStudyId = "luh" | "as" | "cove";
 
 const CV_PDF_URL = "/cv/Patricia-Rivera-CV-EN.pdf";
 const CV_DOWNLOAD_NAME = "Patricia Rivera - CV.pdf";
+const CONTACT_EMAIL = "riverapatriciam20@gmail.com";
+const LINKEDIN_URL = "https://www.linkedin.com/in/riverapatriciam/";
+const WHATSAPP_URL = "https://wa.link/s0diwh";
 
 const VIDEO_LUH_URL = "/videos/level-up-habits-preview.mp4";
 const VIDEO_AS_URL = "/videos/after-story-preview.mp4";
@@ -98,18 +101,27 @@ function GradientButton({
   onClick,
   href,
   download,
+  target,
 }: {
   children: ReactNode;
   className?: string;
   onClick?: () => void;
   href?: string;
   download?: string;
+  target?: string;
 }) {
   const classes = `inline-flex cursor-pointer items-center justify-center gap-[10px] rounded-[40px] border-2 border-transparent bg-gradient-to-r from-[#fad89e] to-[#f29bfd] px-[20px] py-[10px] text-[#543976] shadow-[0_0_4px_0_rgba(0,0,0,0.04),0_4px_8px_0_rgba(0,0,0,0.06)] transition-[border-color,box-shadow] duration-200 hover:border-[#ff99b9] hover:shadow-[0_0_4px_0_rgba(0,0,0,0.04),0_8px_16px_0_rgba(0,0,0,0.08)] ${className}`;
 
   if (href) {
     return (
-      <a href={href} download={download} onClick={onClick} className={classes}>
+      <a
+        href={href}
+        download={download}
+        onClick={onClick}
+        target={target}
+        rel={target === "_blank" ? "noopener noreferrer" : undefined}
+        className={classes}
+      >
         {children}
       </a>
     );
@@ -328,6 +340,46 @@ const HERO_CURVE_TABLET =
   "M964.234 3.99878C806.178 7.86252 537.011 117.718 469.476 260.087C401.94 402.456 475.944 560.659 658.574 572.153C812.655 581.85 900.201 506.919 900.201 402.456C900.201 297.993 803.057 192.389 670.581 158.269C538.104 124.148 67.0173 2.49469 3.98438 701.999";
 const HERO_CURVE_DESKTOP =
   "M1440 -3C1202.98 2.6849 799.332 164.32 698.055 373.794C596.778 583.269 707.755 816.041 981.63 832.952C1212.69 847.22 1343.97 736.97 1343.97 583.269C1343.97 429.568 1198.3 274.187 999.634 223.985C800.971 173.782 94.5248 -5.21301 0 1024";
+
+/**
+ * Same curve family as `HERO_CURVE_DESKTOP`, vertically compressed to fit the
+ * Contact section's much shorter canvas (567 tall vs. Hero's 1025) — Y values
+ * scaled by 567/1025, X left untouched since the section is the same 1440
+ * width. No exact Figma coordinates were given for this curve, so it reuses
+ * the established curve shape/gradient rather than an unrelated new one.
+ */
+const CONTACT_CURVE_DESKTOP =
+  "M1440 -1.66C1202.98 1.49 799.332 90.9 698.055 206.7C596.778 322.6 707.755 451.5 981.63 460.8C1212.69 468.7 1343.97 407.7 1343.97 322.6C1343.97 237.6 1198.3 151.7 999.634 123.9C800.971 96.1 94.5248 -2.88 0 566.5";
+/** Same curve, X compressed by 834/1440 to fit the tablet canvas (height barely changes: 567 -> 568). */
+const CONTACT_CURVE_TABLET =
+  "M834 -1.66C696.5 1.49 462.8 90.9 404.2 206.7C345.5 322.6 409.8 451.5 568.4 460.8C702.3 468.7 778.2 407.7 778.2 322.6C778.2 237.6 693.8 151.7 578.8 123.9C463.8 96.1 54.7 -2.88 0 566.5";
+
+/** Decorative background curve behind the Contact card, tablet/desktop only (no mobile spec given). */
+function ContactCurve() {
+  return (
+    <div className="pointer-events-none absolute inset-0 hidden overflow-hidden md:block" aria-hidden>
+      <svg className="h-full w-full lg:hidden" fill="none" preserveAspectRatio="none" viewBox="0 0 834 568">
+        <DrawPath d={CONTACT_CURVE_TABLET} stroke="url(#contact-curve-tablet)" strokeWidth="8" />
+        <defs>
+          <linearGradient gradientUnits="userSpaceOnUse" id="contact-curve-tablet" x1="0" x2="834" y1="284" y2="284">
+            <stop stopColor="#E9A8FF" />
+            <stop offset="1" stopColor="#0FF5E5" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <svg className="hidden h-full w-full lg:block" fill="none" preserveAspectRatio="none" viewBox="0 0 1440 567">
+        <DrawPath d={CONTACT_CURVE_DESKTOP} stroke="url(#contact-curve-desktop)" strokeWidth="8" />
+        <defs>
+          <linearGradient gradientUnits="userSpaceOnUse" id="contact-curve-desktop" x1="0" x2="1440" y1="283.5" y2="283.5">
+            <stop stopColor="#E9A8FF" />
+            <stop offset="1" stopColor="#0FF5E5" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  );
+}
 
 /** Animates a path drawing itself along its own trace, from start to end. */
 function DrawPath(props: SVGProps<SVGPathElement>) {
@@ -870,25 +922,13 @@ const TIMELINE: { role: string; period: string; company: string; desc: string }[
 ];
 
 function TimelineDot() {
-  const uid = useId();
-  const ringId = `dot-ring-${uid}`;
-  const fillId = `dot-fill-${uid}`;
   return (
-    <svg className="size-[40px] shrink-0 lg:size-[48px]" fill="none" preserveAspectRatio="none" viewBox="0 0 50 50">
-      <rect fill="#FFF3FF" height="48" rx="24" width="48" x="1" y="1" />
-      <rect height="48" rx="24" stroke={`url(#${ringId})`} strokeDasharray="7 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" width="48" x="1" y="1" />
-      <circle cx="25" cy="25" fill={`url(#${fillId})`} r="18" />
-      <defs>
-        <linearGradient gradientUnits="userSpaceOnUse" id={ringId} x1="1" x2="49" y1="25" y2="25">
-          <stop stopColor="#FCBFD5" />
-          <stop offset="1" stopColor="#8D75FA" />
-        </linearGradient>
-        <linearGradient gradientUnits="userSpaceOnUse" id={fillId} x1="7" x2="43" y1="25" y2="25">
-          <stop stopColor="#FCBFD5" />
-          <stop offset="1" stopColor="#8D75FA" />
-        </linearGradient>
-      </defs>
-    </svg>
+    <div
+      aria-hidden="true"
+      className="flex size-[38px] shrink-0 items-center justify-center gap-[10px] rounded-full border-2 border-dashed border-[#fcbfd5] bg-[#fff3ff] md:size-[48px]"
+    >
+      <div className="size-[28px] rounded-full bg-gradient-to-r from-[#fcbfd5] to-[#8d75fa] md:size-[36px]" />
+    </div>
   );
 }
 
@@ -896,38 +936,61 @@ function TimelineSection() {
   return (
     <section className="pb-[60px] md:pb-[80px] lg:pb-[100px]">
       <Container>
-        {/* Base/tablet: single stacked column */}
-        <div className="flex flex-col gap-[10px] lg:hidden">
+        {/* Mobile only: per-row dot + a connecting segment that flex-grows to
+            exactly fill the gap to the next dot. A single absolutely-
+            positioned line (matching the Figma layer 1:1) doesn't work here
+            like it does for tablet/desktop: `justify-between` only lines up
+            two columns' items when each column's own per-item size is
+            proportionally similar, and a 38px dot vs. a 4-line text block
+            aren't. Per-row segments size themselves off each row's own
+            actual text height instead, so misalignment can't happen —  each
+            segment uses the same gradient, so adjacent rows still read as
+            one continuous line (the gradient runs left-right across a 3px
+            width, too narrow to show a visible seam between segments). */}
+        <div className="flex flex-col gap-[10px] md:hidden">
           {TIMELINE.map((item, i) => (
             <div key={item.role} className="flex gap-[16px]">
-              <div className="flex flex-col items-center">
+              <div className="relative z-0 flex flex-col items-center">
                 <TimelineDot />
                 {i < TIMELINE.length - 1 && (
-                  <div className="w-0 flex-1 border-l-2 border-dashed border-[#8D75FA]" />
+                  <div className="timeline-line -z-10 w-[3px] flex-1" />
                 )}
               </div>
-              <div className="flex flex-col gap-[6px] pb-[32px]">
-                <p className="text-[22px] font-extrabold text-[#3e2859] md:text-[28px]">{item.role}</p>
-                <p className="text-[15px] text-[#543976] md:text-[16px]">{item.period}</p>
-                <p className="mt-[6px] text-[18px] font-extrabold text-[#3e2859] md:text-[22px]">{item.company}</p>
-                <p className="text-[15px] text-[#543976] md:text-[16px]">{item.desc}</p>
+              <div className="flex flex-1 flex-col items-start gap-[20px] px-[20px]">
+                <p className="self-stretch text-[18px] font-bold leading-[1.5] text-[#3e2859]">{item.role}</p>
+                <p className="self-stretch text-[14px] leading-[1.5] text-[#543976]">{item.period}</p>
+                <p className="self-stretch text-[16px] font-medium leading-[1.5] text-[#3e2859]">{item.company}</p>
+                <p className="self-stretch text-[14px] leading-[1.5] text-[#543976]">{item.desc}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Desktop: three columns (dates | dotted line+dots | descriptions) */}
-        <div className="hidden lg:flex lg:items-stretch lg:gap-[24px]">
+        {/* Tablet/Desktop: three columns (dates | dotted line+dots | descriptions).
+            Tablet reuses desktop's distribution (not the mobile stack), just at
+            smaller type sizes and without desktop's asymmetric 170/100 padding.
+            `items-stretch` (not the literal `align-items:flex-start` from the
+            Figma spec) — the three columns each distribute their own 4 items
+            via internal `justify-between`, which only lines dots up with their
+            matching text row if all three columns share the same height. */}
+        <div className="hidden md:mx-auto md:flex md:w-full md:max-w-[746px] md:items-stretch md:justify-between lg:max-w-none lg:items-stretch lg:justify-between lg:pl-[170px] lg:pr-[100px]">
           <div className="flex flex-col justify-between gap-[24px]">
             {TIMELINE.map((item) => (
               <div key={item.role} className="flex flex-col gap-[14px]">
-                <p className="text-[32px] font-extrabold text-[#3e2859]">{item.role}</p>
-                <p className="text-[18px] text-[#543976]">{item.period}</p>
+                <p className="text-[24px] font-bold text-[#3e2859] lg:text-[32px] lg:font-extrabold">{item.role}</p>
+                <p className="text-[16px] text-[#543976] lg:text-[18px]">{item.period}</p>
               </div>
             ))}
           </div>
-          <div className="relative flex flex-col items-center justify-between">
-            <div className="absolute bottom-0 top-0 w-0 border-l-2 border-dashed border-[#8D75FA]" />
+          <div className="relative z-0 flex flex-col items-center justify-between">
+            {/* top/bottom insets (half the 48px dot) instead of the literal
+                685px spec height — stretches to reach exactly the first and
+                last dot's center regardless of how tall the real text content
+                renders (685px alone overshot past the last dot here). `z-0`
+                on this wrapper for the same reason as the mobile line above:
+                without it, `-z-10` escapes past this column and hides fully
+                behind the page's own background section. */}
+            <div className="timeline-line absolute left-[24px] top-[24px] bottom-[24px] -z-10 w-[3px]" />
             {TIMELINE.map((item) => (
               <TimelineDot key={item.role} />
             ))}
@@ -935,8 +998,8 @@ function TimelineSection() {
           <div className="flex flex-col justify-between gap-[24px]">
             {TIMELINE.map((item) => (
               <div key={item.role} className="flex flex-col gap-[14px]">
-                <p className="text-[32px] font-extrabold text-[#3e2859]">{item.company}</p>
-                <p className="max-w-[444px] text-[18px] text-[#543976]">{item.desc}</p>
+                <p className="text-[24px] font-bold text-[#3e2859] lg:text-[32px] lg:font-extrabold">{item.company}</p>
+                <p className="max-w-[444px] text-[16px] text-[#543976] lg:text-[18px]">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -950,8 +1013,14 @@ function TimelineSection() {
 
 function ContactSection() {
   return (
-    <section id="contact" className="relative bg-[#825db1] pb-[40px] pt-[60px] md:pt-[80px]">
-      <Container>
+    <section id="contact" className="relative overflow-hidden bg-[#825db1] pb-[40px] pt-[60px] md:flex md:min-h-[568px] md:flex-col md:pt-[80px] lg:min-h-[567px]">
+      <ContactCurve />
+      {/* `md:flex-1` (not `h-full`) — the section only has `min-height`, and
+          percentage heights don't resolve against a `min-height`-only parent
+          (it isn't a "definite" height per spec), but flex-grow distributes
+          leftover space fine regardless of whether the flex container's own
+          height came from content or a min-height floor. */}
+      <Container className="relative flex flex-col items-center md:flex-1 lg:items-stretch">
         <div className="flex justify-center">
           <div className="flex items-center gap-[10px] rounded-full border-3 border-[#ff99b9] px-[20px] py-[10px]">
             <MapIcon className="size-[24px]" />
@@ -959,14 +1028,24 @@ function ContactSection() {
           </div>
         </div>
 
-        <div className="relative mt-[32px] overflow-hidden rounded-[20px] bg-[rgba(229,217,230,0.24)] px-[24px] py-[40px] backdrop-blur-[32px] md:px-[40px] md:py-[55px]">
-          <h2 className="text-center text-[30px] font-extrabold leading-[1.15] [text-shadow:4px_6px_6px_rgba(73,73,73,0.25)] md:text-[40px] lg:text-[52px] lg:leading-[1.1]">
+        <div className="relative mt-[32px] flex w-full flex-1 flex-col items-center justify-center overflow-hidden rounded-[20px] bg-[rgba(229,217,230,0.24)] px-[24px] py-[40px] backdrop-blur-[32px] md:mx-auto md:mt-0 md:w-[746px] md:justify-end md:gap-[31px] md:px-0 md:pb-[34px] md:pt-[55px] lg:mx-[140px] lg:w-auto lg:gap-[60px] lg:px-[18px] lg:py-[60px]">
+          <h2 className="text-center text-[30px] font-extrabold leading-[1.15] md:text-[40px] lg:text-[52px] lg:leading-[1.1]">
             <GradientText className="from-[#ff99b9] to-[#fff08f]">
               Let's build meaningful products together
             </GradientText>
           </h2>
-          <div className="mt-[32px] flex flex-col items-center justify-center gap-[20px] sm:flex-row">
-            <GradientButton className="w-full text-[20px] sm:w-auto md:text-[24px]">
+          {/* No `sm:` here on purpose — this project overrides `md`/`lg` via
+              custom `@theme` breakpoints but leaves `sm` at Tailwind's
+              default (640px), which Tailwind then places *after* the custom
+              md/lg blocks in the generated stylesheet. At a viewport like
+              834px (satisfying both `sm:` and `md:`), the later `sm:` rule
+              silently won over `md:flex-col` despite `sm`'s pixel value
+              being smaller. Mixing an unmodified default breakpoint with
+              overridden ones on the same property is unreliable — stick to
+              the custom breakpoints (md/lg) for anything that must win at a
+              specific viewport. */}
+          <div className="mt-[32px] flex flex-col items-center justify-center gap-[20px] md:mt-0 md:flex-col lg:flex-row">
+            <GradientButton href={`mailto:${CONTACT_EMAIL}`} target="_blank" className="w-full text-[20px] sm:w-auto md:text-[24px]">
               Get in touch
               <ChatMailIcon className="size-[26px] text-[#543976] md:size-[30px]" />
             </GradientButton>
@@ -991,9 +1070,18 @@ function Footer() {
       <Container className="flex flex-wrap items-center justify-center gap-x-[24px] gap-y-[12px] py-[20px] text-center md:justify-between">
         <p className="text-[16px] font-bold text-[#3e2859] md:text-[18px]">UX/UI Designer | Product Designer</p>
         <div className="flex items-center gap-[16px]">
-          <LinkedinIcon className="size-[26px] md:size-[30px]" />
-          <WhatsappIcon className="size-[26px] md:size-[30px]" />
-          <span className="text-[14px] font-medium text-[#3e2859] md:text-[18px]">riverapatriciam20@gmail.com</span>
+          <Sparkle className="size-[16px] fill-[#fad89e] text-[#fad89e] md:size-[20px]" />
+          <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <LinkedinIcon className="size-[26px] md:size-[30px]" />
+          </a>
+          <Sparkle className="size-[16px] fill-[#fad89e] text-[#fad89e] md:size-[20px]" />
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <WhatsappIcon className="size-[26px] md:size-[30px]" />
+          </a>
+          <Sparkle className="size-[16px] fill-[#fad89e] text-[#fad89e] md:size-[20px]" />
+          <a href={`mailto:${CONTACT_EMAIL}`} target="_blank" rel="noopener noreferrer" className="text-[14px] font-medium text-[#3e2859] md:text-[18px]">
+            {CONTACT_EMAIL}
+          </a>
         </div>
       </Container>
       <Container className="flex flex-col items-center justify-between gap-[8px] border-t border-white/20 py-[14px] text-center text-[12px] font-medium md:flex-row md:text-[14px]">
