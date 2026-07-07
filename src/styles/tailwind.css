@@ -83,3 +83,31 @@
   0% { height: 130px; width: 120px; translate: 0 0; }
   100% { height: 170px; width: 170px; translate: 0 -56px; }
 }
+
+/* About-card blur-motion blobs (same Ellipse 14/15 pair, About me card scale) */
+.blur-motion-about-a {
+  height: 135px;
+  width: 147px;
+  filter: blur(26px);
+  transform: rotate(var(--blur-motion-rotate-a));
+  animation:
+    blur-motion-a-rotate 5s ease-in-out infinite alternate,
+    blur-motion-about-a-shape 5s ease-in-out infinite alternate;
+}
+.blur-motion-about-b {
+  height: 135px;
+  width: 147px;
+  filter: blur(26px);
+  transform: rotate(var(--blur-motion-rotate-b));
+  animation:
+    blur-motion-b-rotate 5s ease-in-out infinite alternate,
+    blur-motion-about-b-shape 5s ease-in-out infinite alternate;
+}
+@keyframes blur-motion-about-a-shape {
+  0% { height: 135px; width: 147px; translate: 0 0; }
+  100% { height: 121px; width: 121px; translate: 0 386px; }
+}
+@keyframes blur-motion-about-b-shape {
+  0% { height: 135px; width: 147px; translate: 0 0; }
+  100% { height: 216px; width: 216px; translate: 0 -305px; }
+}
