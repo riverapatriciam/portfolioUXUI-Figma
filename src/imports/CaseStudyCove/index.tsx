@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import svgPaths from "./svg-qty3xgth3i";
 import imgGemini25FlashImageDejalaIgualPeroQuitaArrugas01 from "./9f1050a21bba5f5d3fa2742de8b0428e523fd24c.png";
 import imgLucidOriginNereaIsA32YearOldWomanWorkingInItThatIsStressedAndHasAnxietyLook01 from "./57045b1b795ba692c583f9f9707eaa9b9e09b27a.png";
@@ -496,7 +497,7 @@ function Frame10() {
 
 function Research() {
   return (
-    <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[14px] items-start left-[calc(37.5%+110px)] right-[63px] text-right top-[837px]" data-name="Research">
+    <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[14px] items-start left-[calc(37.5%+110px)] right-[63px] text-end top-[837px]" data-name="Research">
       <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">Research</p>
       <div className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-full whitespace-pre-wrap">
         <p className="leading-[1.5] mb-0">Through expert interviews, personas, journey mapping, and HMW workshops, we explored the needs of three key stakeholders: patients, family members, and mental health professionals.</p>
@@ -1115,7 +1116,7 @@ function Frame20() {
             </defs>
           </svg>
         </div>
-        <p className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#543976] text-[18px]">A dedicated SOS flow provides quick access to emergency contacts and guided breathing exercises during moments of distress</p>
+        <p className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#543976] text-[16px]">A dedicated SOS flow provides quick access to emergency contacts and guided breathing exercises during moments of distress</p>
       </div>
     </div>
   );
@@ -1136,7 +1137,7 @@ function Frame21() {
             </defs>
           </svg>
         </div>
-        <p className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#543976] text-[18px]">{`Professionals can customize features according to each patient's needs, reducing anxiety and avoiding counterproductive interactions`}</p>
+        <p className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#543976] text-[16px]">{`Professionals can customize features according to each patient's needs, reducing anxiety and avoiding counterproductive interactions`}</p>
       </div>
     </div>
   );
@@ -1157,7 +1158,7 @@ function Frame24() {
             </defs>
           </svg>
         </div>
-        <p className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal h-full leading-[1.5] min-w-px relative text-[#543976] text-[18px]">Patients, family members, and professionals share a connected ecosystem that promotes understanding and continuous support</p>
+        <p className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal h-full leading-[1.5] min-w-px relative text-[#543976] text-[16px]">Patients, family members, and professionals share a connected ecosystem that promotes understanding and continuous support</p>
       </div>
     </div>
   );
@@ -6245,6 +6246,374 @@ export default function CaseStudyCove() {
       <a className="absolute bg-gradient-to-r content-stretch cursor-pointer drop-shadow-[0px_0px_2px_rgba(0,0,0,0.04),0px_4px_4px_rgba(0,0,0,0.06)] flex from-[#fad89e] gap-[10px] items-center justify-center left-[calc(75%+74px)] px-[20px] py-[10px] right-[60px] rounded-[40px] to-[#f29bfd] top-[29px]" href="https://www.figma.com/proto/gIEUzqHhcGxGaGPPEPvgo6/Grupo-2---UI?node-id=211-1621&p=f&viewport=279%2C-49%2C0.08&t=0QFF01ppu3W6mVz0-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=271%3A906&page-id=0%3A1" target="_blank" data-name="Button">
         <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#543976] text-[16px] text-center whitespace-nowrap">Play demo</p>
       </a>
+    </div>
+  );
+}
+
+/* ============================================================
+ * Mobile breakpoint (hand-built, native 440px canvas) — reuses
+ * persona/phone/illustration sub-components defined above rather
+ * than duplicating their (large) svgPaths/image data. See
+ * .claude/plans in this session for the reference design.
+ * ============================================================ */
+
+/**
+ * Crops+scales an illustration sub-component that was positioned with
+ * `absolute inset-[%]` against the original 1024x5850 desktop canvas — the
+ * percentages resolve correctly only against that canvas, so instead of
+ * fighting them we render a full 1024x5850 box, scale it down, and shift it
+ * so the illustration's own (x,y,w,h) box (measured on that canvas) lands
+ * exactly in a size×size (or size×(h/w*size)) crop window.
+ */
+function MobileIllustrationCrop({
+  x,
+  y,
+  w,
+  h,
+  size,
+  flip,
+  children,
+}: {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  size: number;
+  flip?: boolean;
+  children: ReactNode;
+}) {
+  const scale = size / Math.max(w, h);
+  return (
+    <div className="relative shrink-0 overflow-hidden" style={{ width: w * scale, height: h * scale }}>
+      <div
+        className="absolute"
+        style={{
+          width: 1024,
+          height: 5850,
+          left: -x * scale,
+          top: -y * scale,
+          transform: `scale(${scale})${flip ? " scaleX(-1)" : ""}`,
+          transformOrigin: "0 0",
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function MobileSectionHeading({ children }: { children: ReactNode }) {
+  return (
+    <p className="bg-gradient-to-r from-[#fe85ea] to-[#5102a0] bg-clip-text text-transparent font-extrabold text-[24px] leading-[1.3]">
+      {children}
+    </p>
+  );
+}
+
+function MobileBody({ children }: { children: ReactNode }) {
+  return <p className="text-[#543976] text-[14px] leading-[1.5]">{children}</p>;
+}
+
+function MobileHighlightBox({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return (
+    <div
+      className={`rounded-[12px] bg-[rgba(247,174,248,0.34)] backdrop-blur-[2px] p-[16px] text-[#543976] text-[14px] leading-[1.5] ${className}`}
+    >
+      {children}
+    </div>
+  );
+}
+
+function MobileMetaCell({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex flex-1 flex-col items-center gap-[3px] text-center">
+      <p className="text-[#9b72ce] font-extrabold text-[16px]">{label}</p>
+      <p className="text-[#6b4a94] text-[12px]">{value}</p>
+    </div>
+  );
+}
+
+/**
+ * Fresh stacked persona card (photo above, Frustrations/Goals below) instead
+ * of reusing `Bio`/`Bio1`/`Bio2` — those have a fixed `h-[144px]` sized for
+ * desktop's wider side-by-side layout, which clips the frustrations/goals
+ * text at mobile width. Same photo imports/content, natural height instead.
+ */
+function MobilePersonaCard({
+  name,
+  photo,
+  frustrations,
+  goals,
+}: {
+  name: string;
+  photo: string;
+  frustrations: string[];
+  goals: string[];
+}) {
+  return (
+    <div className="flex flex-col gap-[8px] rounded-[20px] bg-[rgba(247,174,248,0.34)] backdrop-blur-[2px] p-[16px]">
+      <p className="bg-gradient-to-r from-[#fe85ea] to-[#5102a0] bg-clip-text text-transparent font-medium text-[18px] text-center">
+        {name}
+      </p>
+      <div className="mx-auto size-[80px] shrink-0 overflow-hidden rounded-full border-2 border-[#fad89e]">
+        <img alt="" className="size-full object-cover" src={photo} />
+      </div>
+      <div className="rounded-[16px] bg-[#fff3ff] p-[12px] text-center">
+        <p className="mb-[4px] font-bold text-[14px] text-[#543976]">Frustrations</p>
+        {frustrations.map((f) => (
+          <p key={f} className="text-[14px] leading-[1.5] text-[#543976]">
+            ✻ {f}
+          </p>
+        ))}
+      </div>
+      <div className="rounded-[16px] bg-[#fff3ff] p-[12px] text-center">
+        <p className="mb-[4px] font-bold text-[14px] text-[#543976]">Goals</p>
+        {goals.map((g) => (
+          <p key={g} className="text-[14px] leading-[1.5] text-[#543976]">
+            ✻ {g}
+          </p>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function CaseStudyCoveMobile() {
+  return (
+    <div className="relative w-full overflow-hidden bg-[#fff3ff]" data-name="Case study - Cove (mobile)">
+      {/* Decorative background curve — real Figma vector path (survives SVG
+          export, unlike the text), same #E9A8FF -> #0FF5E5 gradient family
+          as Home-1's HeroCurve/ContactCurve. Sized to the reference's own
+          440x5939 canvas and stretched to this tree's actual height. */}
+      <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+        <svg className="h-full w-full" fill="none" preserveAspectRatio="none" viewBox="0 0 440 5939">
+          <path
+            d="M-287.377 -77C-319.535 270.343 -287.008 360.689 -210.024 656.873C-107.012 1053.2 117.643 1340.87 575.675 1340.87C1038.05 1340.87 1268.7 938.846 1254.46 639.061C1237.08 273.015 811.052 69.9528 536.564 69.9528C136.764 69.9528 -83.9659 429.21 -210.024 818.967C-326.414 1178.83 -359.037 1858.67 -210.024 2205.67C25.1748 2753.37 524.396 3252.18 1203.19 2563.7C1482.17 2280.73 1204.92 1814.68 1047.61 1684.65C757.323 1444.71 100.302 1543.73 -50.9675 2073.85C-260.883 2809.51 53.3278 3017.02 693.876 3105.2C1481.19 3213.57 693.867 4212.16 303.638 4263.01C-557.67 4375.22 -478.681 3228.53 53.328 3198.76C1088.46 3140.82 1213.62 4088.87 1213.62 4909.6C1213.62 5598.94 812.948 5843.86 257.573 5696.91C-158.628 5586.78 -272.524 5210.75 -114.414 4803.61C40.7276 4404.13 375.682 4272.76 771.229 4416.19C1434.38 4656.66 1389.05 5437.76 1257.94 6205.45C1166.68 6739.83 796.466 6754.97 606.964 6548.34C417.462 6341.72 457.946 6071.93 794.696 5904.42C1122.36 5741.44 1732.02 6074.69 1335.29 6714"
+            stroke="url(#cove-mobile-curve)"
+            strokeWidth="8"
+          />
+          <defs>
+            <linearGradient gradientUnits="userSpaceOnUse" id="cove-mobile-curve" x1="-346" y1="3318.5" x2="1465" y2="3318.5">
+              <stop stopColor="#E9A8FF" />
+              <stop offset="1" stopColor="#0FF5E5" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div className="flex flex-col items-center gap-[8px] px-[20px] pt-[32px] text-center">
+        <p className="bg-gradient-to-r from-[#fe85ea] to-[#5102a0] bg-clip-text text-transparent font-extrabold text-[40px]">
+          Cove
+        </p>
+        <p className="text-[#9b72ce] text-[16px] leading-[1.5]">
+          “What if mental health support extended beyond therapy sessions and became a connected support ecosystem?”
+        </p>
+      </div>
+
+      <div className="mx-[20px] mt-[24px] rounded-[12px] bg-[rgba(247,174,248,0.38)] backdrop-blur-[5px] p-[16px] flex flex-col gap-[16px]">
+        <div className="flex justify-between gap-[8px]">
+          <MobileMetaCell label="Timeline" value="5 Day" />
+          <MobileMetaCell label="Role" value="UI Designer · Prototype & DS Lead" />
+          <MobileMetaCell label="Tools" value="Figma · FigJam" />
+        </div>
+        <div className="flex justify-between gap-[8px]">
+          <MobileMetaCell label="Team" value="4 Designers" />
+          <MobileMetaCell label="Methods" value="Design Sprint" />
+        </div>
+      </div>
+
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px]">
+        <MobileSectionHeading>The problem</MobileSectionHeading>
+        <MobileBody>
+          Spain faces one of the highest rates of anxiety and depression in Europe, yet accessing support can still
+          feel overwhelming.
+        </MobileBody>
+        <MobileBody>
+          The challenge was to design a digital solution that could provide meaningful mental health support without
+          creating additional pressure, information overload, or dependency on constant self-tracking.
+        </MobileBody>
+        <MobileIllustrationCrop x={662} y={481} w={302} h={297} size={110}>
+          <NoConectionStreamlineDjakarta />
+        </MobileIllustrationCrop>
+      </div>
+
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px] items-end text-end">
+        <MobileIllustrationCrop x={60} y={794} w={346} h={333} size={110}>
+          <ListeningToFeedbackStreamlineDjakarta />
+        </MobileIllustrationCrop>
+        <MobileSectionHeading>Research</MobileSectionHeading>
+        <MobileBody>
+          Through expert interviews, personas, journey mapping, and HMW workshops, we explored the needs of three
+          key stakeholders: patients, family members, and mental health professionals.
+        </MobileBody>
+        <MobileBody>
+          Our goal was to understand how a digital product could support mental health while preserving empathy,
+          personalization, and human connection.
+        </MobileBody>
+      </div>
+
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px] text-center">
+        <MobileSectionHeading>Key Findings</MobileSectionHeading>
+        <MobileHighlightBox className="text-center font-medium text-[16px]">
+          Mental health support should feel human, not like another task to complete
+        </MobileHighlightBox>
+      </div>
+
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px]">
+        <MobileSectionHeading>Personas</MobileSectionHeading>
+        <MobileBody>Digital-first users who enjoy RPGs and self-improvement</MobileBody>
+        <MobileIllustrationCrop x={631} y={1255} w={299} h={248} size={90}>
+          <TeamWorkStreamlineDjakarta />
+        </MobileIllustrationCrop>
+
+        <MobilePersonaCard
+          name="Patient"
+          photo={imgLucidOriginNereaIsA32YearOldWomanWorkingInItThatIsStressedAndHasAnxietyLook01}
+          frustrations={[
+            "Feeling overwhelmed by traditional self-tracking tools.",
+            "Difficulty finding help during moments of crisis.",
+          ]}
+          goals={["Access support in a safe and approachable way.", "Better understand emotional patterns and progress."]}
+        />
+        <MobilePersonaCard
+          name="Family Members"
+          photo={imgLucidOriginMateoIsA35YearOldArtistRelaxedOpenMindedAndHasAGirlfriendUsesACh01}
+          frustrations={["Feeling powerless when trying to help.", "Lack of visibility into emotional warning signs."]}
+          goals={["Better understand and support loved ones.", "Participate actively in the recovery journey."]}
+        />
+        <MobilePersonaCard
+          name="Mental Health Professional"
+          photo={imgGemini25FlashImageDejalaIgualPeroQuitaArrugas01}
+          frustrations={["Fragmented information across multiple channels.", "Increasing workload and administrative burden"]}
+          goals={["Access meaningful patient context.", "Spend more time helping and less time organizing information."]}
+        />
+      </div>
+
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px] text-end">
+        <div className="relative shrink-0" style={{ width: 90, height: 90 }}>
+          <WritingStreamlineDjakarta />
+        </div>
+        <MobileSectionHeading>Ideation & Priorization</MobileSectionHeading>
+        <MobileBody>
+          Using HMW workshops, Lightning Demos, Crazy 8s, and collaborative voting, we explored multiple concepts
+          focused on reducing friction and increasing accessibility to mental health support.
+        </MobileBody>
+        <MobileBody>
+          The selected concepts prioritized crisis intervention, guided reflection, and stronger collaboration
+          between patients, professionals, and families.
+        </MobileBody>
+      </div>
+
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px] text-center">
+        <MobileSectionHeading>Solution</MobileSectionHeading>
+        <MobileHighlightBox className="text-center text-[14px]">
+          A mental health support platform designed to connect patients, families, and professionals through
+          personalized guidance and immediate support.
+        </MobileHighlightBox>
+      </div>
+
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px]">
+        <MobileSectionHeading>Information Architecture</MobileSectionHeading>
+        <MobileBody>
+          The information architecture was designed to simplify access to key actions while reducing cognitive
+          load. Priority was given to crisis support, emotional tracking, and professional communication.
+        </MobileBody>
+      </div>
+
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px] text-end">
+        <MobileSectionHeading>Hi-Fi Wireframes / UI Design</MobileSectionHeading>
+        <div className="flex flex-col gap-[12px] text">
+          <div className="w-full">
+            <Frame20 />
+          </div>
+          <div className="w-full">
+            <Frame21 />
+          </div>
+          <div className="w-full">
+            <Frame24 />
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-[24px] overflow-x-auto px-[20px]">
+        <Frame12 />
+      </div>
+
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px] text-center">
+        <MobileSectionHeading>My contribution</MobileSectionHeading>
+        <MobileHighlightBox className="text-[14px]">
+          <p className="mb-[8px]">As part of a team of four designers, I was responsible for:</p>
+          <p className="mb-0">✻ Design System creation</p>
+          <p className="mb-0">✻ Component library setup</p>
+          <p className="mb-0">✻ Visual Design</p>
+          <p className="mb-0">✻ High-fidelity UI</p>
+          <p className="mb-0">✻ Interactive Prototyping</p>
+          <p className="mb-0">✻ Kanban organization</p>
+          <p>✻ Daily Sprint coordination</p>
+        </MobileHighlightBox>
+        <p className="bg-gradient-to-r from-[#fe85ea] to-[#5102a0] bg-clip-text text-transparent text-[16px] leading-[1.5] text-center">
+          I ensured visual consistency across the product while helping the team stay aligned and on schedule
+          throughout the sprint
+        </p>
+      </div>
+
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px]">
+        <MobileSectionHeading>Design System</MobileSectionHeading>
+        <MobileHighlightBox className="text-[14px]">
+          <p className="mb-[8px]">To accelerate collaboration during the sprint, I established the project's design system, defining:</p>
+          <p className="mb-0">✻ Components</p>
+          <p className="mb-0">✻ Typography</p>
+          <p className="mb-0">✻ Color styles</p>
+          <p className="mb-0">✻ Variables</p>
+          <p>✻ Reusable patterns</p>
+        </MobileHighlightBox>
+        <p className="bg-gradient-to-r from-[#fe85ea] to-[#5102a0] bg-clip-text text-transparent text-[16px] leading-[1.5]">
+          This allowed the team to move quickly from wireframes to high-fidelity screens while maintaining
+          consistency.
+        </p>
+      </div>
+
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px] text-right">
+        <MobileSectionHeading>User Testing</MobileSectionHeading>
+        <div className="flex flex-col gap-[4px]">
+          <p className="text-[#3e2859] font-bold text-[14px]">Testing & Validation</p>
+          <MobileBody>5 users tested the high-fidelity prototype.</MobileBody>
+        </div>
+        <div className="flex flex-col gap-[4px]">
+          <p className="text-[#3e2859] font-bold text-[14px]">What Worked</p>
+          <MobileBody>✻ The concept and value proposition were well understood.</MobileBody>
+          <MobileBody>✻ Users appreciated the warm and approachable visual language.</MobileBody>
+        </div>
+        <div className="flex flex-col gap-[4px]">
+          <p className="text-[#3e2859] font-bold text-[14px]">Opportunities for Improvement</p>
+          <MobileBody>✻ Navigation patterns were not always intuitive.</MobileBody>
+          <MobileBody>✻ The SOS feature lacked visibility despite its importance.</MobileBody>
+          <MobileBody>✻ Some actions required stronger feedback and clearer interaction cues</MobileBody>
+        </div>
+      </div>
+
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px] text-center">
+        <MobileSectionHeading>Future Features</MobileSectionHeading>
+        <div className="flex flex-col gap-[4px] text-[#543976] text-[14px] leading-[1.5]">
+          <p className="mb-0">✻ Video consultations with professionals</p>
+          <p className="mb-0">✻ Dark mode</p>
+          <p className="mb-0">✻ Patient progress insights</p>
+          <p className="mb-0">✻ Family guidance resources</p>
+          <p>✻ Clinician-controlled personalization</p>
+        </div>
+        <MobileIllustrationCrop x={618} y={4185} w={342} h={344} size={110}>
+          <DesigningWebsiteStreamlineDjakarta />
+        </MobileIllustrationCrop>
+      </div>
+
+      <div className="mx-[20px] my-[32px] flex flex-col gap-[14px]">
+        <MobileSectionHeading>Key learnings</MobileSectionHeading>
+        <MobileHighlightBox className="text-[14px]">
+          <p className="mb-0">✻ Mental health products should support users without becoming another source of pressure.</p>
+          <p className="mb-0">✻ Human-centered experiences require balancing technology with empathy and professional guidance.</p>
+          <p>✻ Design systems and clear team organization can significantly improve efficiency during fast-paced design sprints.</p>
+        </MobileHighlightBox>
+      </div>
     </div>
   );
 }

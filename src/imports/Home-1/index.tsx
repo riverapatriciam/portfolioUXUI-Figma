@@ -46,7 +46,7 @@ function ChatMailIcon({ className = "" }: { className?: string }) {
   );
 }
 
-function LinkedinIcon({ className = "" }: { className?: string }) {
+export function LinkedinIcon({ className = "" }: { className?: string }) {
   return (
     <svg className={className} fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
       <path d={svgPaths.p5472600} fill="#3E2859" />
@@ -54,7 +54,7 @@ function LinkedinIcon({ className = "" }: { className?: string }) {
   );
 }
 
-function WhatsappIcon({ className = "" }: { className?: string }) {
+export function WhatsappIcon({ className = "" }: { className?: string }) {
   return (
     <svg className={className} fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
       <path d={svgPaths.pf262880} fill="#3E2859" />
@@ -1064,7 +1064,7 @@ function ContactSection() {
   );
 }
 
-function Footer() {
+export function Footer() {
   return (
     <footer className="bg-[#c79aff]">
       <Container className="flex flex-wrap items-center justify-center gap-x-[24px] gap-y-[12px] py-[20px] text-center md:justify-between">
