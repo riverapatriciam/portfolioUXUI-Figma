@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import { ArrowLeft } from "lucide-react";
-import CaseStudyAs from "@/imports/CaseStudyAs";
+import { ArrowLeft, MoreVertical } from "lucide-react";
+import CaseStudyAsImport, { CaseStudyAsMobile } from "@/imports/CaseStudyAs";
+import { Footer } from "@/imports/Home-1";
 import { FrameWrapper, useFrameScale } from "./FrameWrapper";
 
 /**
@@ -45,23 +46,38 @@ function BackButton({ onBack }: { onBack: () => void }) {
   );
 }
 
+/** Mobile-only nav bar — the desktop `BackButton` is a floating scaled pill; the mobile Figma design wants a full-width bar instead. */
+function MobileNavBar({ onBack }: { onBack: () => void }) {
+  return (
+    <div className="mx-[12px] mt-[12px] flex items-center justify-between rounded-full bg-[#d7b8ff] px-[20px] py-[16px]">
+      <button onClick={onBack} aria-label="Back to Home" className="flex items-center gap-1.5 text-[#3e2859] font-medium">
+        <ArrowLeft size={18} />
+        Back
+      </button>
+      <MoreVertical className="text-[#3e2859]" size={20} />
+    </div>
+  );
+}
+
 export default function CaseStudy({ onBack }: { onBack: () => void }) {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
     <>
-      <BackButton onBack={onBack} />
-      <FrameWrapper frameH={FRAME_H}>
-        {/*
-         * CaseStudyAs renders the entire Figma frame with:
-         *  - root: `relative size-full`  (fills FRAME_W × FRAME_H)
-         *  - all children: `absolute` positioned in pixel-exact Figma coords
-         *  - footer bars: `absolute bottom-0` / `absolute bottom-[47px]`
-         *  - decorative wave SVG: `absolute h-[6791px] top-[-77px]`
-         *  - all SVG illustrations, mockup images, and glassmorphism cards intact
-         */}
-        <CaseStudyAs />
-      </FrameWrapper>
+      {/* Tablet/desktop: unchanged — the entire Figma frame, uniformly scaled. */}
+      <div className="hidden md:contents">
+        <BackButton onBack={onBack} />
+        <FrameWrapper frameH={FRAME_H}>
+          <CaseStudyAsImport />
+        </FrameWrapper>
+      </div>
+
+      {/* Mobile: hand-built responsive tree matching the native mobile Figma frame. */}
+      <div className="md:hidden">
+        <MobileNavBar onBack={onBack} />
+        <CaseStudyAsMobile />
+        <Footer />
+      </div>
     </>
   );
 }
