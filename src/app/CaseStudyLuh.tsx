@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import { ArrowLeft } from "lucide-react";
-import CaseStudyLuhImport from "@/imports/CaseStudyLuh";
+import { ArrowLeft, MoreVertical } from "lucide-react";
+import CaseStudyLuhImport, { CaseStudyLuhMobile } from "@/imports/CaseStudyLuh";
+import { Footer } from "@/imports/Home-1";
 import { FrameWrapper, useFrameScale } from "./FrameWrapper";
 
 /**
@@ -48,23 +49,38 @@ function BackButton({ onBack }: { onBack: () => void }) {
   );
 }
 
+/** Mobile-only nav bar — the desktop `BackButton` is a floating scaled pill; the mobile Figma design wants a full-width bar instead. */
+function MobileNavBar({ onBack }: { onBack: () => void }) {
+  return (
+    <div className="mx-[12px] mt-[12px] flex items-center justify-between rounded-full bg-[#d7b8ff] px-[20px] py-[16px]">
+      <button onClick={onBack} aria-label="Back to Home" className="flex items-center gap-1.5 text-[#3e2859] font-medium">
+        <ArrowLeft size={18} />
+        Back
+      </button>
+      <MoreVertical className="text-[#3e2859]" size={20} />
+    </div>
+  );
+}
+
 export default function CaseStudyLuh({ onBack }: { onBack: () => void }) {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
     <>
-      <BackButton onBack={onBack} />
-      <FrameWrapper frameH={FRAME_H}>
-        {/*
-         * CaseStudyLuhImport renders the entire Figma frame unchanged:
-         *  - root:    `relative size-full`  → fills FRAME_W × FRAME_H
-         *  - all children: pixel-exact absolute positions from Figma export
-         *  - footer bars: `absolute bottom-0` / `absolute bottom-[47px]`
-         *  - background wave SVG, illustrations, and phone mockups intact
-         *  - Rajdhani, Orbitron, Patrick Hand fonts used throughout
-         */}
-        <CaseStudyLuhImport />
-      </FrameWrapper>
+      {/* Tablet/desktop: unchanged — the entire Figma frame, uniformly scaled. */}
+      <div className="hidden md:contents">
+        <BackButton onBack={onBack} />
+        <FrameWrapper frameH={FRAME_H}>
+          <CaseStudyLuhImport />
+        </FrameWrapper>
+      </div>
+
+      {/* Mobile: hand-built responsive tree matching the native mobile Figma frame. */}
+      <div className="md:hidden">
+        <MobileNavBar onBack={onBack} />
+        <CaseStudyLuhMobile />
+        <Footer />
+      </div>
     </>
   );
 }

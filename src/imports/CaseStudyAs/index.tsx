@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import svgPaths from "./svg-4ng9z5q2l4";
 import imgArquetipoMeiKim from "./74311f2cea29c7f6e993dbfe8c4c5d45069dc08f.png";
 import imgEllipse1 from "./e382af2a8556c8b3970fafe48058db0724bba060.png";
@@ -1003,7 +1004,7 @@ function Frame55() {
     <div className="backdrop-blur-[2px] bg-[rgba(255,243,255,0.65)] relative rounded-[20px] shrink-0 w-full">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center p-[10px] relative size-full">
-          <p className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#543976] text-[18px] text-center">After defining the core user needs, I created an information architecture focused on reducing cognitive load, the information architecture was designed around three primary user actions: Discover, Track, and Explore</p>
+          <p className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#543976] text-[14px] text-center">After defining the core user needs, I created an information architecture focused on reducing cognitive load, the information architecture was designed around three primary user actions: Discover, Track, and Explore</p>
         </div>
       </div>
     </div>
@@ -7037,7 +7038,7 @@ function Frame56() {
             </defs>
           </svg>
         </div>
-        <p className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#543976] text-[18px]">Users receive recommendations based on their emotional state.</p>
+        <p className="font-normal leading-[1.5] min-w-px relative text-[#543976] text-[14px]">Users receive recommendations based on their emotional state.</p>
       </div>
     </div>
   );
@@ -7058,7 +7059,7 @@ function Frame57() {
             </defs>
           </svg>
         </div>
-        <p className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#543976] text-[18px]">Reading experiences are recorded through feelings instead of ratings alone.</p>
+        <p className="font-normal leading-[1.5] min-w-px relative text-[#543976] text-[14px]">Reading experiences are recorded through feelings instead of ratings alone.</p>
       </div>
     </div>
   );
@@ -7079,7 +7080,7 @@ function Frame58() {
             </defs>
           </svg>
         </div>
-        <p className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative self-stretch text-[#543976] text-[18px]">Reduced decision fatigue through focused content suggestions.</p>
+        <p className="font-normal leading-[1.5] min-w-px relative self-stretch text-[#543976] text-[14px]">Reduced decision fatigue through focused content suggestions.</p>
       </div>
     </div>
   );
@@ -13003,6 +13004,395 @@ export default function CaseStudyAs() {
       <a className="absolute bg-gradient-to-r content-stretch cursor-pointer drop-shadow-[0px_0px_2px_rgba(0,0,0,0.04),0px_4px_4px_rgba(0,0,0,0.06)] flex from-[#fad89e] gap-[10px] items-center justify-center left-[calc(75%+74px)] px-[20px] py-[10px] right-[60px] rounded-[40px] to-[#f29bfd] top-[29px]" href="https://www.figma.com/proto/WnSSL3saTOJKzkc4sRbTdp/Patricia.Rivera---PFB-UI?node-id=248-450&viewport=597%2C-25%2C0.08&t=yWVjf7uNk9DpxMyX-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=221%3A3906&show-proto-sidebar=1&page-id=215%3A3903" target="_blank" data-name="Button">
         <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#543976] text-[16px] text-center whitespace-nowrap">Play demo</p>
       </a>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Mobile breakpoint — hand-built responsive tree (md:hidden)          */
+/* ------------------------------------------------------------------ */
+
+const AS_FRAME_H = 6200;
+
+function MobileIllustrationCrop({
+  x,
+  y,
+  w,
+  h,
+  size,
+  children,
+}: {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  size: number;
+  children: ReactNode;
+}) {
+  const scale = size / Math.max(w, h);
+  return (
+    <div className="relative shrink-0 overflow-hidden" style={{ width: w * scale, height: h * scale }}>
+      <div
+        className="absolute"
+        style={{ width: 1024, height: AS_FRAME_H, left: -x * scale, top: -y * scale, transform: `scale(${scale})`, transformOrigin: "0 0" }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
+
+/** For the self-contained icon components whose own root is `relative` (not `absolute`) — just resize, no crop offset needed. */
+function MobileScaledIcon({ w, h, size, flip, children }: { w: number; h: number; size: number; flip?: boolean; children: ReactNode }) {
+  const scale = size / Math.max(w, h);
+  const scaled = (
+    <div style={{ width: w, height: h, transform: `scale(${scale})`, transformOrigin: "top left" }}>{children}</div>
+  );
+  return (
+    <div className="relative shrink-0 overflow-hidden" style={{ width: w * scale, height: h * scale }}>
+      {flip ? <div style={{ width: w * scale, height: h * scale, transform: "scaleX(-1)", transformOrigin: "center" }}>{scaled}</div> : scaled}
+    </div>
+  );
+}
+
+function MobileSectionHeading({ children }: { children: ReactNode }) {
+  return <p className="bg-gradient-to-r from-[#fe85ea] to-[#5102a0] bg-clip-text text-transparent font-extrabold text-[24px] leading-[1.3]">{children}</p>;
+}
+
+function MobileBody({ children }: { children: ReactNode }) {
+  return <p className="text-[#543976] text-[14px] leading-[1.5]">{children}</p>;
+}
+
+function MobileHighlightBox({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return <div className={`rounded-[12px] bg-[rgba(247,174,248,0.34)] backdrop-blur-[2px] p-[16px] text-[#543976] text-[14px] leading-[1.5] ${className}`}>{children}</div>;
+}
+
+function MobileMetaCell({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex flex-1 flex-col items-center gap-[3px] text-center">
+      <p className="text-[#9b72ce] font-extrabold text-[16px]">{label}</p>
+      <p className="text-[#6b4a94] text-[12px]">{value}</p>
+    </div>
+  );
+}
+
+/** Frame53/Frame52 forked out of `absolute` positioning for normal document flow. */
+function MobileFrustrationsGoals() {
+  return (
+    <div className="flex flex-col gap-[12px]">
+      <div className="rounded-[12px] backdrop-blur-[2px] bg-[rgba(247,174,248,0.4)] p-[16px] text-[#543976] flex flex-col gap-[6px] items-center text-center">
+        <p className="font-medium text-[18px]">Frustrations</p>
+        <p className="text-[14px] leading-[1.5]">✻ Too many options</p>
+        <p className="text-[14px] leading-[1.5]">✻ Generic recommendations</p>
+      </div>
+      <div className="rounded-[12px] backdrop-blur-[2px] bg-[rgba(247,174,248,0.4)] p-[16px] text-[#543976] flex flex-col gap-[6px] items-center text-center">
+        <p className="font-medium text-[18px]">Goals</p>
+        <p className="text-[14px] leading-[1.5]">✻ Find stories quickly</p>
+        <p className="text-[14px] leading-[1.5]">✻ Avoid decision fatigue</p>
+      </div>
+    </div>
+  );
+}
+
+/** Frame39 forked out of `absolute` positioning — its pill-node children are already positioned relative to it, so they're reused verbatim. */
+function Frame39Mobile() {
+  return (
+    <div className="relative w-full h-[190px] overflow-x-auto overflow-y-clip">
+      <div className="absolute content-stretch flex items-start left-[316px] top-0" data-name="Node / Action">
+        <div className="bg-[#543976] relative rounded-[24px] shrink-0" data-name="Node / Default">
+          <div className="content-stretch flex items-center overflow-clip px-[24px] py-[8px] relative rounded-[inherit] size-full">
+            <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Roboto:Medium',sans-serif] font-medium from-[#fad89e] leading-[normal] relative shrink-0 text-[12px] text-[transparent] text-center to-[#f29bfd] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+              Onboarding
+            </p>
+          </div>
+          <div aria-hidden className="absolute border border-[#fad89e] border-solid inset-0 pointer-events-none rounded-[24px]" />
+        </div>
+      </div>
+      <div className="absolute content-stretch flex items-start left-0 top-0" data-name="Node / Action">
+        <div className="bg-[#543976] relative rounded-[24px] shrink-0" data-name="Node / Default">
+          <div className="content-stretch flex items-center overflow-clip px-[24px] py-[8px] relative rounded-[inherit] size-full">
+            <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Roboto:Medium',sans-serif] font-medium from-[#fad89e] leading-[normal] relative shrink-0 text-[12px] text-[transparent] text-center to-[#f29bfd] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+              Splash
+            </p>
+          </div>
+          <div aria-hidden className="absolute border border-[#fad89e] border-solid inset-0 pointer-events-none rounded-[24px]" />
+        </div>
+      </div>
+      <div className="absolute content-stretch flex items-start left-[105px] top-0" data-name="Node / Action">
+        <div className="bg-[#543976] relative rounded-[24px] shrink-0" data-name="Node / Default">
+          <div className="content-stretch flex items-center overflow-clip px-[24px] py-[8px] relative rounded-[inherit] size-full">
+            <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Roboto:Medium',sans-serif] font-medium from-[#fad89e] leading-[normal] relative shrink-0 text-[12px] text-[transparent] text-center to-[#f29bfd] whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+              Register
+            </p>
+          </div>
+          <div aria-hidden className="absolute border border-[#fad89e] border-solid inset-0 pointer-events-none rounded-[24px]" />
+        </div>
+      </div>
+      <Frame38 />
+      <Frame35 />
+      <Frame36 />
+      <Frame37 />
+      <Frame34 />
+    </div>
+  );
+}
+
+/**
+ * Standalone persona row (photo + name/age/description card) built from scratch
+ * instead of reusing `Bio`/`Bio1`/`Bio2`/`UserPersona1`/`UserPersona2` — those rely on
+ * `flex-[1_0_0]` chains that need a definite-height desktop grid ancestor to resolve;
+ * outside that grid (e.g. Buyer persona's `Frame30`/`Bio2`) they collapse to 0×0.
+ */
+function MobilePersonaRow({
+  photo,
+  photoSide,
+  name,
+  age,
+  description,
+}: {
+  photo: string;
+  photoSide: "left" | "right";
+  name: string;
+  age: string;
+  description: string;
+}) {
+  const photoEl = (
+    <div className="relative shrink-0 overflow-hidden rounded-full size-[100px] border-4 border-[#fad89e]">
+      <img alt="" className="absolute inset-0 size-full object-cover" src={photo} />
+    </div>
+  );
+  const textEl = (
+    <div className="min-w-0 flex-1 rounded-[20px] border-4 border-[#fad89e] bg-[#d7b8ff] backdrop-blur-[32px] p-[20px] flex flex-col gap-[4px]">
+      <p className="text-[#543976] font-medium text-[18px] leading-[1.3]">{name}</p>
+      <p className="text-[#543976] text-[14px]">{age}</p>
+      <p className="mt-[4px] text-[#543976] text-[14px] leading-[1.5]">{description}</p>
+    </div>
+  );
+  return (
+    <div className="flex w-full items-start gap-[12px]">
+      {photoSide === "left" ? (
+        <>
+          {photoEl}
+          {textEl}
+        </>
+      ) : (
+        <>
+          {textEl}
+          {photoEl}
+        </>
+      )}
+    </div>
+  );
+}
+
+export function CaseStudyAsMobile() {
+  return (
+    <div className="relative w-full overflow-hidden bg-[#fff3ff]" data-name="Case study - AS (mobile)">
+      <div className="flex flex-col items-center gap-[8px] px-[20px] pt-[32px] text-center">
+        <p className="bg-gradient-to-r from-[#fe85ea] to-[#5102a0] bg-clip-text text-transparent font-extrabold text-[40px]">After Story</p>
+        <p className="text-[#9b72ce] text-[16px] leading-[1.5]">
+          "What if users discovered stories based on how they want to feel, instead of what genre they want to read?"
+        </p>
+      </div>
+
+      <div className="mx-[20px] mt-[24px] rounded-[12px] bg-[rgba(247,174,248,0.38)] backdrop-blur-[5px] p-[16px] flex flex-col gap-[16px]">
+        <div className="flex justify-between gap-[8px]">
+          <MobileMetaCell label="Timeline" value="3 Weeks" />
+          <MobileMetaCell label="Role" value="UX/UI Designer" />
+        </div>
+        <div className="flex justify-between gap-[8px]">
+          <MobileMetaCell label="Tools" value="Figma · Gemini · FigJam" />
+          <MobileMetaCell label="Methods" value="Design thinking · Interviews, Benchmarking · Usability Testing" />
+        </div>
+      </div>
+
+      {/* The problem — left, image right */}
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px]">
+        <MobileSectionHeading>The problem</MobileSectionHeading>
+        <MobileBody>Many anime and manga fans spend more time searching for their next story than actually enjoying one.</MobileBody>
+      </div>
+
+      {/* Research — right, image left */}
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px] items-end text-end">
+        <div className="self-start">
+          <MobileIllustrationCrop x={60} y={736} w={346} h={338} size={130}>
+            <ListeningToFeedbackStreamlineDjakarta />
+          </MobileIllustrationCrop>
+        </div>
+        <MobileSectionHeading>Research</MobileSectionHeading>
+        <MobileBody>To better understand discovery behaviors and recommendation habits, I conducted:</MobileBody>
+        <MobileBody>Desk research ✻</MobileBody>
+        <MobileBody>Benchmark ✻</MobileBody>
+        <MobileBody>User interviews ✻</MobileBody>
+      </div>
+
+      {/* Key Findings — center */}
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px] text-center">
+        <MobileSectionHeading>Key Findings</MobileSectionHeading>
+        <MobileHighlightBox className="text-center font-medium text-[16px]">
+          Users don't choose their next story based on genre alone. They choose it based on how they want to feel
+        </MobileHighlightBox>
+      </div>
+
+      {/* Personas — intro left, image right */}
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px]">
+        <MobileSectionHeading>Personas</MobileSectionHeading>
+        <MobileBody>
+          The user does not behave like a mere content consumer, but rather as an emotional explorer seeking experiences that resonate with their inner state.
+        </MobileBody>
+        <div className="ml-auto">
+          <MobileIllustrationCrop x={665} y={1273} w={299} h={251} size={110}>
+            <TeamWorkStreamlineDjakarta />
+          </MobileIllustrationCrop>
+        </div>
+
+        <MobileFrustrationsGoals />
+
+        <MobileSectionHeading>User persona</MobileSectionHeading>
+        <MobilePersonaRow
+          photo={imgEllipse1}
+          photoSide="left"
+          name="Elara Lockgarden"
+          age="26 years old"
+          description="Reader who uses manga as an escape from stress and looks for quick recommendations based on their mood, their biggest frustration is cold interfaces and wasting time searching for something to read"
+        />
+
+        <MobileSectionHeading>Buyer persona</MobileSectionHeading>
+        <MobilePersonaRow
+          photo={imgEllipse2}
+          photoSide="right"
+          name="Benjamin Black"
+          age="32 years old"
+          description="Professional willing to pay a subscription if the app provides real value, exclusivity (artbooks), and customisation, rejecting advertising and microtransactions"
+        />
+
+        <MobileSectionHeading>Archetype</MobileSectionHeading>
+        <MobilePersonaRow
+          photo={imgArquetipoMeiKim}
+          photoSide="left"
+          name="Mei Kim [The emotional explorer]"
+          age="28 years old"
+          description="Creative and introspective profile that views their library as an aesthetic refuge, requires rating with emojis or colours to avoid decision fatigue from technical catalogues"
+        />
+      </div>
+
+      {/* Ideation & Priorization — right, image left */}
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px] items-end text-end">
+        <div className="self-start">
+          <MobileScaledIcon w={295} h={295} size={90} flip>
+            <WritingStreamlineDjakarta />
+          </MobileScaledIcon>
+        </div>
+        <MobileSectionHeading>Ideation &amp; Priorization</MobileSectionHeading>
+        <MobileBody>Using the MoSCoW framework, I prioritized features that directly addressed the main user problem: finding the right story without feeling overwhelmed</MobileBody>
+        <MobileBody>This helped define a focused MVP centered on emotional discovery rather than feature quantity.</MobileBody>
+      </div>
+
+      {/* Information Architecture — center */}
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px] text-center items-center">
+        <MobileSectionHeading>Information Architecture</MobileSectionHeading>
+        <MobileBody>After defining the core user needs, I created an information architecture focused on reducing cognitive load, the information architecture was designed around three primary user actions: Discover, Track, and Explore</MobileBody>
+      </div>
+
+      {/* Scrollable IA node map */}
+      <div className="mt-[24px] px-[20px]">
+        <Frame39Mobile />
+      </div>
+
+      <div className="mx-[20px] mt-[24px]">
+        <MobileIllustrationCrop x={60} y={2898} w={245} h={245} size={130}>
+          <PageUnderConstructionStreamlineDjakarta />
+        </MobileIllustrationCrop>
+      </div>
+
+      {/* Lo-fi Wireframes — left */}
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px]">
+        <MobileSectionHeading>Lo-fi Wireframes</MobileSectionHeading>
+        <MobileBody>Early wireframes focused on validating navigation patterns and recommendation flows before investing in visual design</MobileBody>
+      </div>
+      <div className="mt-[16px] overflow-x-auto px-[20px]">
+        <Frame9 />
+      </div>
+
+      {/* Visual Identity — right */}
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[24px] items-center text-right">
+        <MobileSectionHeading>Visual Identity</MobileSectionHeading>
+        <Frame43 />
+        <Frame44 />
+        <Frame45 />
+      </div>
+
+      {/* Hi-Fi Wireframes / UI Design — center */}
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px] text-center items-center">
+        <MobileSectionHeading>Hi-Fi Wireframes / UI Design</MobileSectionHeading>
+        <div className="flex w-full flex-col gap-[12px]">
+          <div className="w-full">
+            <Frame56 />
+          </div>
+          <div className="w-full">
+            <Frame57 />
+          </div>
+          <div className="w-full">
+            <Frame58 />
+          </div>
+        </div>
+      </div>
+      <div className="mt-[16px] overflow-x-auto px-[20px]">
+        <Frame40 />
+      </div>
+
+      {/* User Testing → Iteration — left, image right */}
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px]">
+        <MobileSectionHeading>User Testing → Iteration</MobileSectionHeading>
+        <div className="flex flex-col gap-[4px]">
+          <p className="text-[#3e2859] font-bold text-[14px]">Navigation Clarity</p>
+          <MobileBody>Users needed more guidance during onboarding → Added progress indicators and clearer navigation cues</MobileBody>
+        </div>
+        <div className="flex flex-col gap-[4px]">
+          <p className="text-[#3e2859] font-bold text-[14px]">Recommendation Transparency</p>
+          <MobileBody>{`Users didn't immediately connect recommendations with their selected mood → Introduced visual explanations linking recommendations to emotional states`}</MobileBody>
+        </div>
+        <div className="flex flex-col gap-[4px]">
+          <p className="text-[#3e2859] font-bold text-[14px]">Familiar Reading Behaviors</p>
+          <MobileBody>Users expected rating systems and more intuitive content interactions → Refined gestures and explored lightweight score integration within the UI</MobileBody>
+        </div>
+        <div className="ml-auto">
+          <MobileScaledIcon w={328} h={328} size={140} flip>
+            <UserTestingImg />
+          </MobileScaledIcon>
+        </div>
+      </div>
+
+      {/* Future Features — right, image left */}
+      <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px] items-end text-end">
+        <div className="self-start">
+          <MobileScaledIcon w={303} h={283} size={110} flip>
+            <MachineLearningStreamlineDjakarta />
+          </MobileScaledIcon>
+        </div>
+        <MobileSectionHeading>Future Features</MobileSectionHeading>
+        <div className="text-[#543976] text-[14px] leading-[1.5]">
+          <p className="mb-0">Smarter personalization ✻</p>
+          <p className="mb-0">Community-driven discovery ✻</p>
+          <p>Advanced filtering ✻</p>
+        </div>
+      </div>
+
+      <div className="mx-[20px] mt-[24px] flex justify-center">
+        <MobileIllustrationCrop x={700} y={5643} w={258.5} h={259} size={110}>
+          <DesignerWorking1StreamlineDjakarta />
+        </MobileIllustrationCrop>
+      </div>
+
+      {/* Key learnings — center */}
+      <div className="mx-[20px] my-[32px] flex flex-col gap-[14px]">
+        <MobileSectionHeading>Key learnings</MobileSectionHeading>
+        <MobileHighlightBox className="text-[14px]">
+          <p className="mb-0">✻ Emotional context can be more valuable than traditional recommendation systems.</p>
+          <p className="mb-0">✻ Simplicity is essential when users face decision fatigue.</p>
+          <p>✻ User testing revealed assumptions that weren't visible during the design phase.</p>
+        </MobileHighlightBox>
+      </div>
     </div>
   );
 }
