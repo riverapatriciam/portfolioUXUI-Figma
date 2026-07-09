@@ -238,7 +238,7 @@ export function NavBar({
               {projectsOpen && (
                 <div
                   role="menu"
-                  className="absolute left-0 top-[calc(100%+12px)] z-40 w-[240px] overflow-hidden rounded-2xl border border-[#ff99b9] shadow-[0_0_25px_0_rgba(0,0,0,0.05)]"
+                  className="absolute left-0 top-[calc(100%+12px)] bg-[#FFF3FF] z-40 w-[240px] overflow-hidden rounded-2xl border border-[#ff99b9] shadow-[0_0_25px_0_rgba(0,0,0,0.05)]"
                 >
                   {PROJECT_LINKS.map((p) => (
                     <button
