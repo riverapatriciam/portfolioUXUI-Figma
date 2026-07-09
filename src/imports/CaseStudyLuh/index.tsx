@@ -425,8 +425,8 @@ function TeamWorkStreamlineDjakarta() {
 function Frame28() {
   return (
     <div className="content-stretch flex flex-col gap-[3px] items-center relative shrink-0 w-[176px]">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Timeline</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">2 Weeks</p>
+      <p className="font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Timeline</p>
+      <p className="font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">2 Weeks</p>
     </div>
   );
 }
@@ -434,8 +434,8 @@ function Frame28() {
 function Frame29() {
   return (
     <div className="content-stretch flex flex-col gap-[3px] items-center relative shrink-0 w-[176px]">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Role</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">UX/UI Designer</p>
+      <p className="font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Role</p>
+      <p className="font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">UX/UI Designer</p>
     </div>
   );
 }
@@ -443,8 +443,8 @@ function Frame29() {
 function Frame30() {
   return (
     <div className="content-stretch flex flex-col gap-[3px] items-center relative shrink-0 w-[176px]">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Tools</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">Figma · Gemini · FigJam</p>
+      <p className="font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Tools</p>
+      <p className="font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">Figma · Gemini · FigJam</p>
     </div>
   );
 }
@@ -452,8 +452,8 @@ function Frame30() {
 function Frame31() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[3px] items-center min-w-px relative">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] whitespace-nowrap">Methods</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal min-w-full relative shrink-0 text-[#6b4a94] text-[18px] w-[min-content]">Desk Research · Benchmarking · Surveys · Interviews · Card Sorting</p>
+      <p className="font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] whitespace-nowrap">Methods</p>
+      <p className="font-normal min-w-full relative shrink-0 text-[#6b4a94] text-[18px] w-[min-content]">Desk Research · Benchmarking · Surveys · Interviews · Card Sorting</p>
     </div>
   );
 }
@@ -472,8 +472,8 @@ function Frame32() {
 function Frame37() {
   return (
     <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[14px] items-start left-[calc(25%+130px)] text-right top-[2289px] w-[578px]">
-      <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">{`Ideation & Priorization`}</p>
-      <div className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-full whitespace-pre-wrap">
+      <p className="bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">{`Ideation & Priorization`}</p>
+      <div className="font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-full whitespace-pre-wrap">
         <p className="leading-[1.5] mb-0">Using POV statements and a 2x2 prioritization matrix, I evaluated ideas based on user desirability and implementation effort.</p>
         <p className="leading-[1.5] mb-0">​</p>
         <p className="leading-[1.5]">The MVP focused on features that increased motivation and reduced abandonment, while avoiding complex mechanics that could overwhelm users.</p>
@@ -485,8 +485,8 @@ function Frame37() {
 function Research() {
   return (
     <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[14px] items-start leading-[1.5] left-[calc(37.5%+110px)] text-right top-[867px] w-[467px]" data-name="Research">
-      <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">Research</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#543976] text-[18px] w-full">To better understand habit-building challenges, I combined desk research, surveys, competitor analysis, and user interviews focused on motivation, executive dysfunction, and gamification.</p>
+      <p className="bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">Research</p>
+      <p className="font-normal relative shrink-0 text-[#543976] text-[18px] w-full">To better understand habit-building challenges, I combined desk research, surveys, competitor analysis, and user interviews focused on motivation, executive dysfunction, and gamification.</p>
     </div>
   );
 }
@@ -494,8 +494,8 @@ function Research() {
 function TheProblem() {
   return (
     <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[14px] items-start left-[61px] top-[493px] w-[578px]" data-name="The problem">
-      <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">The problem</p>
-      <div className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-full whitespace-pre-wrap">
+      <p className="bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">The problem</p>
+      <div className="font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-full whitespace-pre-wrap">
         <p className="leading-[1.5] mb-0">Many people with ADHD struggle to build consistent habits, not because they lack motivation, but because everyday tasks often fail to provide immediate rewards.</p>
         <p className="leading-[1.5] mb-0">​</p>
         <p className="leading-[1.5]">Without visible progress and meaningful feedback, maintaining routines becomes increasingly difficult, leading to frustration, procrastination, and abandonment.</p>
@@ -683,8 +683,8 @@ function Avatar() {
 function Frame10() {
   return (
     <div className="content-stretch flex items-center justify-between relative shrink-0 text-[#543976] w-full whitespace-nowrap">
-      <p className="font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[24px]">{`Andrew Allen [The strategist] `}</p>
-      <div className="flex flex-col font-['Momo_Trust_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[18px]">
+      <p className="font-medium leading-[1.5] relative shrink-0 text-[24px]">{`Andrew Allen [The strategist] `}</p>
+      <div className="flex flex-col font-normal justify-center leading-[0] relative shrink-0 text-[18px]">
         <p className="leading-[1.5]">29 years old</p>
       </div>
     </div>
@@ -697,7 +697,7 @@ function Bio() {
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="[word-break:break-word] content-stretch flex flex-col gap-[3px] items-start p-[20px] relative size-full">
           <Frame10 />
-          <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#4d382d] text-[16px] w-full">{`A digital-first user who doesn't want another agenda or habit tracker. Instead, they seek a personal operating system that transforms self-improvement into a structured and rewarding experience`}</p>
+          <p className="font-normal leading-[1.5] relative shrink-0 text-[#4d382d] text-[16px] w-full">{`A digital-first user who doesn't want another agenda or habit tracker. Instead, they seek a personal operating system that transforms self-improvement into a structured and rewarding experience`}</p>
         </div>
       </div>
       <div aria-hidden className="absolute border-4 border-[#fad89e] border-solid inset-0 pointer-events-none rounded-[20px]" />
@@ -708,7 +708,7 @@ function Bio() {
 function Frame33() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[7px] items-start min-w-px relative">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Medium',sans-serif] font-medium from-[#fe85ea] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] text-center to-[#5102a0] w-full">Archetype</p>
+      <p className="bg-clip-text bg-gradient-to-r font-medium from-[#fe85ea] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] text-center to-[#5102a0] w-full">Archetype</p>
       <Bio />
     </div>
   );
@@ -737,8 +737,8 @@ function Avatar1() {
 function Frame11() {
   return (
     <div className="content-stretch flex flex-col gap-[2px] items-start relative shrink-0 w-full whitespace-nowrap">
-      <p className="font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[24px]">Matthew Black</p>
-      <div className="flex flex-col font-['Momo_Trust_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[18px]">
+      <p className="font-medium leading-[1.5] relative shrink-0 text-[24px]">Matthew Black</p>
+      <div className="flex flex-col font-normal justify-center leading-[0] relative shrink-0 text-[18px]">
         <p className="leading-[1.5]">32 years old</p>
       </div>
     </div>
@@ -751,7 +751,7 @@ function Bio1() {
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] items-start p-[20px] relative size-full text-[#543976]">
           <Frame11 />
-          <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[16px] w-full">{`“I already optimize my performance in games. Why can't I do the same in real life?”`}</p>
+          <p className="font-normal leading-[1.5] relative shrink-0 text-[16px] w-full">{`“I already optimize my performance in games. Why can't I do the same in real life?”`}</p>
         </div>
       </div>
       <div aria-hidden className="absolute border-4 border-[#fad89e] border-solid inset-0 pointer-events-none rounded-[20px]" />
@@ -771,7 +771,7 @@ function Frame34() {
 function UserPersona1() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] items-start justify-center min-w-px relative" data-name="User-persona">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Medium',sans-serif] font-medium from-[#fe85ea] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] text-center to-[#5102a0] w-full">User persona</p>
+      <p className="bg-clip-text bg-gradient-to-r font-medium from-[#fe85ea] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] text-center to-[#5102a0] w-full">User persona</p>
       <Frame34 />
     </div>
   );
@@ -780,8 +780,8 @@ function UserPersona1() {
 function Frame12() {
   return (
     <div className="content-stretch flex flex-col gap-[2px] items-start relative shrink-0 text-[#543976] w-full whitespace-nowrap">
-      <p className="font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[24px]">Sebastian Lockgarden</p>
-      <div className="flex flex-col font-['Momo_Trust_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[18px]">
+      <p className="font-medium leading-[1.5] relative shrink-0 text-[24px]">Sebastian Lockgarden</p>
+      <div className="flex flex-col font-normal justify-center leading-[0] relative shrink-0 text-[18px]">
         <p className="leading-[1.5]">34 years old</p>
       </div>
     </div>
@@ -794,7 +794,7 @@ function Bio2() {
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] items-start p-[20px] relative size-full">
           <Frame12 />
-          <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#4d382d] text-[16px] w-full">Professional willing to focus on their goals, not spend energy planning how to reach them</p>
+          <p className="font-normal leading-[1.5] relative shrink-0 text-[#4d382d] text-[16px] w-full">Professional willing to focus on their goals, not spend energy planning how to reach them</p>
         </div>
       </div>
       <div aria-hidden className="absolute border-4 border-[#fad89e] border-solid inset-0 pointer-events-none rounded-[20px]" />
@@ -827,7 +827,7 @@ function Frame35() {
 function UserPersona2() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] items-start justify-center min-w-px relative self-stretch" data-name="User-persona">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Medium',sans-serif] font-medium from-[#fe85ea] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] text-center to-[#5102a0] w-full">Buyer persona</p>
+      <p className="bg-clip-text bg-gradient-to-r font-medium from-[#fe85ea] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] text-center to-[#5102a0] w-full">Buyer persona</p>
       <Frame35 />
     </div>
   );
@@ -845,8 +845,8 @@ function Frame56() {
 function Frame36() {
   return (
     <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[10px] items-start leading-[1.5] left-[60px] top-[1376px] w-[353px]">
-      <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">Personas</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#543976] text-[18px] w-full">Digital-first users who enjoy RPGs and self-improvement</p>
+      <p className="bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">Personas</p>
+      <p className="font-normal relative shrink-0 text-[#543976] text-[18px] w-full">Digital-first users who enjoy RPGs and self-improvement</p>
     </div>
   );
 }
@@ -866,7 +866,7 @@ function Frame57() {
 function Frame38() {
   return (
     <div className="absolute backdrop-blur-[2px] content-stretch flex flex-col gap-[14px] items-center left-[calc(12.5%+61px)] top-[2641px] w-[670px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Information Architecture</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Information Architecture</p>
       <Frame57 />
     </div>
   );
@@ -1517,7 +1517,7 @@ function Frame51() {
 function Frame46() {
   return (
     <div className="content-stretch flex flex-col gap-[23px] items-center relative shrink-0">
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] min-w-full relative shrink-0 text-[#6b4a94] text-[24px] w-[min-content]">Typography</p>
+      <p className="font-medium leading-[1.5] min-w-full relative shrink-0 text-[#6b4a94] text-[24px] w-[min-content]">Typography</p>
       <Frame50 />
       <Frame51 />
     </div>
@@ -1569,7 +1569,7 @@ function Colores() {
 function Frame47() {
   return (
     <div className="content-stretch flex flex-col gap-[28px] items-center relative shrink-0 w-[371.25px]">
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#6b4a94] text-[24px] text-center w-full">Colour palette</p>
+      <p className="font-medium leading-[1.5] relative shrink-0 text-[#6b4a94] text-[24px] text-center w-full">Colour palette</p>
       <Colores />
     </div>
   );
@@ -1578,7 +1578,7 @@ function Frame47() {
 function Frame48() {
   return (
     <div className="content-stretch flex flex-col gap-[34px] items-center relative shrink-0 w-[202px]">
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] min-w-full relative shrink-0 text-[#6b4a94] text-[24px] text-center w-[min-content]">Logo</p>
+      <p className="font-medium leading-[1.5] min-w-full relative shrink-0 text-[#6b4a94] text-[24px] text-center w-[min-content]">Logo</p>
       <div className="overflow-clip relative shrink-0 size-[150px]" data-name="Logo">
         <div className="absolute inset-[0.98%_8.98%_16.99%_8.98%]" data-name="Icon">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 123.047 123.047">
@@ -1661,7 +1661,7 @@ function Frame49() {
 function Frame45() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[28px] items-end left-[59px] top-[3921px] w-[904px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] min-w-full relative shrink-0 text-[32px] text-[transparent] text-right to-[#5102a0] w-[min-content]">Visual Identity</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] min-w-full relative shrink-0 text-[32px] text-[transparent] text-right to-[#5102a0] w-[min-content]">Visual Identity</p>
       <Frame49 />
     </div>
   );
@@ -2654,8 +2654,8 @@ function Wireframe() {
 function Frame53() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[14px] items-start justify-center left-[60px] top-[3216px] w-[904px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] min-w-full relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-[min-content]">Lo-fi Wireframes</p>
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[18px] w-[497px]">Early wireframes explored habit creation, quest management, and progression systems before moving into visual design</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] min-w-full relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-[min-content]">Lo-fi Wireframes</p>
+      <p className="[word-break:break-word] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[18px] w-[497px]">Early wireframes explored habit creation, quest management, and progression systems before moving into visual design</p>
       <Wireframe />
     </div>
   );
@@ -5434,7 +5434,7 @@ function Frame44() {
 function Frame62() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[14px] items-end left-[60px] top-[4274.25px] w-[904px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Hi-Fi Wireframes / UI Design</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Hi-Fi Wireframes / UI Design</p>
       <Frame61 />
       <Frame44 />
     </div>
@@ -5444,8 +5444,8 @@ function Frame62() {
 function Frame54() {
   return (
     <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[14px] items-start left-[104px] top-[4942px]">
-      <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] min-w-full relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-[min-content]">Future Features</p>
-      <div className="font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-[380px]">
+      <p className="bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] min-w-full relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-[min-content]">Future Features</p>
+      <div className="font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-[380px]">
         <p className="leading-[1.5] mb-0">✻ Smarter personalization</p>
         <p className="leading-[1.5] mb-0">✻ Community accountability</p>
         <p className="leading-[1.5] mb-0">✻ Adaptive motivation systems</p>
@@ -5755,7 +5755,7 @@ function DesignerWorking1StreamlineDjakarta() {
 function Frame63() {
   return (
     <div className="backdrop-blur-[2px] bg-[rgba(247,174,248,0.34)] content-stretch flex items-center justify-end p-[20px] relative rounded-[14px] shrink-0 w-[557px]">
-      <div className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] min-w-px relative text-[#543976] text-[18px] text-right whitespace-pre-wrap">
+      <div className="[word-break:break-word] flex-[1_0_0] font-normal leading-[0] min-w-px relative text-[#543976] text-[18px] text-right whitespace-pre-wrap">
         <p className="leading-[1.5] mb-0">✻ Motivation is often a design challenge rather than a discipline problem</p>
         <p className="leading-[1.5] mb-0">{` ✻ Visible progress plays a critical role in long-term habit formation`}</p>
         <p className="leading-[1.5]">{` ✻ Gamification is most effective when it supports real-world goals rather than entertainment alone`}</p>
@@ -5780,58 +5780,8 @@ function Frame65() {
 function Frame55() {
   return (
     <div className="absolute content-stretch flex flex-col items-end left-[60px] top-[5271px] w-[904px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] h-[48px] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-right to-[#5102a0] w-full">Key learnings</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] h-[48px] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-right to-[#5102a0] w-full">Key learnings</p>
       <Frame65 />
-    </div>
-  );
-}
-
-function Frame25() {
-  return (
-    <div className="[word-break:break-word] absolute bg-[#c79aff] bottom-0 content-stretch flex font-['Momo_Trust_Sans:Medium',sans-serif] font-medium h-[47px] items-center justify-end left-0 px-[60px] py-[6px] right-0 text-[14px]">
-      <p className="flex-[1_0_0] leading-[1.5] min-w-px relative text-[#fff3ff]">© 2026 Patricia Rivera. All rights reserved.</p>
-      <p className="leading-[0] relative shrink-0 text-[#e8d6ff] text-right w-[452px]">
-        <span className="leading-[1.5]">{`Designed & Built with `}</span>
-        <span className="bg-clip-text bg-gradient-to-r from-[#ff99b9] leading-[1.5] text-[transparent] to-[#fff08f]">passion</span>
-      </p>
-    </div>
-  );
-}
-
-function FormkitLinkedin() {
-  return (
-    <div className="relative shrink-0 size-[30px]" data-name="formkit:linkedin">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
-        <g id="formkit:linkedin">
-          <path d={svgPaths.p5472600} fill="var(--fill-0, #3E2859)" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function IcBaselineWhatsapp() {
-  return (
-    <div className="relative shrink-0 size-[30px]" data-name="ic:baseline-whatsapp">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
-        <g id="ic:baseline-whatsapp">
-          <path d={svgPaths.pf262880} fill="var(--fill-0, #3E2859)" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function Frame27() {
-  return (
-    <div className="absolute bg-[#c79aff] bottom-[47px] content-stretch flex h-[89px] items-start justify-between left-0 px-[60px] py-[20px] right-0">
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Bold',sans-serif] font-bold leading-[1.5] relative shrink-0 text-[#3e2859] text-[18px] whitespace-nowrap">UX/UI Designer | Product Designer</p>
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium','Noto_Sans_Symbols2:Regular',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#ffd6a5] text-[24px] whitespace-nowrap">✦</p>
-      <FormkitLinkedin />
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium','Noto_Sans_Symbols2:Regular',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#ffd6a5] text-[24px] whitespace-nowrap">✦</p>
-      <IcBaselineWhatsapp />
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium','Noto_Sans_Symbols2:Regular',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#ffd6a5] text-[24px] whitespace-nowrap">✦</p>
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#3e2859] text-[18px] whitespace-nowrap">riverapatriciam20@gmail.com</p>
     </div>
   );
 }
@@ -5841,7 +5791,7 @@ function Frame67() {
     <div className="backdrop-blur-[2px] bg-[rgba(247,174,248,0.34)] relative shrink-0 w-full">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center px-[40px] py-[20px] relative size-full">
-          <div className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[0] relative shrink-0 text-[#543976] text-[24px] text-center w-[672px]">
+          <div className="font-medium leading-[0] relative shrink-0 text-[#543976] text-[24px] text-center w-[672px]">
             <p className="leading-[1.5] mb-0">{`Users don't need more habit trackers.`}</p>
             <p className="leading-[1.5]">They need a system that makes progress feel rewarding</p>
           </div>
@@ -5854,7 +5804,7 @@ function Frame67() {
 function Frame66() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[14px] items-center left-0 top-[1132px] w-[1024px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Key Findings</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Key Findings</p>
       <Frame67 />
     </div>
   );
@@ -5863,8 +5813,8 @@ function Frame66() {
 function Frame68() {
   return (
     <div className="[word-break:break-word] absolute backdrop-blur-[2px] bg-[rgba(247,174,248,0.4)] content-stretch flex flex-col gap-[6px] items-center justify-center left-[60px] p-[20px] rounded-[12px] text-[#543976] top-[1526px] w-[442px]">
-      <p className="font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[24px] text-center whitespace-nowrap">Frustrations</p>
-      <div className="font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] min-w-full relative shrink-0 text-[18px] w-[min-content]">
+      <p className="font-medium leading-[1.5] relative shrink-0 text-[24px] text-center whitespace-nowrap">Frustrations</p>
+      <div className="font-normal leading-[0] min-w-full relative shrink-0 text-[18px] w-[min-content]">
         <p className="leading-[1.5] mb-0">✻ Habit-building systems often punish failure instead of supporting recovery</p>
         <p className="leading-[1.5]">✻ Progress feels invisible, making it difficult to stay motivated.</p>
       </div>
@@ -5875,26 +5825,10 @@ function Frame68() {
 function Frame69() {
   return (
     <div className="[word-break:break-word] absolute backdrop-blur-[2px] bg-[rgba(247,174,248,0.4)] content-stretch flex flex-col gap-[6px] items-center justify-center left-[calc(50%+9px)] p-[20px] rounded-[12px] text-[#543976] top-[1526px] w-[442px]">
-      <p className="font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[24px] text-center w-full">Goals</p>
-      <div className="font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[18px] w-full">
+      <p className="font-medium leading-[1.5] relative shrink-0 text-[24px] text-center w-full">Goals</p>
+      <div className="font-normal leading-[0] relative shrink-0 text-[18px] w-full">
         <p className="leading-[1.5] mb-0">✻ Transform self-improvement into a structured and rewarding experience</p>
         <p className="leading-[1.5]">✻ Stay consistent by seeing meaningful progress over time</p>
-      </div>
-    </div>
-  );
-}
-
-function Frame26() {
-  return (
-    <div className="content-stretch flex gap-[20px] items-center justify-end relative shrink-0">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="Text-btn">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[18px] whitespace-nowrap">Projects</p>
-      </div>
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="Text-btn">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[18px] whitespace-nowrap">About</p>
-      </div>
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="Text-btn">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[18px] whitespace-nowrap">Contact</p>
       </div>
     </div>
   );
@@ -5923,7 +5857,7 @@ export default function CaseStudyLuh() {
       </div>
       <ListeningToFeedbackStreamlineDjakarta />
       <TeamWorkStreamlineDjakarta />
-      <p className="-translate-x-1/2 [word-break:break-word] absolute bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.1] left-[calc(25%+255.5px)] text-[52px] text-[transparent] text-center to-[#5102a0] top-[133px] whitespace-nowrap">Level Up Habits</p>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.1] left-[calc(25%+255.5px)] text-[52px] text-[transparent] text-center to-[#5102a0] top-[133px] whitespace-nowrap">Level Up Habits</p>
       <Frame32 />
       <Frame37 />
       <Research />
@@ -5941,22 +5875,10 @@ export default function CaseStudyLuh() {
       <Frame54 />
       <MachineLearningStreamlineDjakarta />
       <Frame55 />
-      <Frame25 />
-      <Frame27 />
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] left-[523.5px] text-[#9b72ce] text-[24px] text-center top-[214px] w-[745px]">{`"What if building habits felt as rewarding as leveling up in a game?"`}</p>
+      <p className="-translate-x-1/2 absolute font-medium leading-[1.5] left-[523.5px] text-[#9b72ce] text-[24px] text-center top-[214px] w-[745px]">{`"What if building habits felt as rewarding as leveling up in a game?"`}</p>
       <Frame66 />
       <Frame68 />
       <Frame69 />
-      <div className="absolute bg-[#d7b8ff] content-stretch flex h-[81px] items-center justify-between left-0 pl-[110px] pr-[20px] py-[10px] right-[calc(37.5%+9px)] rounded-bl-[99999px] rounded-br-[999px] rounded-tr-[999px] top-0" data-name="Nav-bar">
-        <div className="[word-break:break-word] content-stretch flex font-bold gap-[2px] items-center justify-center relative shrink-0 text-[24px] text-[transparent]" data-name="Home-btn">
-          <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Bold','Noto_Sans_Symbols2:Regular',sans-serif] from-[#fad89e] h-full leading-[normal] relative shrink-0 text-shadow-[0px_0px_30px_#f29bfd] to-[#f29bfd] w-[21px]">❋</p>
-          <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Bold',sans-serif] from-[#5102a0] leading-[1.5] relative shrink-0 to-[#fe85ea] whitespace-nowrap">Patricia Rivera</p>
-        </div>
-        <Frame26 />
-      </div>
-      <a className="absolute bg-gradient-to-r content-stretch cursor-pointer drop-shadow-[0px_0px_2px_rgba(0,0,0,0.04),0px_4px_4px_rgba(0,0,0,0.06)] flex from-[#fad89e] gap-[10px] items-center justify-center left-[calc(75%+74px)] px-[20px] py-[10px] right-[60px] rounded-[40px] to-[#f29bfd] top-[29px]" href="https://www.figma.com/proto/Kd9acktVBSJzkMbJd537EC/Patricia.Rivera---Reto-2?node-id=291-3348&viewport=201%2C410%2C0.16&t=O6FNuWxTnlVpP2bf-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=310%3A4874&show-proto-sidebar=1&page-id=0%3A1" target="_blank" data-name="Button">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#543976] text-[16px] text-center whitespace-nowrap">Play demo</p>
-      </a>
     </div>
   );
 }
@@ -6023,8 +5945,8 @@ function MobileHighlightBox({ children, className = "" }: { children: ReactNode;
 function MobileMetaCell({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex flex-1 flex-col items-center gap-[3px] text-center">
-      <p className="text-[#9b72ce] font-extrabold text-[16px]">{label}</p>
-      <p className="text-[#6b4a94] text-[12px]">{value}</p>
+      <p className="text-[#9b72ce] font-bold text-[24px] leading-[1.5]">{label}</p>
+      <p className="text-[#6b4a94] font-normal text-[16px] leading-[1.5]">{value}</p>
     </div>
   );
 }

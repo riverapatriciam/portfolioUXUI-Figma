@@ -43,7 +43,7 @@ export function FrameWrapper({
   /* ── Desktop ─────────────────────────────────────────────────────────── */
   if (vw >= FRAME_W) {
     return (
-      <div style={{ background: bg, minHeight: frameH }}>
+      <div style={{ background: bg, minHeight: frameH, overflow: "hidden" }}>
         <div
           style={{
             width: FRAME_W,

@@ -594,8 +594,8 @@ function TeamWorkStreamlineDjakarta() {
 function Frame23() {
   return (
     <div className="content-stretch flex flex-col gap-[3px] items-center relative shrink-0 w-[176px]">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Timeline</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">3 Weeks</p>
+      <p className="font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Timeline</p>
+      <p className="font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">3 Weeks</p>
     </div>
   );
 }
@@ -603,8 +603,8 @@ function Frame23() {
 function Frame24() {
   return (
     <div className="content-stretch flex flex-col gap-[3px] items-center relative shrink-0 w-[176px]">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Role</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">UX/UI Designer</p>
+      <p className="font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Role</p>
+      <p className="font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">UX/UI Designer</p>
     </div>
   );
 }
@@ -612,8 +612,8 @@ function Frame24() {
 function Frame25() {
   return (
     <div className="content-stretch flex flex-col gap-[3px] items-center relative shrink-0 w-[176px]">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Tools</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">Figma · Gemini · FigJam</p>
+      <p className="font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Tools</p>
+      <p className="font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">Figma · Gemini · FigJam</p>
     </div>
   );
 }
@@ -621,8 +621,8 @@ function Frame25() {
 function Frame26() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[3px] items-center min-w-px relative">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] whitespace-nowrap">Methods</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal min-w-full relative shrink-0 text-[#6b4a94] text-[18px] w-[min-content]">Design thinking · Interviews, Benchmarking · Usability Testing</p>
+      <p className="font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] whitespace-nowrap">Methods</p>
+      <p className="font-normal min-w-full relative shrink-0 text-[#6b4a94] text-[18px] w-[min-content]">Design thinking · Interviews, Benchmarking · Usability Testing</p>
     </div>
   );
 }
@@ -641,8 +641,8 @@ function Frame27() {
 function Frame32() {
   return (
     <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[14px] items-start left-[calc(25%+130px)] text-right top-[2285px] w-[578px]">
-      <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">{`Ideation & Priorization`}</p>
-      <div className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-full whitespace-pre-wrap">
+      <p className="bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">{`Ideation & Priorization`}</p>
+      <div className="font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-full whitespace-pre-wrap">
         <p className="leading-[1.5] mb-0">Using the MoSCoW framework, I prioritized features that directly addressed the main user problem: finding the right story without feeling overwhelmed</p>
         <p className="leading-[1.5] mb-0">​</p>
         <p className="leading-[1.5]">This helped define a focused MVP centered on emotional discovery rather than feature quantity.</p>
@@ -654,8 +654,8 @@ function Frame32() {
 function Research() {
   return (
     <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[14px] items-start left-[calc(37.5%+110px)] text-right top-[867px] w-[467px]" data-name="Research">
-      <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">Research</p>
-      <div className="font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-full">
+      <p className="bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">Research</p>
+      <div className="font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-full">
         <p className="leading-[1.5] mb-0">To better understand discovery behaviors and recommendation habits, I conducted:</p>
         <p className="leading-[1.5] mb-0">Desk research ✻</p>
         <p className="mb-0">
@@ -674,8 +674,8 @@ function Research() {
 function TheProblem() {
   return (
     <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[14px] items-start leading-[1.5] left-[60px] top-[520px] w-[578px]" data-name="The problem">
-      <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">The problem</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#543976] text-[18px] w-full">Many anime and manga fans spend more time searching for their next story than actually enjoying one.</p>
+      <p className="bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">The problem</p>
+      <p className="font-normal relative shrink-0 text-[#543976] text-[18px] w-full">Many anime and manga fans spend more time searching for their next story than actually enjoying one.</p>
     </div>
   );
 }
@@ -848,8 +848,8 @@ function NoConectionStreamlineDjakarta() {
 function Frame6() {
   return (
     <div className="content-stretch flex items-center justify-between relative shrink-0 text-[#543976] w-full whitespace-nowrap">
-      <p className="font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[24px]">{`Mei Kim [The emotional explorer] `}</p>
-      <div className="flex flex-col font-['Momo_Trust_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[18px]">
+      <p className="font-medium leading-[1.5] relative shrink-0 text-[24px]">{`Mei Kim [The emotional explorer] `}</p>
+      <div className="flex flex-col font-normal justify-center leading-[0] relative shrink-0 text-[18px]">
         <p className="leading-[1.5]">28 years old</p>
       </div>
     </div>
@@ -862,7 +862,7 @@ function Bio() {
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="[word-break:break-word] content-stretch flex flex-col gap-[3px] items-start p-[20px] relative size-full">
           <Frame6 />
-          <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#4d382d] text-[16px] w-full">Creative and introspective profile that views their library as an aesthetic refuge, requires rating with emojis or colours to avoid decision fatigue from technical catalogues</p>
+          <p className="font-normal leading-[1.5] relative shrink-0 text-[#4d382d] text-[16px] w-full">Creative and introspective profile that views their library as an aesthetic refuge, requires rating with emojis or colours to avoid decision fatigue from technical catalogues</p>
         </div>
       </div>
       <div aria-hidden className="absolute border-4 border-[#fad89e] border-solid inset-0 pointer-events-none rounded-[20px]" />
@@ -873,7 +873,7 @@ function Bio() {
 function Frame28() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[7px] items-start min-w-px relative">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Medium',sans-serif] font-medium from-[#fe85ea] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] text-center to-[#5102a0] w-full">Archetype</p>
+      <p className="bg-clip-text bg-gradient-to-r font-medium from-[#fe85ea] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] text-center to-[#5102a0] w-full">Archetype</p>
       <Bio />
     </div>
   );
@@ -894,8 +894,8 @@ function UserPersona() {
 function Frame7() {
   return (
     <div className="content-stretch flex flex-col gap-[2px] items-start relative shrink-0 w-full whitespace-nowrap">
-      <p className="font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[24px]">Elara Lockgarden</p>
-      <div className="flex flex-col font-['Momo_Trust_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[18px]">
+      <p className="font-medium leading-[1.5] relative shrink-0 text-[24px]">Elara Lockgarden</p>
+      <div className="flex flex-col font-normal justify-center leading-[0] relative shrink-0 text-[18px]">
         <p className="leading-[1.5]">26 years old</p>
       </div>
     </div>
@@ -908,7 +908,7 @@ function Bio1() {
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] items-start p-[20px] relative size-full text-[#543976]">
           <Frame7 />
-          <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[16px] w-full">Reader who uses manga as an escape from stress and looks for quick recommendations based on their mood, their biggest frustration is cold interfaces and wasting time searching for something to read</p>
+          <p className="font-normal leading-[1.5] relative shrink-0 text-[16px] w-full">Reader who uses manga as an escape from stress and looks for quick recommendations based on their mood, their biggest frustration is cold interfaces and wasting time searching for something to read</p>
         </div>
       </div>
       <div aria-hidden className="absolute border-4 border-[#fad89e] border-solid inset-0 pointer-events-none rounded-[20px]" />
@@ -930,7 +930,7 @@ function Frame29() {
 function UserPersona1() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] items-start justify-center min-w-px relative" data-name="User-persona">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Medium',sans-serif] font-medium from-[#fe85ea] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] text-center to-[#5102a0] w-full">User persona</p>
+      <p className="bg-clip-text bg-gradient-to-r font-medium from-[#fe85ea] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] text-center to-[#5102a0] w-full">User persona</p>
       <Frame29 />
     </div>
   );
@@ -939,8 +939,8 @@ function UserPersona1() {
 function Frame8() {
   return (
     <div className="content-stretch flex flex-col gap-[2px] items-start relative shrink-0 text-[#543976] w-full whitespace-nowrap">
-      <p className="font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[24px]">Benjamin Black</p>
-      <div className="flex flex-col font-['Momo_Trust_Sans:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[18px]">
+      <p className="font-medium leading-[1.5] relative shrink-0 text-[24px]">Benjamin Black</p>
+      <div className="flex flex-col font-normal justify-center leading-[0] relative shrink-0 text-[18px]">
         <p className="leading-[1.5]">32 years old</p>
       </div>
     </div>
@@ -953,7 +953,7 @@ function Bio2() {
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] items-start p-[20px] relative size-full">
           <Frame8 />
-          <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#4d382d] text-[16px] w-full">Professional willing to pay a subscription if the app provides real value, exclusivity (artbooks), and customisation, rejecting advertising and microtransactions</p>
+          <p className="font-normal leading-[1.5] relative shrink-0 text-[#4d382d] text-[16px] w-full">Professional willing to pay a subscription if the app provides real value, exclusivity (artbooks), and customisation, rejecting advertising and microtransactions</p>
         </div>
       </div>
       <div aria-hidden className="absolute border-4 border-[#fad89e] border-solid inset-0 pointer-events-none rounded-[20px]" />
@@ -975,7 +975,7 @@ function Frame30() {
 function UserPersona2() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] items-start justify-center min-w-px relative self-stretch" data-name="User-persona">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Medium',sans-serif] font-medium from-[#fe85ea] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] text-center to-[#5102a0] w-full">Buyer persona</p>
+      <p className="bg-clip-text bg-gradient-to-r font-medium from-[#fe85ea] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] text-center to-[#5102a0] w-full">Buyer persona</p>
       <Frame30 />
     </div>
   );
@@ -993,8 +993,8 @@ function Frame54() {
 function Frame31() {
   return (
     <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[10px] items-start leading-[1.5] left-[64px] top-[1346px] w-[570px]">
-      <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">Personas</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#543976] text-[18px] w-full">The user does not behave like a mere content consumer, but rather as an emotional explorer seeking experiences that resonate with their inner state.</p>
+      <p className="bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">Personas</p>
+      <p className="font-normal relative shrink-0 text-[#543976] text-[18px] w-full">The user does not behave like a mere content consumer, but rather as an emotional explorer seeking experiences that resonate with their inner state.</p>
     </div>
   );
 }
@@ -1004,7 +1004,7 @@ function Frame55() {
     <div className="backdrop-blur-[2px] bg-[rgba(255,243,255,0.65)] relative rounded-[20px] shrink-0 w-full">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center p-[10px] relative size-full">
-          <p className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#543976] text-[14px] text-center">After defining the core user needs, I created an information architecture focused on reducing cognitive load, the information architecture was designed around three primary user actions: Discover, Track, and Explore</p>
+          <p className="[word-break:break-word] flex-[1_0_0] font-normal leading-[1.5] min-w-px relative text-[#543976] text-[14px] text-center">After defining the core user needs, I created an information architecture focused on reducing cognitive load, the information architecture was designed around three primary user actions: Discover, Track, and Explore</p>
         </div>
       </div>
     </div>
@@ -1014,7 +1014,7 @@ function Frame55() {
 function Frame33() {
   return (
     <div className="absolute backdrop-blur-[2px] content-stretch flex flex-col gap-[14px] items-center left-[calc(12.5%+61px)] top-[2631px] w-[670px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Information Architecture</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Information Architecture</p>
       <Frame55 />
     </div>
   );
@@ -1833,7 +1833,7 @@ function Frame16() {
 function Frame43() {
   return (
     <div className="content-stretch flex flex-col gap-[23px] items-center relative shrink-0 w-[135px]">
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] min-w-full relative shrink-0 text-[#6b4a94] text-[24px] w-[min-content]">Typography</p>
+      <p className="font-medium leading-[1.5] min-w-full relative shrink-0 text-[#6b4a94] text-[24px] w-[min-content]">Typography</p>
       <Frame17 />
       <Frame16 />
     </div>
@@ -1871,7 +1871,7 @@ function Frame10() {
 function Frame44() {
   return (
     <div className="content-stretch flex flex-col gap-[28px] items-center relative shrink-0 w-[371.25px]">
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#6b4a94] text-[24px] text-center w-full">Colour palette</p>
+      <p className="font-medium leading-[1.5] relative shrink-0 text-[#6b4a94] text-[24px] text-center w-full">Colour palette</p>
       <div className="h-[143.25px] relative shrink-0 w-full" data-name="Colores">
         <Frame11 />
         <Frame18 />
@@ -1888,7 +1888,7 @@ function Frame44() {
 function Frame45() {
   return (
     <div className="content-stretch flex flex-col gap-[34px] items-center relative shrink-0 w-[202px]">
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] min-w-full relative shrink-0 text-[#6b4a94] text-[24px] text-center w-[min-content]">Logo</p>
+      <p className="font-medium leading-[1.5] min-w-full relative shrink-0 text-[#6b4a94] text-[24px] text-center w-[min-content]">Logo</p>
       <div className="h-[89px] overflow-clip relative shrink-0 w-[202px]" data-name="Logo">
         <div className="absolute inset-[3.28%_1.11%_2.16%_0.85%]" data-name="Vector">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 198.039 84.1583">
@@ -2000,7 +2000,7 @@ function Frame46() {
 function Frame42() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[28px] items-end left-[59px] top-[3918px] w-[904px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-right to-[#5102a0] w-full">Visual Identity</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-right to-[#5102a0] w-full">Visual Identity</p>
       <Frame46 />
     </div>
   );
@@ -7016,8 +7016,8 @@ function Frame9() {
 function Frame47() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[14px] items-start left-[60px] top-[3213px] w-[904px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] min-w-full relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-[min-content]">Lo-fi Wireframes</p>
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[18px] w-[497px]">Early wireframes focused on validating navigation patterns and recommendation flows before investing in visual design</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] min-w-full relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-[min-content]">Lo-fi Wireframes</p>
+      <p className="[word-break:break-word] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[18px] w-[497px]">Early wireframes focused on validating navigation patterns and recommendation flows before investing in visual design</p>
       <Frame9 />
     </div>
   );
@@ -12492,7 +12492,7 @@ function Frame40() {
 function Frame60() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[14px] items-end left-[60px] top-[4271.25px] w-[904px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Hi-Fi Wireframes / UI Design</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Hi-Fi Wireframes / UI Design</p>
       <Frame59 />
       <Frame40 />
     </div>
@@ -12620,8 +12620,8 @@ function UserTestingImg() {
 function Frame48() {
   return (
     <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[14px] items-end left-[calc(37.5%+85px)] text-right top-[5420px]">
-      <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] min-w-full relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-[min-content]">Future Features</p>
-      <div className="font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-[380px]">
+      <p className="bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] min-w-full relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-[min-content]">Future Features</p>
+      <div className="font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-[380px]">
         <p className="leading-[1.5] mb-0">Smarter personalization ✻</p>
         <p className="leading-[1.5] mb-0">Community-driven discovery ✻</p>
         <p className="leading-[1.5]">Advanced filtering ✻</p>
@@ -12768,17 +12768,17 @@ function Frame50() {
     <div className="backdrop-blur-[2px] bg-[rgba(247,174,248,0.34)] relative shrink-0 w-full">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center px-[120px] py-[20px] relative size-full">
-          <div className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] min-w-px relative text-[#543976] text-[18px]">
+          <div className="[word-break:break-word] flex-[1_0_0] font-normal leading-[0] min-w-px relative text-[#543976] text-[18px]">
             <p className="mb-0">
-              <span className="[word-break:break-word] font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[1.5]">✻</span>
+              <span className="[word-break:break-word] font-normal leading-[1.5]">✻</span>
               <span className="leading-[1.5]">{` Emotional context can be more valuable than traditional recommendation systems.`}</span>
             </p>
             <p className="mb-0">
-              <span className="[word-break:break-word] font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[1.5]">✻</span>
+              <span className="[word-break:break-word] font-normal leading-[1.5]">✻</span>
               <span className="leading-[1.5]">{` Simplicity is essential when users face decision fatigue.`}</span>
             </p>
             <p>
-              <span className="[word-break:break-word] font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[1.5]">✻</span>
+              <span className="[word-break:break-word] font-normal leading-[1.5]">✻</span>
               <span className="leading-[1.5]">{` User testing revealed assumptions that weren't visible during the design phase.`}</span>
             </p>
           </div>
@@ -12791,68 +12791,19 @@ function Frame50() {
 function Frame49() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[14px] items-center left-0 top-[5737px] w-[1024px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] h-[48px] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Key learnings</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] h-[48px] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Key learnings</p>
       <Frame50 />
     </div>
   );
 }
 
-function Frame20() {
-  return (
-    <div className="[word-break:break-word] absolute bg-[#c79aff] bottom-0 content-stretch flex font-['Momo_Trust_Sans:Medium',sans-serif] font-medium h-[47px] items-center justify-end left-0 px-[60px] py-[6px] right-0 text-[14px]">
-      <p className="flex-[1_0_0] leading-[1.5] min-w-px relative text-[#fff3ff]">© 2026 Patricia Rivera. All rights reserved.</p>
-      <p className="leading-[0] relative shrink-0 text-[#e8d6ff] text-right w-[452px]">
-        <span className="leading-[1.5]">{`Designed & Built with `}</span>
-        <span className="bg-clip-text bg-gradient-to-r from-[#ff99b9] leading-[1.5] text-[transparent] to-[#fff08f]">passion</span>
-      </p>
-    </div>
-  );
-}
-
-function FormkitLinkedin() {
-  return (
-    <div className="relative shrink-0 size-[30px]" data-name="formkit:linkedin">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
-        <g id="formkit:linkedin">
-          <path d={svgPaths.p5472600} fill="var(--fill-0, #3E2859)" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function IcBaselineWhatsapp() {
-  return (
-    <div className="relative shrink-0 size-[30px]" data-name="ic:baseline-whatsapp">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
-        <g id="ic:baseline-whatsapp">
-          <path d={svgPaths.pf262880} fill="var(--fill-0, #3E2859)" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function Frame22() {
-  return (
-    <div className="absolute bg-[#c79aff] bottom-[47px] content-stretch flex h-[89px] items-start justify-between left-0 px-[60px] py-[20px] right-0">
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Bold',sans-serif] font-bold leading-[1.5] relative shrink-0 text-[#3e2859] text-[18px] whitespace-nowrap">UX/UI Designer | Product Designer</p>
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium','Noto_Sans_Symbols2:Regular',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#ffd6a5] text-[24px] whitespace-nowrap">✦</p>
-      <FormkitLinkedin />
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium','Noto_Sans_Symbols2:Regular',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#ffd6a5] text-[24px] whitespace-nowrap">✦</p>
-      <IcBaselineWhatsapp />
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium','Noto_Sans_Symbols2:Regular',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#ffd6a5] text-[24px] whitespace-nowrap">✦</p>
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#3e2859] text-[18px] whitespace-nowrap">riverapatriciam20@gmail.com</p>
-    </div>
-  );
-}
 
 function Frame51() {
   return (
     <div className="backdrop-blur-[2px] bg-[rgba(247,174,248,0.34)] relative shrink-0 w-full">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center px-[40px] py-[20px] relative size-full">
-          <div className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[0] relative shrink-0 text-[#543976] text-[24px] text-center whitespace-nowrap">
+          <div className="font-medium leading-[0] relative shrink-0 text-[#543976] text-[24px] text-center whitespace-nowrap">
             <p className="leading-[1.5] mb-0">{`Users don't choose their next story based on genre alone.`}</p>
             <p className="leading-[1.5]">They choose it based on how they want to feel</p>
           </div>
@@ -12865,7 +12816,7 @@ function Frame51() {
 function Frame61() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[14px] items-center left-0 top-[1102px] w-[1024px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Key Findings</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Key Findings</p>
       <Frame51 />
     </div>
   );
@@ -12874,8 +12825,8 @@ function Frame61() {
 function Frame53() {
   return (
     <div className="[word-break:break-word] absolute backdrop-blur-[2px] bg-[rgba(247,174,248,0.4)] content-stretch flex flex-col gap-[6px] items-center justify-center left-[calc(12.5%+88px)] p-[20px] rounded-[12px] text-[#543976] top-[1544px] w-[286px]">
-      <p className="font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[24px] text-center whitespace-nowrap">Frustrations</p>
-      <div className="font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] min-w-full relative shrink-0 text-[18px] w-[min-content]">
+      <p className="font-medium leading-[1.5] relative shrink-0 text-[24px] text-center whitespace-nowrap">Frustrations</p>
+      <div className="font-normal leading-[0] min-w-full relative shrink-0 text-[18px] w-[min-content]">
         <p className="leading-[1.5] mb-0">✻ Too many options</p>
         <p className="leading-[1.5]">✻ Generic recommendations</p>
       </div>
@@ -12886,26 +12837,10 @@ function Frame53() {
 function Frame52() {
   return (
     <div className="[word-break:break-word] absolute backdrop-blur-[2px] bg-[rgba(247,174,248,0.4)] content-stretch flex flex-col gap-[6px] h-[136px] items-center justify-center left-[calc(50%+10px)] p-[20px] rounded-[12px] text-[#543976] top-[1544px] w-[286px]">
-      <p className="font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[24px] text-center w-full">Goals</p>
-      <div className="font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[18px] w-full">
+      <p className="font-medium leading-[1.5] relative shrink-0 text-[24px] text-center w-full">Goals</p>
+      <div className="font-normal leading-[0] relative shrink-0 text-[18px] w-full">
         <p className="leading-[1.5] mb-0">✻ Find stories quickly</p>
         <p className="leading-[1.5]">✻ Avoid decision fatigue</p>
-      </div>
-    </div>
-  );
-}
-
-function Frame21() {
-  return (
-    <div className="content-stretch flex gap-[20px] items-center justify-end relative shrink-0">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="Text-btn">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[18px] whitespace-nowrap">Projects</p>
-      </div>
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="Text-btn">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[18px] whitespace-nowrap">About</p>
-      </div>
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="Text-btn">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[18px] whitespace-nowrap">Contact</p>
       </div>
     </div>
   );
@@ -12935,7 +12870,7 @@ export default function CaseStudyAs() {
       </div>
       <ListeningToFeedbackStreamlineDjakarta />
       <TeamWorkStreamlineDjakarta />
-      <p className="-translate-x-1/2 [word-break:break-word] absolute bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.1] left-[calc(25%+255.5px)] text-[52px] text-[transparent] text-center to-[#5102a0] top-[133px] whitespace-nowrap">After Story</p>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.1] left-[calc(25%+255.5px)] text-[52px] text-[transparent] text-center to-[#5102a0] top-[133px] whitespace-nowrap">After Story</p>
       <Frame27 />
       <Frame32 />
       <Research />
@@ -12955,10 +12890,10 @@ export default function CaseStudyAs() {
           <UserTestingImg />
         </div>
       </div>
-      <p className="[word-break:break-word] absolute bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] left-[60px] text-[32px] text-[transparent] to-[#5102a0] top-[4876.25px] w-[904px]">User Testing → Iteration</p>
-      <div className="[word-break:break-word] absolute font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[0] left-[60px] text-[#543976] text-[0px] top-[4938.25px] w-[578px] whitespace-pre-wrap">
+      <p className="[word-break:break-word] absolute bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] left-[60px] text-[32px] text-[transparent] to-[#5102a0] top-[4876.25px] w-[904px]">User Testing → Iteration</p>
+      <div className="[word-break:break-word] absolute font-normal leading-[0] left-[60px] text-[#543976] text-[0px] top-[4938.25px] w-[578px] whitespace-pre-wrap">
         <p className="mb-0 text-[18px]">
-          <span className="[word-break:break-word] font-['Momo_Trust_Sans:Bold',sans-serif] font-bold leading-[1.5]">Navigation Clarity</span>
+          <span className="[word-break:break-word] font-bold leading-[1.5]">Navigation Clarity</span>
           <span className="leading-[1.5]">
             <br aria-hidden />
             Users needed more guidance during onboarding → Added progress indicators and clearer navigation cues
@@ -12966,7 +12901,7 @@ export default function CaseStudyAs() {
         </p>
         <p className="leading-[1.5] mb-0 text-[18px]">​</p>
         <p className="mb-0 text-[18px]">
-          <span className="[word-break:break-word] font-['Momo_Trust_Sans:Bold',sans-serif] font-bold leading-[1.5]">Recommendation Transparency</span>
+          <span className="[word-break:break-word] font-bold leading-[1.5]">Recommendation Transparency</span>
           <span className="leading-[1.5]">
             <br aria-hidden />
             {`Users didn't immediately connect recommendations with their selected mood → Introduced visual explanations linking recommendations to emotional states`}
@@ -12974,7 +12909,7 @@ export default function CaseStudyAs() {
         </p>
         <p className="leading-[1.5] mb-0 text-[18px]">​</p>
         <p className="text-[18px]">
-          <span className="[word-break:break-word] font-['Momo_Trust_Sans:Bold',sans-serif] font-bold leading-[1.5]">Familiar Reading Behaviors</span>
+          <span className="[word-break:break-word] font-bold leading-[1.5]">Familiar Reading Behaviors</span>
           <span className="leading-[1.5]">
             <br aria-hidden />
             Users expected rating systems and more intuitive content interactions → Refined gestures and explored lightweight score integration within the UI
@@ -12988,22 +12923,10 @@ export default function CaseStudyAs() {
         </div>
       </div>
       <Frame49 />
-      <Frame20 />
-      <Frame22 />
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] left-[523.5px] text-[#9b72ce] text-[24px] text-center top-[214px] w-[745px]">{`"What if users discovered stories based on how they want to feel, instead of what genre they want to read?"`}</p>
+      <p className="-translate-x-1/2 absolute font-medium leading-[1.5] left-[523.5px] text-[#9b72ce] text-[24px] text-center top-[214px] w-[745px]">{`"What if users discovered stories based on how they want to feel, instead of what genre they want to read?"`}</p>
       <Frame61 />
       <Frame53 />
       <Frame52 />
-      <div className="absolute bg-[#d7b8ff] content-stretch flex h-[81px] items-center justify-between left-0 pl-[110px] pr-[20px] py-[10px] right-[calc(37.5%+9px)] rounded-bl-[99999px] rounded-br-[999px] rounded-tr-[999px] top-0" data-name="Nav-bar">
-        <div className="[word-break:break-word] content-stretch flex font-bold gap-[2px] items-center justify-center relative shrink-0 text-[24px] text-[transparent]" data-name="Home-btn">
-          <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Bold','Noto_Sans_Symbols2:Regular',sans-serif] from-[#fad89e] h-full leading-[normal] relative shrink-0 text-shadow-[0px_0px_30px_#f29bfd] to-[#f29bfd] w-[21px]">❋</p>
-          <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Bold',sans-serif] from-[#5102a0] leading-[1.5] relative shrink-0 to-[#fe85ea] whitespace-nowrap">Patricia Rivera</p>
-        </div>
-        <Frame21 />
-      </div>
-      <a className="absolute bg-gradient-to-r content-stretch cursor-pointer drop-shadow-[0px_0px_2px_rgba(0,0,0,0.04),0px_4px_4px_rgba(0,0,0,0.06)] flex from-[#fad89e] gap-[10px] items-center justify-center left-[calc(75%+74px)] px-[20px] py-[10px] right-[60px] rounded-[40px] to-[#f29bfd] top-[29px]" href="https://www.figma.com/proto/WnSSL3saTOJKzkc4sRbTdp/Patricia.Rivera---PFB-UI?node-id=248-450&viewport=597%2C-25%2C0.08&t=yWVjf7uNk9DpxMyX-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=221%3A3906&show-proto-sidebar=1&page-id=215%3A3903" target="_blank" data-name="Button">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#543976] text-[16px] text-center whitespace-nowrap">Play demo</p>
-      </a>
     </div>
   );
 }
@@ -13070,8 +12993,8 @@ function MobileHighlightBox({ children, className = "" }: { children: ReactNode;
 function MobileMetaCell({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex flex-1 flex-col items-center gap-[3px] text-center">
-      <p className="text-[#9b72ce] font-extrabold text-[16px]">{label}</p>
-      <p className="text-[#6b4a94] text-[12px]">{value}</p>
+      <p className="text-[#9b72ce] font-bold text-[24px] leading-[1.5]">{label}</p>
+      <p className="text-[#6b4a94] font-normal text-[16px] leading-[1.5]">{value}</p>
     </div>
   );
 }
