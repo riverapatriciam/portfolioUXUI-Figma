@@ -148,7 +148,27 @@ const PROJECT_LINKS: { id: CaseStudyId; label: string }[] = [
   { id: "cove", label: "Cove" },
 ];
 
-function NavBar({ onOpenCaseStudy }: { onOpenCaseStudy: (id: CaseStudyId) => void }) {
+export type NavCta = {
+  label: string;
+  icon: ReactNode;
+  href: string;
+  download?: string;
+  target?: string;
+};
+
+export function NavBar({
+  onOpenCaseStudy,
+  variant = "home",
+  onBack,
+  onNavigateHome,
+  cta,
+}: {
+  onOpenCaseStudy: (id: CaseStudyId) => void;
+  variant?: "home" | "back";
+  onBack?: () => void;
+  onNavigateHome?: (anchor: "about" | "contact") => void;
+  cta?: NavCta;
+}) {
   const [open, setOpen] = useState(false);
   const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -185,10 +205,20 @@ function NavBar({ onOpenCaseStudy }: { onOpenCaseStudy: (id: CaseStudyId) => voi
     <header className="sticky top-0 z-30 pt-[16px] md:pt-0">
       <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-[12px] pl-[20px] pr-[20px] md:pl-0 md:pr-[44px] lg:pr-[60px]">
         <div className="flex h-[82px] w-full items-center justify-between gap-[16px] rounded-full bg-[#d7b8ff] px-[20px] py-[6px] md:w-[632px] md:rounded-[0_46px_10px_82px] md:py-[10px] md:pl-[44px] md:pr-[20px] lg:w-[932px] lg:[border-radius:0_46px_10px_150px/0_46px_10px_82px] lg:pl-[60px] lg:pr-[20px]">
-          <div className="group flex shrink-0 cursor-default items-center gap-[2px] text-[20px] font-bold lg:text-[24px]">
-            <GradientText className="inline-block from-[#fad89e] to-[#f29bfd] text-shadow-[0px_0px_30px_#f29bfd] transition-transform duration-300 group-hover:rotate-[25deg]">❋</GradientText>
-            <GradientText className="inline-block from-[#5102a0] to-[#fe85ea] whitespace-nowrap transition-transform duration-300 group-hover:scale-[1.08]">Patricia Rivera</GradientText>
-          </div>
+          {variant === "back" ? (
+            <button
+              type="button"
+              onClick={onBack}
+              className="shrink-0 cursor-pointer whitespace-nowrap text-[18px] font-medium text-[#543976] transition-colors duration-200 hover:text-[#9b72ce]"
+            >
+              {"< Back"}
+            </button>
+          ) : (
+            <div className="group flex shrink-0 cursor-default items-center gap-[2px] text-[20px] font-bold lg:text-[24px]">
+              <GradientText className="inline-block from-[#fad89e] to-[#f29bfd] text-shadow-[0px_0px_30px_#f29bfd] transition-transform duration-300 group-hover:rotate-[25deg]">❋</GradientText>
+              <GradientText className="inline-block from-[#5102a0] to-[#fe85ea] whitespace-nowrap transition-transform duration-300 group-hover:scale-[1.08]">Patricia Rivera</GradientText>
+            </div>
+          )}
 
           <nav className="hidden items-center gap-[20px] md:flex">
             <div ref={projectsRef} className="relative">
@@ -223,15 +253,26 @@ function NavBar({ onOpenCaseStudy }: { onOpenCaseStudy: (id: CaseStudyId) => voi
                 </div>
               )}
             </div>
-            {NAV_LINKS.filter((l) => l.label !== "Projects").map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                className="font-normal text-[18px] text-[#543976] whitespace-nowrap transition-colors duration-200 hover:text-[#9b72ce]"
-              >
-                {l.label}
-              </a>
-            ))}
+            {NAV_LINKS.filter((l) => l.label !== "Projects").map((l) =>
+              variant === "back" ? (
+                <button
+                  key={l.label}
+                  type="button"
+                  onClick={() => onNavigateHome?.(l.href.slice(1) as "about" | "contact")}
+                  className="font-normal text-[18px] text-[#543976] whitespace-nowrap transition-colors duration-200 hover:text-[#9b72ce]"
+                >
+                  {l.label}
+                </button>
+              ) : (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  className="font-normal text-[18px] text-[#543976] whitespace-nowrap transition-colors duration-200 hover:text-[#9b72ce]"
+                >
+                  {l.label}
+                </a>
+              ),
+            )}
           </nav>
 
           <div ref={mobileMenuRef} className="relative shrink-0 md:hidden">
@@ -279,27 +320,56 @@ function NavBar({ onOpenCaseStudy }: { onOpenCaseStudy: (id: CaseStudyId) => voi
                   </>
                 )}
 
+                {variant === "back" ? (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setOpen(false);
+                        onNavigateHome?.("about");
+                      }}
+                      className="block w-full px-[20px] py-[14px] text-left text-[16px] text-[#543976] transition-colors hover:bg-[#fed5ff]"
+                    >
+                      About me
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setOpen(false);
+                        onNavigateHome?.("contact");
+                      }}
+                      className="block w-full px-[20px] py-[14px] text-left text-[16px] text-[#543976] transition-colors hover:bg-[#fed5ff]"
+                    >
+                      Contact
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <a
+                      href="#about"
+                      onClick={() => setOpen(false)}
+                      className="block px-[20px] py-[14px] text-[16px] text-[#543976] transition-colors hover:bg-[#fed5ff]"
+                    >
+                      About me
+                    </a>
+                    <a
+                      href="#contact"
+                      onClick={() => setOpen(false)}
+                      className="block px-[20px] py-[14px] text-[16px] text-[#543976] transition-colors hover:bg-[#fed5ff]"
+                    >
+                      Contact
+                    </a>
+                  </>
+                )}
                 <a
-                  href="#about"
-                  onClick={() => setOpen(false)}
-                  className="block px-[20px] py-[14px] text-[16px] text-[#543976] transition-colors hover:bg-[#fed5ff]"
-                >
-                  About me
-                </a>
-                <a
-                  href="#contact"
-                  onClick={() => setOpen(false)}
-                  className="block px-[20px] py-[14px] text-[16px] text-[#543976] transition-colors hover:bg-[#fed5ff]"
-                >
-                  Contact
-                </a>
-                <a
-                  href={CV_PDF_URL}
-                  download={CV_DOWNLOAD_NAME}
+                  href={cta?.href ?? CV_PDF_URL}
+                  download={cta?.download ?? (cta ? undefined : CV_DOWNLOAD_NAME)}
+                  target={cta?.target}
+                  rel={cta?.target === "_blank" ? "noopener noreferrer" : undefined}
                   onClick={() => setOpen(false)}
                   className="block w-full px-[20px] py-[14px] text-left text-[16px] text-[#543976] transition-colors hover:bg-[#fed5ff]"
                 >
-                  Download CV
+                  {cta?.label ?? "Download CV"}
                 </a>
               </div>
             )}
@@ -308,19 +378,25 @@ function NavBar({ onOpenCaseStudy }: { onOpenCaseStudy: (id: CaseStudyId) => voi
 
         <div className="hidden md:block lg:hidden">
           <a
-            href={CV_PDF_URL}
-            download={CV_DOWNLOAD_NAME}
-            aria-label="Download CV"
+            href={cta?.href ?? CV_PDF_URL}
+            download={cta?.download ?? (cta ? undefined : CV_DOWNLOAD_NAME)}
+            target={cta?.target}
+            rel={cta?.target === "_blank" ? "noopener noreferrer" : undefined}
+            aria-label={cta?.label ?? "Download CV"}
             className="flex size-[56px] items-center justify-center rounded-full bg-gradient-to-r from-[#fad89e] to-[#f29bfd] text-[#543976] drop-shadow-[0px_0px_2px_rgba(0,0,0,0.04),0px_4px_4px_rgba(0,0,0,0.06)]"
           >
-            <CvIcon className="size-[24px]" />
+            {cta?.icon ?? <CvIcon className="size-[24px]" />}
           </a>
         </div>
 
         <div className="hidden lg:block">
-          <GradientButton href={CV_PDF_URL} download={CV_DOWNLOAD_NAME}>
-            Download CV
-            <CvIcon className="size-[24px]" />
+          <GradientButton
+            href={cta?.href ?? CV_PDF_URL}
+            download={cta?.download ?? (cta ? undefined : CV_DOWNLOAD_NAME)}
+            target={cta?.target}
+          >
+            {cta?.label ?? "Download CV"}
+            {cta?.icon ?? <CvIcon className="size-[24px]" />}
           </GradientButton>
         </div>
       </div>
@@ -1096,7 +1172,21 @@ export function Footer() {
 
 /* ============================== Page ============================== */
 
-export default function Home({ onOpenCaseStudy }: { onOpenCaseStudy: (id: CaseStudyId) => void }) {
+export default function Home({
+  onOpenCaseStudy,
+  scrollToId,
+  onScrolled,
+}: {
+  onOpenCaseStudy: (id: CaseStudyId) => void;
+  scrollToId?: "about" | "contact" | null;
+  onScrolled?: () => void;
+}) {
+  useEffect(() => {
+    if (!scrollToId) return;
+    document.getElementById(scrollToId)?.scrollIntoView({ behavior: "smooth" });
+    onScrolled?.();
+  }, [scrollToId, onScrolled]);
+
   return (
     <div className="relative w-full overflow-x-clip bg-[#fff3ff]" data-name="Home">
       <HeroCurve />
