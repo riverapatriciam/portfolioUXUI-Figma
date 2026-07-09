@@ -428,8 +428,8 @@ function TeamWorkStreamlineDjakarta() {
 function Frame3() {
   return (
     <div className="content-stretch flex flex-col gap-[3px] items-center relative shrink-0 w-[176px]">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Timeline</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">5 Day</p>
+      <p className="font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Timeline</p>
+      <p className="font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">5 Day</p>
     </div>
   );
 }
@@ -437,8 +437,8 @@ function Frame3() {
 function Frame4() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[3px] items-center min-w-px relative">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Role</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">{`UI Designer · Prototype & DS Lead`}</p>
+      <p className="font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Role</p>
+      <p className="font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">{`UI Designer · Prototype & DS Lead`}</p>
     </div>
   );
 }
@@ -446,8 +446,8 @@ function Frame4() {
 function Frame8() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[3px] items-center min-w-px relative">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Tools</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">Figma · FigJam</p>
+      <p className="font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Tools</p>
+      <p className="font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">Figma · FigJam</p>
     </div>
   );
 }
@@ -455,8 +455,8 @@ function Frame8() {
 function Frame5() {
   return (
     <div className="content-stretch flex flex-col gap-[3px] items-center relative shrink-0 w-[176px]">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Team</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">4 Designers</p>
+      <p className="font-extrabold relative shrink-0 text-[#9b72ce] text-[32px] w-full">Team</p>
+      <p className="font-normal relative shrink-0 text-[#6b4a94] text-[18px] w-full">4 Designers</p>
     </div>
   );
 }
@@ -464,8 +464,8 @@ function Frame5() {
 function Frame6() {
   return (
     <div className="content-stretch flex flex-col gap-[3px] items-center relative shrink-0 whitespace-nowrap">
-      <p className="font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold relative shrink-0 text-[#9b72ce] text-[32px]">Methods</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#6b4a94] text-[18px]">Design Sprint</p>
+      <p className="font-extrabold relative shrink-0 text-[#9b72ce] text-[32px]">Methods</p>
+      <p className="font-normal relative shrink-0 text-[#6b4a94] text-[18px]">Design Sprint</p>
     </div>
   );
 }
@@ -485,8 +485,8 @@ function Frame7() {
 function Frame10() {
   return (
     <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[14px] items-start left-[calc(25%+130px)] right-[60px] text-right top-[2224px]">
-      <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">{`Ideation & Priorization`}</p>
-      <div className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-full whitespace-pre-wrap">
+      <p className="bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">{`Ideation & Priorization`}</p>
+      <div className="font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-full whitespace-pre-wrap">
         <p className="leading-[1.5] mb-0">Using HMW workshops, Lightning Demos, Crazy 8s, and collaborative voting, we explored multiple concepts focused on reducing friction and increasing accessibility to mental health support.</p>
         <p className="leading-[1.5] mb-0">​</p>
         <p className="leading-[1.5]">The selected concepts prioritized crisis intervention, guided reflection, and stronger collaboration between patients, professionals, and families.</p>
@@ -498,8 +498,8 @@ function Frame10() {
 function Research() {
   return (
     <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[14px] items-start left-[calc(37.5%+110px)] right-[63px] text-end top-[837px]" data-name="Research">
-      <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">Research</p>
-      <div className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-full whitespace-pre-wrap">
+      <p className="bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">Research</p>
+      <div className="font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-full whitespace-pre-wrap">
         <p className="leading-[1.5] mb-0">Through expert interviews, personas, journey mapping, and HMW workshops, we explored the needs of three key stakeholders: patients, family members, and mental health professionals.</p>
         <p className="leading-[1.5] mb-0">​</p>
         <p className="leading-[1.5]">Our goal was to understand how a digital product could support mental health while preserving empathy, personalization, and human connection.</p>
@@ -511,8 +511,8 @@ function Research() {
 function TheProblem() {
   return (
     <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[14px] items-start left-[61px] right-[calc(25%+129px)] top-[493px]" data-name="The problem">
-      <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">The problem</p>
-      <div className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-full whitespace-pre-wrap">
+      <p className="bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">The problem</p>
+      <div className="font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-full whitespace-pre-wrap">
         <p className="leading-[1.5] mb-0">Spain faces one of the highest rates of anxiety and depression in Europe, yet accessing support can still feel overwhelming.</p>
         <p className="leading-[1.5] mb-0">​</p>
         <p className="leading-[1.5]">The challenge was to design a digital solution that could provide meaningful mental health support without creating additional pressure, information overload, or dependency on constant self-tracking.</p>
@@ -691,8 +691,8 @@ function Frustration() {
     <div className="bg-[#fff3ff] flex-[1_0_0] h-full min-w-px relative rounded-[20px]" data-name="Frustration">
       <div className="flex flex-row justify-center size-full">
         <div className="content-stretch flex items-start justify-center py-[6px] relative size-full">
-          <div className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] min-w-px relative text-[#543976] text-[0px] text-center">
-            <p className="font-['Momo_Trust_Sans:Bold','Noto_Sans_Symbols2:Regular',sans-serif] font-bold leading-[1.5] mb-0 text-[16px]">Frustrations</p>
+          <div className="[word-break:break-word] flex-[1_0_0] font-normal leading-[0] min-w-px relative text-[#543976] text-[0px] text-center">
+            <p className="font-bold leading-[1.5] mb-0 text-[16px]">Frustrations</p>
             <p className="leading-[1.5] mb-0 text-[16px]">✻ Fragmented information across multiple channels.</p>
             <p className="leading-[1.5] text-[16px]">✻ Increasing workload and administrative burden</p>
           </div>
@@ -707,8 +707,8 @@ function Goals() {
     <div className="bg-[#fff3ff] flex-[1_0_0] h-full min-w-px relative rounded-[20px]" data-name="Goals">
       <div className="flex flex-row justify-center size-full">
         <div className="content-stretch flex items-start justify-center py-[6px] relative size-full">
-          <div className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] min-w-px relative text-[#543976] text-[0px] text-center">
-            <p className="font-['Momo_Trust_Sans:Bold','Noto_Sans_Symbols2:Regular',sans-serif] font-bold leading-[1.5] mb-0 text-[16px]">Goals</p>
+          <div className="[word-break:break-word] flex-[1_0_0] font-normal leading-[0] min-w-px relative text-[#543976] text-[0px] text-center">
+            <p className="font-bold leading-[1.5] mb-0 text-[16px]">Goals</p>
             <p className="leading-[1.5] mb-0 text-[16px]">✻ Access meaningful patient context.</p>
             <p className="leading-[1.5] text-[16px]">✻ Spend more time helping and less time organizing information.</p>
           </div>
@@ -743,7 +743,7 @@ function Bio() {
 function UserPersona() {
   return (
     <div className="absolute backdrop-blur-[2px] bg-[rgba(247,174,248,0.34)] content-stretch flex flex-col gap-[8px] items-start justify-center left-[60px] p-[6px] right-[60px] rounded-[20px] top-[1954px]" data-name="User-persona">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Medium',sans-serif] font-medium from-[#fe85ea] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] text-center to-[#5102a0] w-full">Mental Health Professional</p>
+      <p className="bg-clip-text bg-gradient-to-r font-medium from-[#fe85ea] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] text-center to-[#5102a0] w-full">Mental Health Professional</p>
       <Bio />
     </div>
   );
@@ -773,8 +773,8 @@ function Frustration1() {
     <div className="bg-[#fff3ff] flex-[1_0_0] h-full min-w-px relative rounded-[20px]" data-name="Frustration">
       <div className="flex flex-col items-center size-full">
         <div className="content-stretch flex flex-col items-center py-[6px] relative size-full">
-          <div className="[word-break:break-word] font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#543976] text-[0px] text-center w-full whitespace-pre-wrap">
-            <p className="font-['Momo_Trust_Sans:Bold','Noto_Sans_Symbols2:Regular',sans-serif] font-bold leading-[1.5] mb-0 text-[16px]">Frustrations</p>
+          <div className="[word-break:break-word] font-normal leading-[0] relative shrink-0 text-[#543976] text-[0px] text-center w-full whitespace-pre-wrap">
+            <p className="font-bold leading-[1.5] mb-0 text-[16px]">Frustrations</p>
             <p className="leading-[1.5] mb-0 text-[16px]">✻ Feeling overwhelmed by traditional self-tracking tools.</p>
             <p className="leading-[1.5] text-[16px]">{`✻  Difficulty finding help during moments of crisis.`}</p>
           </div>
@@ -789,8 +789,8 @@ function Goals1() {
     <div className="bg-[#fff3ff] flex-[1_0_0] h-full min-w-px relative rounded-[20px]" data-name="Goals">
       <div className="flex flex-col items-center size-full">
         <div className="content-stretch flex flex-col items-center py-[6px] relative size-full">
-          <div className="[word-break:break-word] font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#543976] text-[0px] text-center w-full">
-            <p className="font-['Momo_Trust_Sans:Bold','Noto_Sans_Symbols2:Regular',sans-serif] font-bold leading-[1.5] mb-0 text-[16px]">Goals</p>
+          <div className="[word-break:break-word] font-normal leading-[0] relative shrink-0 text-[#543976] text-[0px] text-center w-full">
+            <p className="font-bold leading-[1.5] mb-0 text-[16px]">Goals</p>
             <p className="leading-[1.5] mb-0 text-[16px]">✻ Access support in a safe and approachable way.</p>
             <p className="leading-[1.5] text-[16px]">✻ Better understand emotional patterns and progress.</p>
           </div>
@@ -817,7 +817,7 @@ function Bio1() {
 function UserPersona1() {
   return (
     <div className="absolute backdrop-blur-[2px] bg-[rgba(247,174,248,0.34)] content-stretch flex flex-col gap-[8px] items-start justify-center left-[60px] p-[6px] right-[60px] rounded-[20px] top-[1526px]" data-name="User-persona">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Medium',sans-serif] font-medium from-[#fe85ea] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] text-center to-[#5102a0] w-full">Patient</p>
+      <p className="bg-clip-text bg-gradient-to-r font-medium from-[#fe85ea] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] text-center to-[#5102a0] w-full">Patient</p>
       <Bio1 />
     </div>
   );
@@ -847,8 +847,8 @@ function Frustration2() {
     <div className="bg-[#fff3ff] flex-[1_0_0] h-full min-w-px relative rounded-[20px]" data-name="Frustration">
       <div className="flex flex-col items-center size-full">
         <div className="content-stretch flex flex-col items-center py-[6px] relative size-full">
-          <div className="[word-break:break-word] font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#543976] text-[0px] text-center w-full">
-            <p className="font-['Momo_Trust_Sans:Bold','Noto_Sans_Symbols2:Regular',sans-serif] font-bold leading-[1.5] mb-0 text-[16px]">Frustrations</p>
+          <div className="[word-break:break-word] font-normal leading-[0] relative shrink-0 text-[#543976] text-[0px] text-center w-full">
+            <p className="font-bold leading-[1.5] mb-0 text-[16px]">Frustrations</p>
             <p className="leading-[1.5] mb-0 text-[16px]">✻ Feeling powerless when trying to help.</p>
             <p className="leading-[1.5] text-[16px]">✻ Lack of visibility into emotional warning signs.</p>
           </div>
@@ -863,8 +863,8 @@ function Goals2() {
     <div className="bg-[#fff3ff] flex-[1_0_0] h-full min-w-px relative rounded-[20px]" data-name="Goals">
       <div className="flex flex-col items-center size-full">
         <div className="content-stretch flex flex-col items-center py-[6px] relative size-full">
-          <div className="[word-break:break-word] font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#543976] text-[0px] text-center w-full">
-            <p className="font-['Momo_Trust_Sans:Bold','Noto_Sans_Symbols2:Regular',sans-serif] font-bold leading-[1.5] mb-0 text-[16px]">Goals</p>
+          <div className="[word-break:break-word] font-normal leading-[0] relative shrink-0 text-[#543976] text-[0px] text-center w-full">
+            <p className="font-bold leading-[1.5] mb-0 text-[16px]">Goals</p>
             <p className="leading-[1.5] mb-0 text-[16px]">✻ Better understand and support loved ones.</p>
             <p className="leading-[1.5] text-[16px]">✻ Participate actively in the recovery journey.</p>
           </div>
@@ -891,7 +891,7 @@ function Bio2() {
 function UserPersona2() {
   return (
     <div className="absolute backdrop-blur-[2px] bg-[rgba(247,174,248,0.34)] content-stretch flex flex-col gap-[8px] items-start justify-center left-[60px] p-[6px] right-[60px] rounded-[20px] top-[1740px]" data-name="User-persona">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Medium',sans-serif] font-medium from-[#fe85ea] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] text-center to-[#5102a0] w-full">Family Members</p>
+      <p className="bg-clip-text bg-gradient-to-r font-medium from-[#fe85ea] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] text-center to-[#5102a0] w-full">Family Members</p>
       <Bio2 />
     </div>
   );
@@ -900,8 +900,8 @@ function UserPersona2() {
 function Frame9() {
   return (
     <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[10px] items-start leading-[1.5] left-[60px] right-[calc(50%+99px)] top-[1376px]">
-      <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">Personas</p>
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal relative shrink-0 text-[#543976] text-[18px] w-full">Digital-first users who enjoy RPGs and self-improvement</p>
+      <p className="bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">Personas</p>
+      <p className="font-normal relative shrink-0 text-[#543976] text-[18px] w-full">Digital-first users who enjoy RPGs and self-improvement</p>
     </div>
   );
 }
@@ -911,7 +911,7 @@ function Frame18() {
     <div className="backdrop-blur-[2px] bg-[rgba(247,174,248,0.34)] relative shrink-0 w-full">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center p-[10px] relative size-full">
-          <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[18px] text-center w-[650px]">A mental health support platform designed to connect patients, families, and professionals through personalized guidance and immediate support.</p>
+          <p className="[word-break:break-word] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[18px] text-center w-[650px]">A mental health support platform designed to connect patients, families, and professionals through personalized guidance and immediate support.</p>
         </div>
       </div>
     </div>
@@ -921,7 +921,7 @@ function Frame18() {
 function Frame11() {
   return (
     <div className="absolute backdrop-blur-[2px] content-stretch flex flex-col gap-[14px] items-center left-0 right-0 top-[2591px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Solution</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Solution</p>
       <Frame18 />
     </div>
   );
@@ -932,7 +932,7 @@ function Frame19() {
     <div className="backdrop-blur-[2px] bg-[rgba(255,243,255,0.65)] relative rounded-[20px] shrink-0 w-full">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center p-[10px] relative size-full">
-          <p className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#543976] text-[18px]">The information architecture was designed to simplify access to key actions while reducing cognitive load. Priority was given to crisis support, emotional tracking, and professional communication.</p>
+          <p className="[word-break:break-word] flex-[1_0_0] font-normal leading-[1.5] min-w-px relative text-[#543976] text-[18px]">The information architecture was designed to simplify access to key actions while reducing cognitive load. Priority was given to crisis support, emotional tracking, and professional communication.</p>
         </div>
       </div>
     </div>
@@ -942,7 +942,7 @@ function Frame19() {
 function Frame25() {
   return (
     <div className="absolute backdrop-blur-[2px] content-stretch flex flex-col gap-[14px] items-start left-[60px] right-[calc(37.5%+14px)] top-[2797px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">Information Architecture</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-full">Information Architecture</p>
       <Frame19 />
     </div>
   );
@@ -1116,7 +1116,7 @@ function Frame20() {
             </defs>
           </svg>
         </div>
-        <p className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#543976] text-[16px]">A dedicated SOS flow provides quick access to emergency contacts and guided breathing exercises during moments of distress</p>
+        <p className="[word-break:break-word] flex-[1_0_0] font-normal leading-[1.5] min-w-px relative text-[#543976] text-[16px]">A dedicated SOS flow provides quick access to emergency contacts and guided breathing exercises during moments of distress</p>
       </div>
     </div>
   );
@@ -1137,7 +1137,7 @@ function Frame21() {
             </defs>
           </svg>
         </div>
-        <p className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] min-w-px relative text-[#543976] text-[16px]">{`Professionals can customize features according to each patient's needs, reducing anxiety and avoiding counterproductive interactions`}</p>
+        <p className="[word-break:break-word] flex-[1_0_0] font-normal leading-[1.5] min-w-px relative text-[#543976] text-[16px]">{`Professionals can customize features according to each patient's needs, reducing anxiety and avoiding counterproductive interactions`}</p>
       </div>
     </div>
   );
@@ -1158,7 +1158,7 @@ function Frame24() {
             </defs>
           </svg>
         </div>
-        <p className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal h-full leading-[1.5] min-w-px relative text-[#543976] text-[16px]">Patients, family members, and professionals share a connected ecosystem that promotes understanding and continuous support</p>
+        <p className="[word-break:break-word] flex-[1_0_0] font-normal h-full leading-[1.5] min-w-px relative text-[#543976] text-[16px]">Patients, family members, and professionals share a connected ecosystem that promotes understanding and continuous support</p>
       </div>
     </div>
   );
@@ -5483,7 +5483,7 @@ function Frame12() {
 function Frame23() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[14px] items-end left-[60px] right-[60px] top-[3133px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-right to-[#5102a0] w-full">Hi-Fi Wireframes / UI Design</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-right to-[#5102a0] w-full">Hi-Fi Wireframes / UI Design</p>
       <Frame22 />
       <Frame12 />
     </div>
@@ -5493,8 +5493,8 @@ function Frame23() {
 function Frame14() {
   return (
     <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[14px] items-start left-[calc(25%+66px)] right-[calc(25%+66px)] top-[5207px]">
-      <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] min-w-full relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-[min-content]">Future Features</p>
-      <div className="font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-[380px]">
+      <p className="bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] min-w-full relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-[min-content]">Future Features</p>
+      <div className="font-normal leading-[0] relative shrink-0 text-[#543976] text-[18px] w-[380px]">
         <p className="leading-[1.5] mb-0">✻ Video consultations with professionals</p>
         <p className="leading-[1.5] mb-0">✻ Dark mode</p>
         <p className="leading-[1.5] mb-0">✻ Patient progress insights</p>
@@ -5508,7 +5508,7 @@ function Frame14() {
 function Frame16() {
   return (
     <div className="backdrop-blur-[2px] bg-[rgba(247,174,248,0.34)] content-stretch flex items-center justify-end p-[20px] relative rounded-[14px] shrink-0 w-[557px]">
-      <div className="[word-break:break-word] flex-[1_0_0] font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[0] min-w-px relative text-[#543976] text-[18px]">
+      <div className="[word-break:break-word] flex-[1_0_0] font-normal leading-[0] min-w-px relative text-[#543976] text-[18px]">
         <p className="leading-[1.5] mb-0">✻ Mental health products should support users without becoming another source of pressure.</p>
         <p className="leading-[1.5] mb-0">✻ Human-centered experiences require balancing technology with empathy and professional guidance.</p>
         <p className="leading-[1.5]">✻ Design systems and clear team organization can significantly improve efficiency during fast-paced design sprints.</p>
@@ -5528,7 +5528,7 @@ function Frame26() {
 function Frame15() {
   return (
     <div className="absolute content-stretch flex flex-col items-start left-[60px] right-[calc(37.5%+23px)] top-[5474px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] h-[48px] leading-[1.5] min-w-full relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-[min-content]">Key learnings</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] h-[48px] leading-[1.5] min-w-full relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-[min-content]">Key learnings</p>
       <Frame26 />
     </div>
   );
@@ -5698,62 +5698,12 @@ function DesignerWorking1StreamlineDjakarta() {
   );
 }
 
-function Frame() {
-  return (
-    <div className="[word-break:break-word] absolute bg-[#c79aff] bottom-0 content-stretch flex font-['Momo_Trust_Sans:Medium',sans-serif] font-medium h-[47px] items-center justify-end left-0 px-[60px] py-[6px] right-0 text-[14px]">
-      <p className="flex-[1_0_0] leading-[1.5] min-w-px relative text-[#fff3ff]">© 2026 Patricia Rivera. All rights reserved.</p>
-      <p className="leading-[0] relative shrink-0 text-[#e8d6ff] text-right w-[452px]">
-        <span className="leading-[1.5]">{`Designed & Built with `}</span>
-        <span className="bg-clip-text bg-gradient-to-r from-[#ff99b9] leading-[1.5] text-[transparent] to-[#fff08f]">passion</span>
-      </p>
-    </div>
-  );
-}
-
-function FormkitLinkedin() {
-  return (
-    <div className="relative shrink-0 size-[30px]" data-name="formkit:linkedin">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
-        <g id="formkit:linkedin">
-          <path d={svgPaths.p5472600} fill="var(--fill-0, #3E2859)" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function IcBaselineWhatsapp() {
-  return (
-    <div className="relative shrink-0 size-[30px]" data-name="ic:baseline-whatsapp">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
-        <g id="ic:baseline-whatsapp">
-          <path d={svgPaths.pf262880} fill="var(--fill-0, #3E2859)" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function Frame2() {
-  return (
-    <div className="absolute bg-[#c79aff] bottom-[47px] content-stretch flex h-[89px] items-start justify-between left-0 px-[60px] py-[20px] right-0">
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Bold',sans-serif] font-bold leading-[1.5] relative shrink-0 text-[#3e2859] text-[18px] whitespace-nowrap">UX/UI Designer | Product Designer</p>
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium','Noto_Sans_Symbols2:Regular',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#ffd6a5] text-[24px] whitespace-nowrap">✦</p>
-      <FormkitLinkedin />
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium','Noto_Sans_Symbols2:Regular',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#ffd6a5] text-[24px] whitespace-nowrap">✦</p>
-      <IcBaselineWhatsapp />
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium','Noto_Sans_Symbols2:Regular',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#ffd6a5] text-[24px] whitespace-nowrap">✦</p>
-      <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#3e2859] text-[18px] whitespace-nowrap">riverapatriciam20@gmail.com</p>
-    </div>
-  );
-}
-
 function Frame17() {
   return (
     <div className="backdrop-blur-[2px] bg-[rgba(247,174,248,0.34)] relative shrink-0 w-full">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center px-[40px] py-[20px] relative size-full">
-          <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#543976] text-[24px] text-center w-[672px]">Mental health support should feel human, not like another task to complete</p>
+          <p className="font-medium leading-[1.5] relative shrink-0 text-[#543976] text-[24px] text-center w-[672px]">Mental health support should feel human, not like another task to complete</p>
         </div>
       </div>
     </div>
@@ -5763,7 +5713,7 @@ function Frame17() {
 function Frame27() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[14px] items-center left-0 right-0 top-[1152px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Key Findings</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Key Findings</p>
       <Frame17 />
     </div>
   );
@@ -5772,8 +5722,8 @@ function Frame27() {
 function Frame28() {
   return (
     <div className="[word-break:break-word] bg-[rgba(247,174,248,0.34)] content-stretch flex flex-col gap-[10px] items-center justify-center py-[10px] relative rounded-[12px] shrink-0 text-[#543976] text-[18px] w-full">
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] min-w-full relative shrink-0 text-center w-[min-content]">As part of a team of four designers, I was responsible for:</p>
-      <div className="font-['Momo_Trust_Sans:Medium','Noto_Sans_Symbols2:Regular',sans-serif] font-medium leading-[0] relative shrink-0 whitespace-nowrap">
+      <p className="font-normal leading-[1.5] min-w-full relative shrink-0 text-center w-[min-content]">As part of a team of four designers, I was responsible for:</p>
+      <div className="font-medium leading-[0] relative shrink-0 whitespace-nowrap">
         <p className="leading-[1.5] mb-0">✻ Design System creation</p>
         <p className="leading-[1.5] mb-0">✻ Component library setup</p>
         <p className="leading-[1.5] mb-0">✻ Visual Design</p>
@@ -5789,7 +5739,7 @@ function Frame28() {
 function Frame29() {
   return (
     <div className="backdrop-blur-[2px] bg-[rgba(255,243,255,0.34)] content-stretch flex items-center justify-center relative shrink-0 w-full">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r flex-[1_0_0] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium from-[#f777b9] leading-[1.5] min-w-px relative text-[24px] text-[transparent] text-center to-[#5b61f9]">I ensured visual consistency across the product while helping the team stay aligned and on schedule throughout the sprint</p>
+      <p className="bg-clip-text bg-gradient-to-r flex-[1_0_0] font-medium from-[#f777b9] leading-[1.5] min-w-px relative text-[24px] text-[transparent] text-center to-[#5b61f9]">I ensured visual consistency across the product while helping the team stay aligned and on schedule throughout the sprint</p>
     </div>
   );
 }
@@ -5797,7 +5747,7 @@ function Frame29() {
 function Frame13() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[14px] items-center justify-center left-[61px] px-[120px] right-[59px] top-[3819px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">My contribution</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">My contribution</p>
       <Frame28 />
       <Frame29 />
     </div>
@@ -5807,8 +5757,8 @@ function Frame13() {
 function Frame32() {
   return (
     <div className="[word-break:break-word] bg-[rgba(247,174,248,0.34)] content-stretch flex flex-col gap-[10px] items-start px-[20px] py-[10px] relative rounded-[12px] shrink-0 text-[#543976] text-[18px] w-[539px]">
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 w-full">{`To accelerate collaboration during the sprint, I established the project's design system, defining:`}</p>
-      <div className="font-['Momo_Trust_Sans:Medium','Noto_Sans_Symbols2:Regular',sans-serif] font-medium leading-[0] relative shrink-0 w-full">
+      <p className="font-normal leading-[1.5] relative shrink-0 w-full">{`To accelerate collaboration during the sprint, I established the project's design system, defining:`}</p>
+      <div className="font-medium leading-[0] relative shrink-0 w-full">
         <p className="leading-[1.5] mb-0">✻ Components</p>
         <p className="leading-[1.5] mb-0">✻ Typography</p>
         <p className="leading-[1.5] mb-0">✻ Color styles</p>
@@ -5822,7 +5772,7 @@ function Frame32() {
 function Frame33() {
   return (
     <div className="backdrop-blur-[2px] bg-[rgba(255,243,255,0.34)] content-stretch flex flex-col items-start justify-center relative shrink-0 w-[539px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Medium',sans-serif] font-medium from-[#f777b9] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] to-[#5b61f9] w-full">This allowed the team to move quickly from wireframes to high-fidelity screens while maintaining consistency.</p>
+      <p className="bg-clip-text bg-gradient-to-r font-medium from-[#f777b9] leading-[1.5] relative shrink-0 text-[24px] text-[transparent] to-[#5b61f9] w-full">This allowed the team to move quickly from wireframes to high-fidelity screens while maintaining consistency.</p>
     </div>
   );
 }
@@ -5839,7 +5789,7 @@ function Frame31() {
 function Frame30() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[14px] items-start justify-center left-[61px] right-[calc(37.5%+40px)] top-[4319px]">
-      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] min-w-full relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-[min-content]">Design System</p>
+      <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] min-w-full relative shrink-0 text-[32px] text-[transparent] to-[#5102a0] w-[min-content]">Design System</p>
       <Frame31 />
     </div>
   );
@@ -6132,51 +6082,35 @@ function UserTestingImg() {
 function Frame34() {
   return (
     <div className="[word-break:break-word] absolute content-stretch flex flex-col font-normal gap-[10px] items-end leading-[0] left-[calc(25%+75px)] p-[10px] right-[60px] text-[#543976] text-[0px] text-right top-[4854px]">
-      <p className="font-['Momo_Trust_Sans:Regular',sans-serif] relative shrink-0 w-full">
-        <span className="font-['Momo_Trust_Sans:Bold',sans-serif] font-bold leading-[1.5] text-[18px]">{`Testing & Validation`}</span>
+      <p className="relative shrink-0 w-full">
+        <span className="font-bold leading-[1.5] text-[18px]">{`Testing & Validation`}</span>
         <span className="leading-[1.5] text-[18px]">
           <br aria-hidden />5 users tested the high-fidelity prototype.
         </span>
       </p>
-      <div className="font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] relative shrink-0 w-full">
+      <div className="relative shrink-0 w-full">
         <p className="mb-0 text-[18px]">
-          <span className="[word-break:break-word] font-['Momo_Trust_Sans:Bold','Noto_Sans_Symbols2:Regular',sans-serif] font-bold leading-[1.5]">What Worked</span>
+          <span className="[word-break:break-word] font-bold leading-[1.5]">What Worked</span>
           <span className="leading-[1.5]">
             <br aria-hidden />
           </span>
-          <span className="[word-break:break-word] font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[1.5]">{`✻ `}</span>
+          <span className="[word-break:break-word] font-normal leading-[1.5]">{`✻ `}</span>
           <span className="leading-[1.5]">The concept and value proposition were well understood.</span>
         </p>
         <p className="text-[18px]">
-          <span className="[word-break:break-word] font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] font-normal leading-[1.5]">{`✻ `}</span>
+          <span className="[word-break:break-word] font-normal leading-[1.5]">{`✻ `}</span>
           <span className="leading-[1.5]">Users appreciated the warm and approachable visual language.</span>
         </p>
       </div>
-      <div className="font-['Momo_Trust_Sans:Regular','Noto_Sans_Symbols2:Regular',sans-serif] relative shrink-0 w-full">
+      <div className="relative shrink-0 w-full">
         <p className="mb-0 text-[18px]">
-          <span className="[word-break:break-word] font-['Momo_Trust_Sans:Bold','Noto_Sans_Symbols2:Regular',sans-serif] font-bold leading-[1.5]">Opportunities for Improvement</span>
+          <span className="[word-break:break-word] font-bold leading-[1.5]">Opportunities for Improvement</span>
           <span className="leading-[1.5]">
             <br aria-hidden />✻ Navigation patterns were not always intuitive.
           </span>
         </p>
         <p className="leading-[1.5] mb-0 text-[18px]">✻ The SOS feature lacked visibility despite its importance.</p>
         <p className="leading-[1.5] text-[18px]">✻ Some actions required stronger feedback and clearer interaction cues</p>
-      </div>
-    </div>
-  );
-}
-
-function Frame1() {
-  return (
-    <div className="content-stretch flex gap-[20px] items-center justify-end relative shrink-0">
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="Text-btn">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[18px] whitespace-nowrap">Projects</p>
-      </div>
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="Text-btn">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[18px] whitespace-nowrap">About</p>
-      </div>
-      <div className="content-stretch flex items-center justify-center overflow-clip relative shrink-0" data-name="Text-btn">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Regular',sans-serif] font-normal leading-[1.5] relative shrink-0 text-[#543976] text-[18px] whitespace-nowrap">Contact</p>
       </div>
     </div>
   );
@@ -6205,7 +6139,7 @@ export default function CaseStudyCove() {
       </div>
       <ListeningToFeedbackStreamlineDjakarta />
       <TeamWorkStreamlineDjakarta />
-      <p className="[word-break:break-word] absolute bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.1] left-[calc(37.5%+63px)] right-[calc(37.5%+65px)] text-[52px] text-[transparent] text-center to-[#5102a0] top-[133px] whitespace-nowrap">Cove</p>
+      <p className="[word-break:break-word] absolute bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.1] left-[calc(37.5%+63px)] right-[calc(37.5%+65px)] text-[52px] text-[transparent] text-center to-[#5102a0] top-[133px] whitespace-nowrap">Cove</p>
       <Frame7 />
       <Frame10 />
       <Research />
@@ -6226,26 +6160,14 @@ export default function CaseStudyCove() {
       <Frame14 />
       <Frame15 />
       <DesignerWorking1StreamlineDjakarta />
-      <Frame />
-      <Frame2 />
-      <p className="[word-break:break-word] absolute font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] left-[151px] right-[128px] text-[#9b72ce] text-[24px] text-center top-[214px]">“What if mental health support extended beyond therapy sessions and became a connected support ecosystem?”</p>
+      <p className="absolute font-medium leading-[1.5] left-[151px] right-[128px] text-[#9b72ce] text-[24px] text-center top-[214px]">“What if mental health support extended beyond therapy sessions and became a connected support ecosystem?”</p>
       <Frame27 />
       <Frame13 />
       <Frame30 />
       <DesigningWebsiteStreamlineDjakarta />
       <UserTestingImg />
-      <p className="[word-break:break-word] absolute bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:ExtraBold',sans-serif] font-extrabold from-[#fe85ea] leading-[1.5] left-[60px] right-[60px] text-[32px] text-[transparent] text-right to-[#5102a0] top-[4792px]">User Testing</p>
+      <p className="[word-break:break-word] absolute bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] left-[60px] right-[60px] text-[32px] text-[transparent] text-right to-[#5102a0] top-[4792px]">User Testing</p>
       <Frame34 />
-      <div className="absolute bg-[#d7b8ff] content-stretch flex h-[81px] items-center justify-between left-0 pl-[110px] pr-[20px] py-[10px] right-[calc(37.5%+9px)] rounded-bl-[99999px] rounded-br-[999px] rounded-tr-[999px] top-0" data-name="Nav-bar">
-        <div className="[word-break:break-word] content-stretch flex font-bold gap-[2px] items-center justify-center relative shrink-0 text-[24px] text-[transparent]" data-name="Home-btn">
-          <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Bold','Noto_Sans_Symbols2:Regular',sans-serif] from-[#fad89e] h-full leading-[normal] relative shrink-0 text-shadow-[0px_0px_30px_#f29bfd] to-[#f29bfd] w-[21px]">❋</p>
-          <p className="bg-clip-text bg-gradient-to-r font-['Momo_Trust_Sans:Bold',sans-serif] from-[#5102a0] leading-[1.5] relative shrink-0 to-[#fe85ea] whitespace-nowrap">Patricia Rivera</p>
-        </div>
-        <Frame1 />
-      </div>
-      <a className="absolute bg-gradient-to-r content-stretch cursor-pointer drop-shadow-[0px_0px_2px_rgba(0,0,0,0.04),0px_4px_4px_rgba(0,0,0,0.06)] flex from-[#fad89e] gap-[10px] items-center justify-center left-[calc(75%+74px)] px-[20px] py-[10px] right-[60px] rounded-[40px] to-[#f29bfd] top-[29px]" href="https://www.figma.com/proto/gIEUzqHhcGxGaGPPEPvgo6/Grupo-2---UI?node-id=211-1621&p=f&viewport=279%2C-49%2C0.08&t=0QFF01ppu3W6mVz0-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=271%3A906&page-id=0%3A1" target="_blank" data-name="Button">
-        <p className="[word-break:break-word] font-['Momo_Trust_Sans:Medium',sans-serif] font-medium leading-[1.5] relative shrink-0 text-[#543976] text-[16px] text-center whitespace-nowrap">Play demo</p>
-      </a>
     </div>
   );
 }
@@ -6327,8 +6249,8 @@ function MobileHighlightBox({ children, className = "" }: { children: ReactNode;
 function MobileMetaCell({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex flex-1 flex-col items-center gap-[3px] text-center">
-      <p className="text-[#9b72ce] font-extrabold text-[16px]">{label}</p>
-      <p className="text-[#6b4a94] text-[12px]">{value}</p>
+      <p className="text-[#9b72ce] font-bold text-[24px] leading-[1.5]">{label}</p>
+      <p className="text-[#6b4a94] font-normal text-[16px] leading-[1.5]">{value}</p>
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { ArrowLeft, MoreVertical } from "lucide-react";
 import CaseStudyLuhImport, { CaseStudyLuhMobile } from "@/imports/CaseStudyLuh";
 import { Footer, NavBar, type CaseStudyId } from "@/imports/Home-1";
 import { FrameWrapper } from "./FrameWrapper";
@@ -25,19 +24,6 @@ function PlayIcon({ className = "" }: { className?: string }) {
   );
 }
 
-/** Mobile-only nav bar — desktop/tablet use the shared `Home-1` `NavBar` in "back" variant instead. */
-function MobileNavBar({ onBack }: { onBack: () => void }) {
-  return (
-    <div className="mx-[12px] mt-[12px] flex items-center justify-between rounded-full bg-[#d7b8ff] px-[20px] py-[16px]">
-      <button onClick={onBack} aria-label="Back to Home" className="flex items-center gap-1.5 text-[#3e2859] font-medium">
-        <ArrowLeft size={18} />
-        Back
-      </button>
-      <MoreVertical className="text-[#3e2859]" size={20} />
-    </div>
-  );
-}
-
 export default function CaseStudyLuh({
   onBack,
   onOpenCaseStudy,
@@ -51,15 +37,17 @@ export default function CaseStudyLuh({
 
   return (
     <>
-      {/* Tablet/desktop: shared Home-1 header (back variant) + the Figma frame, uniformly scaled. */}
+      {/* Shared Home-1 header (back variant) — handles its own desktop/tablet/mobile layouts internally. */}
+      <NavBar
+        variant="back"
+        onBack={onBack}
+        onOpenCaseStudy={onOpenCaseStudy}
+        onNavigateHome={onNavigateHome}
+        cta={{ label: "Play demo", icon: <PlayIcon className="size-[24px]" />, href: PLAY_DEMO_URL, target: "_blank" }}
+      />
+
+      {/* Tablet/desktop: the Figma frame, uniformly scaled. */}
       <div className="hidden md:contents">
-        <NavBar
-          variant="back"
-          onBack={onBack}
-          onOpenCaseStudy={onOpenCaseStudy}
-          onNavigateHome={onNavigateHome}
-          cta={{ label: "Play demo", icon: <PlayIcon className="size-[24px]" />, href: PLAY_DEMO_URL, target: "_blank" }}
-        />
         <FrameWrapper frameH={FRAME_H}>
           <CaseStudyLuhImport />
         </FrameWrapper>
@@ -68,7 +56,6 @@ export default function CaseStudyLuh({
 
       {/* Mobile: hand-built responsive tree matching the native mobile Figma frame. */}
       <div className="md:hidden">
-        <MobileNavBar onBack={onBack} />
         <CaseStudyLuhMobile />
         <Footer />
       </div>

@@ -66,7 +66,8 @@ export default function App() {
     return <CaseStudyLuh onBack={() => goTo("home")} onOpenCaseStudy={openCaseStudy} onNavigateHome={goToSection} />;
   if (page === "case-study-as")
     return <CaseStudy onBack={() => goTo("home")} onOpenCaseStudy={openCaseStudy} onNavigateHome={goToSection} />;
-  if (page === "case-study-cove") return <CaseStudyCove onBack={() => goTo("home")} />;
+  if (page === "case-study-cove")
+    return <CaseStudyCove onBack={() => goTo("home")} onOpenCaseStudy={openCaseStudy} onNavigateHome={goToSection} />;
 
   return (
     <HomePage
