@@ -21,6 +21,13 @@ const CASE_STUDY_PAGE: Record<CaseStudyId, Page> = {
   cove: "case-study-cove",
 };
 
+function hashToPage(hash: string): Page {
+  if (hash === "#case-study-luh") return "case-study-luh";
+  if (hash === "#case-study-as") return "case-study-as";
+  if (hash === "#case-study-cove") return "case-study-cove";
+  return "home";
+}
+
 function HomePage({
   onNav,
   scrollToId,
@@ -40,18 +47,25 @@ function HomePage({
 }
 
 export default function App() {
-  const [page, setPage] = useState<Page>(() => {
-    const h = window.location.hash;
-    if (h === "#case-study-luh")  return "case-study-luh";
-    if (h === "#case-study-as")   return "case-study-as";
-    if (h === "#case-study-cove") return "case-study-cove";
-    return "home";
-  });
+  const [page, setPage] = useState<Page>(() => hashToPage(window.location.hash));
   const [pendingScroll, setPendingScroll] = useState<"about" | "contact" | null>(null);
 
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     document.body.style.backgroundColor = "#fff3ff";
+  }, []);
+
+  // Reading `location.hash` only in the `useState` initializer above only covers the
+  // very first mount — a hash change that doesn't trigger a full page reload (browser
+  // back/forward, or a hash-only link opened in a tab that already has this app loaded)
+  // never re-runs it, silently stranding the user on whatever page was already showing.
+  // No `scrollTo` here: `#about`/`#contact` are real in-page anchors the browser already
+  // scrolls to natively while on Home, and `goTo`/`goToSection` above already own scroll
+  // behavior for actual page swaps — duplicating it here would fight both.
+  useEffect(() => {
+    const onHashChange = () => startTransition(() => setPage(hashToPage(window.location.hash)));
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
 
   const navigate = (target: Page) => {
