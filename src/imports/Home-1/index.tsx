@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState, type ReactNode, type SVGProps } from "react";
 import { ArrowUp, ChevronDown, ChevronUp, MoreVertical, Sparkle, X } from "lucide-react";
 import svgPaths from "./svg-qr77o6k7nf";
-import imgMobileMockupLuh from "./b3c2d0d39ef8d164ef4f6b454cd7ea3eadde1799.png";
-import imgMobileMockupLuh1 from "./43e7918bdb5051d2c77508d8ffa0fcd5b8185746.png";
-import imgScreenInsertDesignsHere from "./4c3bf707eed0712579fbc19d8f48018d5c4ee230.png";
-import imgScreenInsertDesignsHere1 from "./3a0ca32f84ec842dd6b0cb4828d2a91c5a0a71b4.png";
-import imgScreenInsertDesignsHere2 from "./97b01c1ad5125d8dca70471f580fc161e2f8fab0.png";
-import imgProfilePhoto from "./6c3788d3a7dd46350fe3b7ad9766a2b91e9d3616.png";
+import imgMobileMockupLuh from "./b3c2d0d39ef8d164ef4f6b454cd7ea3eadde1799.webp";
+import imgMobileMockupLuh1 from "./43e7918bdb5051d2c77508d8ffa0fcd5b8185746.webp";
+import imgScreenInsertDesignsHere from "./4c3bf707eed0712579fbc19d8f48018d5c4ee230.webp";
+import imgScreenInsertDesignsHere1 from "./3a0ca32f84ec842dd6b0cb4828d2a91c5a0a71b4.webp";
+import imgScreenInsertDesignsHere2 from "./97b01c1ad5125d8dca70471f580fc161e2f8fab0.webp";
+import imgProfilePhoto from "./6c3788d3a7dd46350fe3b7ad9766a2b91e9d3616.webp";
 import { Container } from "@/app/components/layout/Grid";
+import React from "react";
 
 export type CaseStudyId = "luh" | "as" | "cove";
 
@@ -87,11 +88,13 @@ function TagPill({
   textSize?: string;
 }) {
   return (
-    <span
-      className={`relative shrink-0 whitespace-nowrap rounded-[40px] border-3 border-[#fad89e] bg-[#b488eb] px-[14px] py-[8px] font-medium text-[#fff3ff] ${textSize}`}
-    >
-      {children}
-    </span>
+    <div className="inline-flex shrink-0 rounded-[40px] bg-gradient-to-r from-[#fad89e] to-[#f29bfd] p-[2px]">
+      <span
+        className={`flex items-center justify-center whitespace-nowrap rounded-[38px] bg-[#825db1] p-[10px] font-medium leading-[1.5] text-[#fff3ff] ${textSize}`}
+      >
+        {children}
+      </span>
+  </div>
   );
 }
 
@@ -110,7 +113,7 @@ function GradientButton({
   download?: string;
   target?: string;
 }) {
-  const classes = `inline-flex cursor-pointer items-center justify-center gap-[10px] rounded-[40px] border-2 border-transparent bg-gradient-to-r from-[#fad89e] to-[#f29bfd] px-[20px] py-[10px] text-[#543976] shadow-[0_0_4px_0_rgba(0,0,0,0.04),0_4px_8px_0_rgba(0,0,0,0.06)] transition-[border-color,box-shadow] duration-200 hover:border-[#ff99b9] hover:shadow-[0_0_4px_0_rgba(0,0,0,0.04),0_8px_16px_0_rgba(0,0,0,0.08)] ${className}`;
+  const classes = `inline-flex cursor-pointer items-center justify-center gap-[10px] rounded-[40px] bg-gradient-to-r from-[#fad89e] to-[#f29bfd] px-[20px] py-[10px] text-[#543976] shadow-[0_0_4px_0_rgba(0,0,0,0.04),0_4px_8px_0_rgba(0,0,0,0.06)] transition-shadow duration-200 hover:shadow-[0_0_0_2px_#ff99b9,0_0_4px_0_rgba(0,0,0,0.04),0_8px_16px_0_rgba(0,0,0,0.08)] ${className}`;
 
   if (href) {
     return (
@@ -581,12 +584,12 @@ function HeroCurve() {
  * content width) so it stays visible against opaque card backgrounds
  * further down the page instead of disappearing behind them.
  */
-function buildMeanderPath(height: number, laneCenter: number, amplitude: number, bends = 6): string {
+function buildMeanderPath(height: number, laneCenter: number, amplitude: number, bends = 6, startX = laneCenter): string {
   if (height <= 0) return "";
   const left = laneCenter - amplitude;
   const right = laneCenter + amplitude;
   const segH = height / bends;
-  let x = laneCenter;
+  let x = startX;
   let d = `M${x} 0`;
   for (let i = 0; i < bends; i++) {
     const y0 = i * segH;
@@ -612,6 +615,8 @@ function buildMeanderPath(height: number, laneCenter: number, amplitude: number,
 const LINE_LANE_WIDTH = 160;
 const LINE_LANE_CENTER = 70;
 const LINE_LANE_AMPLITUDE = 55;
+/** `HERO_CURVE_DESKTOP` ends at x=0 (its path's final coordinate, "...0 1024") — start this line there too so it reads as a continuation of that curve instead of jumping sideways into its own lane. */
+const LINE_START_X = 20;
 
 function ScrollDrawLine() {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -657,10 +662,10 @@ function ScrollDrawLine() {
     };
   }, [height]);
 
-  const d = buildMeanderPath(height, LINE_LANE_CENTER, LINE_LANE_AMPLITUDE);
+  const d = buildMeanderPath(height, LINE_LANE_CENTER, LINE_LANE_AMPLITUDE, 6, LINE_START_X);
 
   return (
-    <div ref={wrapperRef} className="pointer-events-none absolute inset-0 -z-10 hidden lg:block" aria-hidden>
+    <div ref={wrapperRef} className="pointer-events-none absolute inset-0 -z-10 block" aria-hidden>
       <div className="relative mx-auto h-full max-w-[1440px]">
         {d && (
           <svg
@@ -669,7 +674,7 @@ function ScrollDrawLine() {
             viewBox={`0 0 ${LINE_LANE_WIDTH} ${height}`}
             fill="none"
           >
-            <path ref={pathRef} d={d} stroke="url(#scroll-draw-line)" strokeWidth="6" strokeLinecap="round" />
+            <path ref={pathRef} d={d} stroke="url(#scroll-draw-line)" strokeWidth="8" strokeLinecap="round" />
             <defs>
               <linearGradient gradientUnits="userSpaceOnUse" id="scroll-draw-line" x1="0" y1="0" x2="0" y2={height}>
                 <stop stopColor="#E9A8FF" />
@@ -795,6 +800,7 @@ function DualPhoneMockup({
               className="block size-full object-cover"
               src={smallScreenVideo}
               poster={smallScreenImg}
+              preload="metadata"
               autoPlay
               loop
               muted
@@ -982,17 +988,17 @@ function CaseStudiesSection({ onOpenCaseStudy }: { onOpenCaseStudy: (id: CaseStu
 /** Scattered floating layout, positioned relative to the photo frame at every breakpoint. */
 const SCATTERED_PILLS: { label: string; top: number; left: number }[] = [
   { label: "Figma", top: 708, left: 94 },
-  { label: "UX/UI Design", top: 383, left: 38 },
-  { label: "Web UI design", top: 448, left: 13 },
-  { label: "Research", top: 23, left: 462 },
-  { label: "Typescript", top: 216, left: 609 },
-  { label: "IA Agents", top: 281, left: 596 },
   { label: "Supernova", top: 643, left: 45 },
-  { label: "Wireframe", top: 82, left: 535 },
-  { label: "Product Designer", top: 318, left: 52 },
   { label: "Token Studio", top: 578, left: 7 },
   { label: "Design system", top: 513, left: 0 },
+  { label: "Web UI design", top: 448, left: 13 },
+  { label: "UX/UI Design", top: 383, left: 38 },
+  { label: "Product Designer", top: 318, left: 52 },
+  { label: "Research", top: 23, left: 462 },
+  { label: "Wireframe", top: 82, left: 535 },
   { label: "Prototyping", top: 151, left: 577 },
+  { label: "Typescript", top: 216, left: 609 },
+  { label: "IA Agents", top: 281, left: 596 },
 ];
 
 /**
@@ -1039,10 +1045,10 @@ function AboutSection() {
               (via `contents` -> `lg:flex-col`) so the two stack together,
               beside the (overlapping) photo column. */}
           <div className="contents lg:order-1 lg:flex lg:flex-col lg:items-start lg:gap-[50px]">
-            <div className="relative w-full max-w-[400px] overflow-hidden rounded-[20px] border-4 border-[#fad89e] bg-[rgba(229,217,230,0.24)] p-[20px] text-[16px] text-[#543976] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] backdrop-blur-[31px] md:ml-[4px] md:w-[442px] md:max-w-none md:text-[18px] lg:z-10 lg:ml-0 lg:w-[647px] lg:max-w-none">
+            <div className="relative w-full max-w-[400px] overflow-hidden rounded-[20px] border-4 border-[#fad89e] bg-[rgba(229,217,230,0.24)] p-[20px] text-[16px] text-[#543976] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] backdrop-blur-[31px] md:ml-[4px] md:w-auto md:p-8 md:max-w-none md:text-[18px] lg:z-10 lg:ml-0 lg:w-[647px] lg:max-w-none">
               <AboutBlurMotion />
               <p>
-                Hi, I'm <GradientText className="from-[#fe85ea] to-[#5102a0]">Patricia 🌸</GradientText>
+                Hi, I'm <GradientText className="from-[#fe85ea] to-[#5102a0]">Patricia ✨</GradientText>
               </p>
               <p className="mt-[16px]">
                 After working as a Frontend Developer, I discovered that what I truly enjoy is
@@ -1071,6 +1077,7 @@ function AboutSection() {
           </div>
 
           <div className="relative mx-auto h-[390px] w-full max-w-[400px] md:h-[778px] md:w-[699px] md:max-w-none lg:order-2 lg:mx-0 lg:-ml-[250px]">
+          <AboutBlurMotion />
             <img
               alt="Patricia Rivera"
               className="absolute left-[111px] top-[32px] h-[357px] w-[228px] aspect-[76/119] rounded-[20px] object-cover md:left-[178px] md:top-[64px] md:h-[714px] md:w-[456px]"
@@ -1088,7 +1095,7 @@ function AboutSection() {
                 <div
                   key={p.label}
                   className="pointer-events-auto absolute"
-                  style={{ top: p.top - 71, left: p.left }}
+                  style={{ top: p.top - 8, left: p.left }}
                 >
                   <TagPill>{p.label}</TagPill>
                 </div>
@@ -1261,43 +1268,23 @@ function ContactSection() {
           leftover space fine regardless of whether the flex container's own
           height came from content or a min-height floor. */}
       <Container className="relative flex flex-col items-center md:flex-1 lg:items-stretch">
-        <div className="flex justify-center">
-          <div className="flex items-center gap-[10px] rounded-full border-3 border-[#ff99b9] px-[20px] py-[10px]">
+        <div className="flex justify-center ">
+          <div className="flex items-center gap-[10px] rounded-full border-3 border-[#ff99b9] px-[20px] py-[10px] bg-[rgba(255, 255, 255, 0.20);] backdrop-blur-[15px]">
             <MapIcon className="size-[24px]" />
             <span className="text-[16px] text-[#fff3ff] md:text-[18px]">Madrid, Spain</span>
           </div>
         </div>
 
-        <div className="relative mt-[32px] flex w-full flex-1 flex-col items-center justify-center overflow-hidden rounded-[20px] bg-[rgba(229,217,230,0.24)] px-[24px] py-[40px] backdrop-blur-[32px] md:mx-auto md:mt-0 md:w-[746px] md:justify-end md:gap-[31px] md:px-0 md:pb-[34px] md:pt-[55px] lg:mx-[140px] lg:w-auto lg:gap-[60px] lg:px-[18px] lg:py-[60px]">
+        <div className="relative mt-[32px] gap-[10px] flex w-full flex-1 flex-col items-center justify-center overflow-hidden rounded-[20px] bg-[rgba(229,217,230,0.24)] px-[24px] py-[40px] backdrop-blur-[32px] md:mx-auto md:mt-[60px] md:w-auto md:justify-center md:gap-[31px] md:px-[44px] md:pb-[34px] md:pt-[55px] lg:mx-[140px] lg:w-auto lg:gap-[60px] lg:px-[18px] lg:py-[60px]">
           <h2 className="text-center text-[30px] font-extrabold leading-[1.15] md:text-[40px] lg:text-[52px] lg:leading-[1.1]">
             <GradientText className="from-[#ff99b9] to-[#fff08f]">
               Let's build meaningful products together
             </GradientText>
           </h2>
-          {/* No `sm:` here on purpose — this project overrides `md`/`lg` via
-              custom `@theme` breakpoints but leaves `sm` at Tailwind's
-              default (640px), which Tailwind then places *after* the custom
-              md/lg blocks in the generated stylesheet. At a viewport like
-              834px (satisfying both `sm:` and `md:`), the later `sm:` rule
-              silently won over `md:flex-col` despite `sm`'s pixel value
-              being smaller. Mixing an unmodified default breakpoint with
-              overridden ones on the same property is unreliable — stick to
-              the custom breakpoints (md/lg) for anything that must win at a
-              specific viewport. */}
-          <div className="mt-[32px] flex flex-col items-center justify-center gap-[20px] md:mt-0 md:flex-col lg:flex-row">
             <GradientButton href={`mailto:${CONTACT_EMAIL}`} target="_blank" className="w-full text-[20px] sm:w-auto md:text-[24px]">
               Get in touch
               <ChatMailIcon className="size-[26px] text-[#543976] md:size-[30px]" />
             </GradientButton>
-            <a
-              href={CV_PDF_URL}
-              download={CV_DOWNLOAD_NAME}
-              className="inline-flex w-full items-center justify-center gap-[10px] rounded-[40px] border-4 border-[#fad89e] px-[20px] py-[10px] text-[20px] text-[#ffd6a5] drop-shadow-[0px_0px_2px_rgba(0,0,0,0.04),0px_4px_4px_rgba(0,0,0,0.06)] sm:w-auto md:text-[24px]"
-            >
-              Download CV
-              <CvIcon className="size-[26px] text-[#ffd6a5] md:size-[30px]" />
-            </a>
-          </div>
         </div>
       </Container>
     </section>
@@ -1325,8 +1312,8 @@ export function Footer() {
         </div>
       </Container>
       <Container className="flex flex-col items-center justify-between gap-[8px] border-t border-white/20 py-[14px] text-center text-[12px] font-medium md:flex-row md:text-[14px]">
-        <p className="text-[#fff3ff]">© 2026 Patricia Rivera. All rights reserved.</p>
-        <p className="text-[#e8d6ff]">
+        <p className="text-[#3e2859]">© 2026 Patricia Rivera. All rights reserved.</p>
+        <p className="text-[#3e2859]">
           Designed & Built with <GradientText className="from-[#ff99b9] to-[#fff08f]">passion</GradientText>
         </p>
       </Container>
@@ -1355,17 +1342,19 @@ export default function Home({
     <div className="relative w-full overflow-x-clip bg-[#fff3ff]" data-name="Home">
       <HeroCurve />
       <NavBar onOpenCaseStudy={onOpenCaseStudy} />
-      <div id="hero" className="flex min-h-[calc(100dvh-98px)] scroll-mt-[98px] flex-col md:min-h-[calc(100dvh-82px)] md:scroll-mt-[82px]">
-        <Hero />
-      </div>
-      <div className="relative z-0">
-        <ScrollDrawLine />
-        <CaseStudiesSection onOpenCaseStudy={onOpenCaseStudy} />
-        <AboutSection />
-        <StatsRow />
-        <TimelineSection />
-      </div>
-      <ContactSection />
+      <main>
+        <div id="hero" className="flex min-h-[calc(100dvh-98px)] scroll-mt-[98px] flex-col md:min-h-[calc(100dvh-82px)] md:scroll-mt-[82px]">
+          <Hero />
+        </div>
+        <div className="relative z-0">
+          <ScrollDrawLine />
+          <CaseStudiesSection onOpenCaseStudy={onOpenCaseStudy} />
+          <AboutSection />
+          <StatsRow />
+          <TimelineSection />
+        </div>
+        <ContactSection />
+      </main>
       <Footer />
       <BackToTopButton />
     </div>

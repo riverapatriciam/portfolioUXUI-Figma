@@ -47,19 +47,20 @@ export default function CaseStudy({
         cta={{ label: "Play demo", icon: <PlayIcon className="size-[24px]" />, href: PLAY_DEMO_URL, target: "_blank" }}
       />
 
-      {/* Tablet/desktop: the Figma frame, uniformly scaled. */}
-      <div className="hidden md:contents">
-        <FrameWrapper frameH={FRAME_H}>
-          <CaseStudyAsImport />
-        </FrameWrapper>
-        <Footer />
-      </div>
+      <main>
+        {/* Tablet/desktop: the Figma frame, uniformly scaled. */}
+        <div className="hidden md:contents">
+          <FrameWrapper frameH={FRAME_H}>
+            <CaseStudyAsImport />
+          </FrameWrapper>
+        </div>
 
-      {/* Mobile: hand-built responsive tree matching the native mobile Figma frame. */}
-      <div className="md:hidden">
-        <CaseStudyAsMobile />
-        <Footer />
-      </div>
+        {/* Mobile: hand-built responsive tree matching the native mobile Figma frame. */}
+        <div className="md:hidden">
+          <CaseStudyAsMobile />
+        </div>
+      </main>
+      <Footer />
     </>
   );
 }

@@ -11,7 +11,7 @@ import { FrameWrapper } from "./FrameWrapper";
  * `FrameWrapper` below) — height only needs to cover the deepest real
  * content, "Key learnings" (~top-[5474px]), plus a little breathing room.
  */
-const FRAME_H = 5710;
+const FRAME_H = 5880;
 
 const PLAY_DEMO_URL =
   "https://www.figma.com/proto/gIEUzqHhcGxGaGPPEPvgo6/Grupo-2---UI?node-id=211-1621&p=f&viewport=279%2C-49%2C0.08&t=0QFF01ppu3W6mVz0-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=271%3A906&page-id=0%3A1";
@@ -46,19 +46,20 @@ export default function CaseStudyCove({
         cta={{ label: "Play demo", icon: <PlayIcon className="size-[24px]" />, href: PLAY_DEMO_URL, target: "_blank" }}
       />
 
-      {/* Tablet/desktop: the Figma frame, uniformly scaled. */}
-      <div className="hidden md:contents">
-        <FrameWrapper frameH={FRAME_H}>
-          <CaseStudyCoveImport />
-        </FrameWrapper>
-        <Footer />
-      </div>
+      <main>
+        {/* Tablet/desktop: the Figma frame, uniformly scaled. */}
+        <div className="hidden md:contents">
+          <FrameWrapper frameH={FRAME_H}>
+            <CaseStudyCoveImport />
+          </FrameWrapper>
+        </div>
 
-      {/* Mobile: hand-built responsive tree matching the native 440px Figma mobile frame. */}
-      <div className="md:hidden">
-        <CaseStudyCoveMobile />
-        <Footer />
-      </div>
+        {/* Mobile: hand-built responsive tree matching the native 440px Figma mobile frame. */}
+        <div className="md:hidden">
+          <CaseStudyCoveMobile />
+        </div>
+      </main>
+      <Footer />
     </>
   );
 }
