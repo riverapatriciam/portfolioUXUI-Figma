@@ -21,11 +21,26 @@ const CASE_STUDY_PAGE: Record<CaseStudyId, Page> = {
   cove: "case-study-cove",
 };
 
-function hashToPage(hash: string): Page {
-  if (hash === "#case-study-luh") return "case-study-luh";
-  if (hash === "#case-study-as") return "case-study-as";
-  if (hash === "#case-study-cove") return "case-study-cove";
-  return "home";
+// Real paths, not `#hash` fragments: a fragment is never sent in the HTTP request, so any
+// service that processes a shared link server-side before forwarding the click — LinkedIn,
+// Facebook, Slack unfurl bots, link shorteners — never sees it and drops it, landing the
+// visitor on "/" instead of the case study they clicked. A path survives that unchanged.
+const PAGE_PATH: Record<Page, string> = {
+  home: "/",
+  "case-study-luh": "/case-study/level-up-habits",
+  "case-study-as": "/case-study/after-story",
+  "case-study-cove": "/case-study/cove",
+};
+
+const OLD_HASH_PAGE: Record<string, Page> = {
+  "#case-study-luh": "case-study-luh",
+  "#case-study-as": "case-study-as",
+  "#case-study-cove": "case-study-cove",
+};
+
+function pathToPage(pathname: string): Page {
+  const entry = Object.entries(PAGE_PATH).find(([, path]) => path === pathname);
+  return entry ? (entry[0] as Page) : "home";
 }
 
 function HomePage({
@@ -47,7 +62,7 @@ function HomePage({
 }
 
 export default function App() {
-  const [page, setPage] = useState<Page>(() => hashToPage(window.location.hash));
+  const [page, setPage] = useState<Page>(() => pathToPage(window.location.pathname));
   const [pendingScroll, setPendingScroll] = useState<"about" | "contact" | null>(null);
 
   useEffect(() => {
@@ -55,21 +70,31 @@ export default function App() {
     document.body.style.backgroundColor = "#fff3ff";
   }, []);
 
-  // Reading `location.hash` only in the `useState` initializer above only covers the
-  // very first mount — a hash change that doesn't trigger a full page reload (browser
-  // back/forward, or a hash-only link opened in a tab that already has this app loaded)
-  // never re-runs it, silently stranding the user on whatever page was already showing.
-  // No `scrollTo` here: `#about`/`#contact` are real in-page anchors the browser already
-  // scrolls to natively while on Home, and `goTo`/`goToSection` above already own scroll
-  // behavior for actual page swaps — duplicating it here would fight both.
+  // One-time migration for the old `#case-study-*` links (used before this app switched to
+  // real paths) — redirects them to the equivalent path so anyone who bookmarked/shared the
+  // old-style URL directly (not through a link-stripping redirector, which already dropped
+  // the hash before the browser ever got here) still lands on the right page.
   useEffect(() => {
-    const onHashChange = () => startTransition(() => setPage(hashToPage(window.location.hash)));
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
+    const target = OLD_HASH_PAGE[window.location.hash];
+    if (target && window.location.pathname === "/") {
+      window.history.replaceState(null, "", PAGE_PATH[target]);
+      setPage(target);
+    }
+  }, []);
+
+  // Reading `location.pathname` only in the `useState` initializer above only covers the
+  // very first mount — a path change that doesn't trigger a full page reload (browser
+  // back/forward) never re-runs it, silently stranding the user on whatever page was
+  // already showing. `navigate` below already keeps `page` in sync for its own pushState
+  // calls; this listener covers the back/forward case those don't fire for.
+  useEffect(() => {
+    const onPopState = () => startTransition(() => setPage(pathToPage(window.location.pathname)));
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
   const navigate = (target: Page) => {
-    window.location.hash = target === "home" ? "" : target;
+    window.history.pushState(null, "", PAGE_PATH[target]);
     startTransition(() => setPage(target));
   };
 
