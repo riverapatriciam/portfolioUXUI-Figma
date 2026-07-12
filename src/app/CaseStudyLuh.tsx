@@ -11,7 +11,7 @@ import { FrameWrapper } from "./FrameWrapper";
  * `FrameWrapper` below) — height only needs to cover the deepest real
  * content, "Key learnings" (~top-[5271px]), plus a little breathing room.
  */
-const FRAME_H = 5530;
+const FRAME_H = 5680;
 
 const PLAY_DEMO_URL =
   "https://www.figma.com/proto/Kd9acktVBSJzkMbJd537EC/Patricia.Rivera---Reto-2?node-id=291-3348&viewport=201%2C410%2C0.16&t=O6FNuWxTnlVpP2bf-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=310%3A4874&show-proto-sidebar=1&page-id=0%3A1";
