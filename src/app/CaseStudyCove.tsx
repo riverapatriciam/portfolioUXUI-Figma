@@ -46,19 +46,20 @@ export default function CaseStudyCove({
         cta={{ label: "Play demo", icon: <PlayIcon className="size-[24px]" />, href: PLAY_DEMO_URL, target: "_blank" }}
       />
 
-      {/* Tablet/desktop: the Figma frame, uniformly scaled. */}
-      <div className="hidden md:contents">
-        <FrameWrapper frameH={FRAME_H}>
-          <CaseStudyCoveImport />
-        </FrameWrapper>
-        <Footer />
-      </div>
+      <main>
+        {/* Tablet/desktop: the Figma frame, uniformly scaled. */}
+        <div className="hidden md:contents">
+          <FrameWrapper frameH={FRAME_H}>
+            <CaseStudyCoveImport />
+          </FrameWrapper>
+        </div>
 
-      {/* Mobile: hand-built responsive tree matching the native 440px Figma mobile frame. */}
-      <div className="md:hidden">
-        <CaseStudyCoveMobile />
-        <Footer />
-      </div>
+        {/* Mobile: hand-built responsive tree matching the native 440px Figma mobile frame. */}
+        <div className="md:hidden">
+          <CaseStudyCoveMobile />
+        </div>
+      </main>
+      <Footer />
     </>
   );
 }

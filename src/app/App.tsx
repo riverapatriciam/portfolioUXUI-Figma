@@ -1,8 +1,17 @@
-import { useState, useEffect, startTransition } from "react";
+import { useState, useEffect, startTransition, lazy, Suspense, type ReactNode } from "react";
 import Home, { type CaseStudyId } from "@/imports/Home-1";
-import CaseStudy from "./CaseStudy";
-import CaseStudyLuh from "./CaseStudyLuh";
-import CaseStudyCove from "./CaseStudyCove";
+
+const CaseStudy = lazy(() => import("./CaseStudy"));
+const CaseStudyLuh = lazy(() => import("./CaseStudyLuh"));
+const CaseStudyCove = lazy(() => import("./CaseStudyCove"));
+
+function CaseStudyFallback() {
+  return (
+    <div className="flex min-h-dvh w-full items-center justify-center bg-[#fff3ff] text-[#3e2859]">
+      Loading…
+    </div>
+  );
+}
 
 type Page = "home" | "case-study-luh" | "case-study-as" | "case-study-cove";
 
@@ -62,12 +71,17 @@ export default function App() {
     navigate("home");
   };
 
+  let caseStudyElement: ReactNode = null;
   if (page === "case-study-luh")
-    return <CaseStudyLuh onBack={() => goTo("home")} onOpenCaseStudy={openCaseStudy} onNavigateHome={goToSection} />;
-  if (page === "case-study-as")
-    return <CaseStudy onBack={() => goTo("home")} onOpenCaseStudy={openCaseStudy} onNavigateHome={goToSection} />;
-  if (page === "case-study-cove")
-    return <CaseStudyCove onBack={() => goTo("home")} onOpenCaseStudy={openCaseStudy} onNavigateHome={goToSection} />;
+    caseStudyElement = <CaseStudyLuh onBack={() => goTo("home")} onOpenCaseStudy={openCaseStudy} onNavigateHome={goToSection} />;
+  else if (page === "case-study-as")
+    caseStudyElement = <CaseStudy onBack={() => goTo("home")} onOpenCaseStudy={openCaseStudy} onNavigateHome={goToSection} />;
+  else if (page === "case-study-cove")
+    caseStudyElement = <CaseStudyCove onBack={() => goTo("home")} onOpenCaseStudy={openCaseStudy} onNavigateHome={goToSection} />;
+
+  if (caseStudyElement) {
+    return <Suspense fallback={<CaseStudyFallback />}>{caseStudyElement}</Suspense>;
+  }
 
   return (
     <HomePage

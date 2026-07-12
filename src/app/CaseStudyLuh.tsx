@@ -46,19 +46,20 @@ export default function CaseStudyLuh({
         cta={{ label: "Play demo", icon: <PlayIcon className="size-[24px]" />, href: PLAY_DEMO_URL, target: "_blank" }}
       />
 
-      {/* Tablet/desktop: the Figma frame, uniformly scaled. */}
-      <div className="hidden md:contents">
-        <FrameWrapper frameH={FRAME_H}>
-          <CaseStudyLuhImport />
-        </FrameWrapper>
-        <Footer />
-      </div>
+      <main>
+        {/* Tablet/desktop: the Figma frame, uniformly scaled. */}
+        <div className="hidden md:contents">
+          <FrameWrapper frameH={FRAME_H}>
+            <CaseStudyLuhImport />
+          </FrameWrapper>
+        </div>
 
-      {/* Mobile: hand-built responsive tree matching the native mobile Figma frame. */}
-      <div className="md:hidden">
-        <CaseStudyLuhMobile />
-        <Footer />
-      </div>
+        {/* Mobile: hand-built responsive tree matching the native mobile Figma frame. */}
+        <div className="md:hidden">
+          <CaseStudyLuhMobile />
+        </div>
+      </main>
+      <Footer />
     </>
   );
 }
