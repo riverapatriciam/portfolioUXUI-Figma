@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @source '../**/*.{js,ts,jsx,tsx}';
 
-@import "tw-animate-css";
-
 @font-face {
   font-family: "Momo Trust Sans";
   src: url("/fonts/MomoTrustSans-VariableFont_wght.ttf") format("truetype-variations");
