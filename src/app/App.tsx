@@ -78,6 +78,9 @@ export default function App() {
     const target = OLD_HASH_PAGE[window.location.hash];
     if (target && window.location.pathname === "/") {
       window.history.replaceState(null, "", PAGE_PATH[target]);
+      // Syncing state FROM the URL (an external system) once at mount is the point of
+      // this effect; the extra render only ever happens for legacy `#` links.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setPage(target);
     }
   }, []);
@@ -112,21 +115,35 @@ export default function App() {
 
   let caseStudyElement: ReactNode = null;
   if (page === "case-study-luh")
-    caseStudyElement = <CaseStudyLuh onBack={() => goTo("home")} onOpenCaseStudy={openCaseStudy} onNavigateHome={goToSection} />;
+    caseStudyElement = (
+      <CaseStudyLuh
+        onBack={() => goTo("home")}
+        onOpenCaseStudy={openCaseStudy}
+        onNavigateHome={goToSection}
+      />
+    );
   else if (page === "case-study-as")
-    caseStudyElement = <CaseStudy onBack={() => goTo("home")} onOpenCaseStudy={openCaseStudy} onNavigateHome={goToSection} />;
+    caseStudyElement = (
+      <CaseStudy
+        onBack={() => goTo("home")}
+        onOpenCaseStudy={openCaseStudy}
+        onNavigateHome={goToSection}
+      />
+    );
   else if (page === "case-study-cove")
-    caseStudyElement = <CaseStudyCove onBack={() => goTo("home")} onOpenCaseStudy={openCaseStudy} onNavigateHome={goToSection} />;
+    caseStudyElement = (
+      <CaseStudyCove
+        onBack={() => goTo("home")}
+        onOpenCaseStudy={openCaseStudy}
+        onNavigateHome={goToSection}
+      />
+    );
 
   if (caseStudyElement) {
     return <Suspense fallback={<CaseStudyFallback />}>{caseStudyElement}</Suspense>;
   }
 
   return (
-    <HomePage
-      onNav={goTo}
-      scrollToId={pendingScroll}
-      onScrolled={() => setPendingScroll(null)}
-    />
+    <HomePage onNav={goTo} scrollToId={pendingScroll} onScrolled={() => setPendingScroll(null)} />
   );
 }

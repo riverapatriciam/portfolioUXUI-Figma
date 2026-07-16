@@ -27,11 +27,8 @@ export function FrameWrapper({
   frameH: number;
   bg?: string;
 }) {
-  const [vw, setVw] = useState(
-    () =>
-      typeof window !== "undefined"
-        ? document.documentElement.clientWidth
-        : FRAME_W,
+  const [vw, setVw] = useState(() =>
+    typeof window !== "undefined" ? document.documentElement.clientWidth : FRAME_W,
   );
 
   useEffect(() => {
@@ -64,9 +61,7 @@ export function FrameWrapper({
   const scaledH = Math.round(frameH * scale);
 
   return (
-    <div
-      style={{ background: bg, overflow: "hidden", minHeight: scaledH }}
-    >
+    <div style={{ background: bg, overflow: "hidden", minHeight: scaledH }}>
       <div
         style={{
           width: FRAME_W,
@@ -86,16 +81,12 @@ export function FrameWrapper({
 
 /** Returns the CSS scale factor (≤ 1) for the current viewport. */
 export function useFrameScale(): number {
-  const [scale, setScale] = useState(
-    () =>
-      typeof window !== "undefined"
-        ? Math.min(1, document.documentElement.clientWidth / FRAME_W)
-        : 1,
+  const [scale, setScale] = useState(() =>
+    typeof window !== "undefined" ? Math.min(1, document.documentElement.clientWidth / FRAME_W) : 1,
   );
 
   useEffect(() => {
-    const measure = () =>
-      setScale(Math.min(1, document.documentElement.clientWidth / FRAME_W));
+    const measure = () => setScale(Math.min(1, document.documentElement.clientWidth / FRAME_W));
     window.addEventListener("resize", measure, { passive: true });
     return () => window.removeEventListener("resize", measure);
   }, []);
