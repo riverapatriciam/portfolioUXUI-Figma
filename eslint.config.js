@@ -5,11 +5,7 @@ import reactHooks from "eslint-plugin-react-hooks";
 export default tseslint.config(
   {
     // src/imports is Figma-generated code — regenerated, never hand-edited or linted.
-    ignores: [
-      "dist/**",
-      "src/imports/**",
-      "node_modules/**",
-    ],
+    ignores: ["dist/**", "src/imports/**", "node_modules/**"],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
