@@ -9,8 +9,6 @@ export default tseslint.config(
       "dist/**",
       "src/imports/**",
       "node_modules/**",
-      // Unused stock shadcn drop-in, deleted in the dead-code cleanup phase.
-      "src/app/components/ui/**",
     ],
   },
   js.configs.recommended,
