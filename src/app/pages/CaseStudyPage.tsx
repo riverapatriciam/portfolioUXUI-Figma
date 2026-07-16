@@ -1,20 +1,8 @@
-import { useEffect } from "react";
-import CaseStudyCoveImport, { CaseStudyCoveMobile } from "@/imports/CaseStudyCove";
-import { Footer, NavBar, type CaseStudyId } from "@/imports/Home-1";
-import { FrameWrapper } from "./components/FrameWrapper";
-
-/**
- * The Figma "Case study – Cove" frame is 1024 px wide.
- *
- * The frame no longer includes its own footer (the embedded copyright/social
- * bars were removed in favor of the shared `Home-1` `Footer`, rendered after
- * `FrameWrapper` below) — height only needs to cover the deepest real
- * content, "Key learnings" (~top-[5474px]), plus a little breathing room.
- */
-const FRAME_H = 5880;
-
-const PLAY_DEMO_URL =
-  "https://www.figma.com/proto/gIEUzqHhcGxGaGPPEPvgo6/Grupo-2---UI?node-id=211-1621&p=f&viewport=279%2C-49%2C0.08&t=0QFF01ppu3W6mVz0-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=271%3A906&page-id=0%3A1";
+import { useEffect, type ComponentType } from "react";
+import { Footer, NavBar } from "@/imports/Home-1";
+import { FrameWrapper } from "../components/FrameWrapper";
+import type { CaseStudyId, HomeAnchor } from "../router";
+import type { CaseStudyConfig } from "../content/case-studies";
 
 function PlayIcon({ className = "" }: { className?: string }) {
   return (
@@ -34,14 +22,29 @@ function PlayIcon({ className = "" }: { className?: string }) {
   );
 }
 
-export default function CaseStudyCove({
+export type CaseStudyPageProps = {
+  onBack: () => void;
+  onOpenCaseStudy: (id: CaseStudyId) => void;
+  onNavigateHome: (anchor: HomeAnchor) => void;
+};
+
+/**
+ * Shared layout for the three case-study pages: navbar (back variant, "Play
+ * demo" CTA), the scaled 1024px Figma desktop frame, the hand-built mobile
+ * tree, and the shared footer. Per-study differences (frame, mobile tree,
+ * frame height, demo URL) come in as props/config.
+ */
+export function CaseStudyPage({
+  config,
+  Desktop,
+  Mobile,
   onBack,
   onOpenCaseStudy,
   onNavigateHome,
-}: {
-  onBack: () => void;
-  onOpenCaseStudy: (id: CaseStudyId) => void;
-  onNavigateHome: (anchor: "about" | "contact") => void;
+}: CaseStudyPageProps & {
+  config: CaseStudyConfig;
+  Desktop: ComponentType;
+  Mobile: ComponentType;
 }) {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -49,7 +52,7 @@ export default function CaseStudyCove({
 
   return (
     <>
-      {/* Shared Home-1 header (back variant) — handles its own desktop/tablet/mobile layouts internally. */}
+      {/* Shared header (back variant) — handles its own desktop/tablet/mobile layouts internally. */}
       <NavBar
         variant="back"
         onBack={onBack}
@@ -58,7 +61,7 @@ export default function CaseStudyCove({
         cta={{
           label: "Play demo",
           icon: <PlayIcon className="size-[24px]" />,
-          href: PLAY_DEMO_URL,
+          href: config.playDemoUrl,
           target: "_blank",
         }}
       />
@@ -66,14 +69,14 @@ export default function CaseStudyCove({
       <main>
         {/* Tablet/desktop: the Figma frame, uniformly scaled. */}
         <div className="hidden md:contents">
-          <FrameWrapper frameH={FRAME_H}>
-            <CaseStudyCoveImport />
+          <FrameWrapper frameH={config.frameH}>
+            <Desktop />
           </FrameWrapper>
         </div>
 
-        {/* Mobile: hand-built responsive tree matching the native 440px Figma mobile frame. */}
+        {/* Mobile: hand-built responsive tree matching the native mobile Figma frame. */}
         <div className="md:hidden">
-          <CaseStudyCoveMobile />
+          <Mobile />
         </div>
       </main>
       <Footer />

@@ -2,9 +2,9 @@ import { useEffect, lazy, Suspense, type ReactNode } from "react";
 import Home from "@/imports/Home-1";
 import { useRouter } from "./router";
 
-const CaseStudy = lazy(() => import("./CaseStudy"));
-const CaseStudyLuh = lazy(() => import("./CaseStudyLuh"));
-const CaseStudyCove = lazy(() => import("./CaseStudyCove"));
+const AfterStory = lazy(() => import("./pages/case-studies/AfterStory"));
+const LevelUpHabits = lazy(() => import("./pages/case-studies/LevelUpHabits"));
+const Cove = lazy(() => import("./pages/case-studies/Cove"));
 
 function CaseStudyFallback() {
   return (
@@ -29,9 +29,9 @@ export default function App() {
   };
 
   let caseStudyElement: ReactNode = null;
-  if (page === "case-study-luh") caseStudyElement = <CaseStudyLuh {...caseStudyProps} />;
-  else if (page === "case-study-as") caseStudyElement = <CaseStudy {...caseStudyProps} />;
-  else if (page === "case-study-cove") caseStudyElement = <CaseStudyCove {...caseStudyProps} />;
+  if (page === "case-study-luh") caseStudyElement = <LevelUpHabits {...caseStudyProps} />;
+  else if (page === "case-study-as") caseStudyElement = <AfterStory {...caseStudyProps} />;
+  else if (page === "case-study-cove") caseStudyElement = <Cove {...caseStudyProps} />;
 
   if (caseStudyElement) {
     return <Suspense fallback={<CaseStudyFallback />}>{caseStudyElement}</Suspense>;
