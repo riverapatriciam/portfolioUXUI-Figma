@@ -1,11 +1,9 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @source '../**/*.{js,ts,jsx,tsx}';
-
-@import 'tw-animate-css';
 
 @font-face {
   font-family: "Momo Trust Sans";
-  src: url('/fonts/MomoTrustSans-VariableFont_wght.ttf') format('truetype-variations');
+  src: url("/fonts/MomoTrustSans-VariableFont_wght.ttf") format("truetype-variations");
   font-weight: 200 800;
   font-style: normal;
   font-display: swap;
@@ -21,29 +19,38 @@
 }
 
 @theme inline {
-    --animate-loop-left: loop-left 60s linear infinite;
+  --animate-loop-left: loop-left 60s linear infinite;
 
-    @keyframes loop-left {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+  @keyframes loop-left {
+    from {
+      transform: translateX(0);
     }
-
-    --animate-bounce-soft: bounce-soft 1.8s ease-in-out infinite;
-
-    @keyframes bounce-soft {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(6px); }
+    to {
+      transform: translateX(-50%);
     }
   }
 
+  --animate-bounce-soft: bounce-soft 1.8s ease-in-out infinite;
+
+  @keyframes bounce-soft {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(6px);
+    }
+  }
+}
+
 /* Case study card blur-motion blobs (Ellipse 14/15 from Figma) */
 @property --blur-motion-rotate-a {
-  syntax: '<angle>';
+  syntax: "<angle>";
   initial-value: 1.571rad;
   inherits: false;
 }
 @property --blur-motion-rotate-b {
-  syntax: '<angle>';
+  syntax: "<angle>";
   initial-value: -3.142rad;
   inherits: false;
 }
@@ -68,20 +75,44 @@
 }
 
 @keyframes blur-motion-a-rotate {
-  0% { --blur-motion-rotate-a: 1.571rad; }
-  100% { --blur-motion-rotate-a: 3.142rad; }
+  0% {
+    --blur-motion-rotate-a: 1.571rad;
+  }
+  100% {
+    --blur-motion-rotate-a: 3.142rad;
+  }
 }
 @keyframes blur-motion-a-shape {
-  0% { height: 110px; width: 120px; translate: 0 0; }
-  100% { height: 95px; width: 95px; translate: 0 42px; }
+  0% {
+    height: 110px;
+    width: 120px;
+    translate: 0 0;
+  }
+  100% {
+    height: 95px;
+    width: 95px;
+    translate: 0 42px;
+  }
 }
 @keyframes blur-motion-b-rotate {
-  0% { --blur-motion-rotate-b: -3.142rad; }
-  100% { --blur-motion-rotate-b: -6.283rad; }
+  0% {
+    --blur-motion-rotate-b: -3.142rad;
+  }
+  100% {
+    --blur-motion-rotate-b: -6.283rad;
+  }
 }
 @keyframes blur-motion-b-shape {
-  0% { height: 130px; width: 120px; translate: 0 0; }
-  100% { height: 170px; width: 170px; translate: 0 -56px; }
+  0% {
+    height: 130px;
+    width: 120px;
+    translate: 0 0;
+  }
+  100% {
+    height: 170px;
+    width: 170px;
+    translate: 0 -56px;
+  }
 }
 
 /* About-card blur-motion blobs (same Ellipse 14/15 pair, About me card scale) */
@@ -104,12 +135,28 @@
     blur-motion-about-b-shape 5s ease-in-out infinite alternate;
 }
 @keyframes blur-motion-about-a-shape {
-  0% { height: 135px; width: 147px; translate: 0 0; }
-  100% { height: 121px; width: 121px; translate: 0 386px; }
+  0% {
+    height: 135px;
+    width: 147px;
+    translate: 0 0;
+  }
+  100% {
+    height: 121px;
+    width: 121px;
+    translate: 0 386px;
+  }
 }
 @keyframes blur-motion-about-b-shape {
-  0% { height: 135px; width: 147px; translate: 0 0; }
-  100% { height: 216px; width: 216px; translate: 0 -305px; }
+  0% {
+    height: 135px;
+    width: 147px;
+    translate: 0 0;
+  }
+  100% {
+    height: 216px;
+    width: 216px;
+    translate: 0 -305px;
+  }
 }
 
 /* Timeline connecting line: gradient fill, dashed via mask-image (a plain
@@ -117,6 +164,18 @@
    punched out of the gradient background using a repeating mask instead). */
 .timeline-line {
   background: linear-gradient(90deg, #fe85ea 0%, #5102a0 100%);
-  -webkit-mask-image: repeating-linear-gradient(to bottom, #000 0, #000 6.6px, transparent 6.6px, transparent 13.2px);
-  mask-image: repeating-linear-gradient(to bottom, #000 0, #000 6.6px, transparent 6.6px, transparent 13.2px);
+  -webkit-mask-image: repeating-linear-gradient(
+    to bottom,
+    #000 0,
+    #000 6.6px,
+    transparent 6.6px,
+    transparent 13.2px
+  );
+  mask-image: repeating-linear-gradient(
+    to bottom,
+    #000 0,
+    #000 6.6px,
+    transparent 6.6px,
+    transparent 13.2px
+  );
 }

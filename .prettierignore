@@ -1,0 +1,4 @@
+# Figma-generated code — never reformat (26k+ lines of churn, JSX whitespace risk)
+src/imports/
+dist/
+package-lock.json
