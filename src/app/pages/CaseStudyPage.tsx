@@ -1,5 +1,6 @@
 import { useEffect, type ComponentType } from "react";
-import { Footer, NavBar } from "@/imports/Home-1";
+import { NavBar } from "../components/NavBar";
+import { Footer } from "../components/Footer";
 import { FrameWrapper } from "../components/FrameWrapper";
 import type { CaseStudyId, HomeAnchor } from "../router";
 import type { CaseStudyConfig } from "../content/case-studies";

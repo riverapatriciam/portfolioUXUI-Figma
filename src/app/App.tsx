@@ -1,5 +1,5 @@
 import { useEffect, lazy, Suspense, type ReactNode } from "react";
-import Home from "@/imports/Home-1";
+import Home from "./pages/HomePage";
 import { useRouter } from "./router";
 
 const AfterStory = lazy(() => import("./pages/case-studies/AfterStory"));
