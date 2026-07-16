@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import CaseStudyCoveImport, { CaseStudyCoveMobile } from "@/imports/CaseStudyCove";
 import { Footer, NavBar, type CaseStudyId } from "@/imports/Home-1";
-import { FrameWrapper } from "./FrameWrapper";
+import { FrameWrapper } from "./components/FrameWrapper";
 
 /**
  * The Figma "Case study – Cove" frame is 1024 px wide.
