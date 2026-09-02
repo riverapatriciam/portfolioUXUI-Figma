@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { createContext, useContext, useState, type ReactNode } from "react";
 import svgPaths from "./svg-4ng9z5q2l4";
 import imgArquetipoMeiKim from "./74311f2cea29c7f6e993dbfe8c4c5d45069dc08f.png";
 import imgEllipse1 from "./e382af2a8556c8b3970fafe48058db0724bba060.png";
@@ -7,14 +7,58 @@ import imgIphone12ProScreen1 from "./Splash.png";
 import imgIphone12ProScreen2 from "./36a3ef5d4cc5073acda051004e22efd69dc9e375.png";
 import imgFurniture11 from "./Onboarding.png";
 import imgIphone12ProScreen4 from "./Register.png";
+import imgIphone12ProScreen4Dark from "./Register-dark.png";
 import imgIphone12ProScreen5 from "./LogIn.png";
+import imgIphone12ProScreen5Dark from "./LogIn-dark.png";
 import imgIphone12ProScreen6 from "./onboarding-steps.png";
+import imgIphone12ProScreen6Dark from "./onboarding-steps-dark.png";
 import imgFurniture12 from "./Home.png";
+import imgFurniture12Dark from "./Home-dark.png";
 import imgIphone12ProScreen7 from "./Profile.png";
+import imgIphone12ProScreen7Dark from "./Profile-dark.png";
 import imgIphone12ProScreen8 from "./Library.png";
+import imgIphone12ProScreen8Dark from "./Library-dark.png";
 import imgIphone12ProScreen9 from "./Vault.png";
+import imgIphone12ProScreen9Dark from "./Vault-dark.png";
 import imgIphone12ProScreen10 from "./Detail-page.png";
+import imgIphone12ProScreen10Dark from "./Detail-page-dark.png";
+import imgExplore from "./Explore.png";
+import imgExploreDark from "./Explore-dark.png";
 import { imgRectangle11, imgIphone12ProScreen, imgRectangle12, imgIphone12ProScreen3 } from "./svg-la72k";
+
+/** Light/Dark toggle for the Hi-Fi Wireframes screenshot row. */
+type HiFiTheme = "light" | "dark";
+const HiFiThemeContext = createContext<{ mode: HiFiTheme; setMode: (mode: HiFiTheme) => void }>({
+  mode: "light",
+  setMode: () => {},
+});
+
+function HiFiThemeProvider({ children }: { children: ReactNode }) {
+  const [mode, setMode] = useState<HiFiTheme>("light");
+  return <HiFiThemeContext.Provider value={{ mode, setMode }}>{children}</HiFiThemeContext.Provider>;
+}
+
+function HiFiThemeToggle() {
+  const { mode, setMode } = useContext(HiFiThemeContext);
+  return (
+    <div className="inline-flex items-center gap-[4px] rounded-full bg-[rgba(247,174,248,0.34)] p-[4px]">
+      {(["light", "dark"] as const).map((option) => (
+        <button
+          key={option}
+          type="button"
+          onClick={() => setMode(option)}
+          className={`rounded-full px-[16px] py-[6px] text-[13px] font-semibold capitalize transition-colors ${
+            mode === option
+              ? "bg-gradient-to-r from-[#fe85ea] to-[#5102a0] text-white"
+              : "text-[#543976]"
+          }`}
+        >
+          {option}
+        </button>
+      ))}
+    </div>
+  );
+}
 
 function Group() {
   return (
@@ -8637,9 +8681,10 @@ function Highlights2() {
 }
 
 function Iphone12ProScreen2() {
+  const { mode } = useContext(HiFiThemeContext);
   return (
     <div className="absolute h-[340.429px] left-[10.01px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.244px_0px] mask-size-[157.403px_340.429px] top-[8.79px] w-[157.159px]" style={{ maskImage: `url("${imgIphone12ProScreen3}")` }} data-name="iphone-12-pro--screen">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgIphone12ProScreen4} />
+      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={mode === "dark" ? imgIphone12ProScreen4Dark : imgIphone12ProScreen4} />
     </div>
   );
 }
@@ -9173,9 +9218,10 @@ function Highlights3() {
 }
 
 function Iphone12ProScreen3() {
+  const { mode } = useContext(HiFiThemeContext);
   return (
     <div className="absolute h-[340.429px] left-[10.01px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.244px_0px] mask-size-[157.403px_340.429px] top-[8.79px] w-[157.159px]" style={{ maskImage: `url("${imgIphone12ProScreen3}")` }} data-name="iphone-12-pro--screen">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgIphone12ProScreen5} />
+      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={mode === "dark" ? imgIphone12ProScreen5Dark : imgIphone12ProScreen5} />
     </div>
   );
 }
@@ -9709,9 +9755,10 @@ function Highlights4() {
 }
 
 function Iphone12ProScreen4() {
+  const { mode } = useContext(HiFiThemeContext);
   return (
     <div className="absolute h-[340.429px] left-[10.01px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.244px_0px] mask-size-[157.403px_340.429px] top-[8.79px] w-[157.159px]" style={{ maskImage: `url("${imgIphone12ProScreen3}")` }} data-name="iphone-12-pro--screen">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgIphone12ProScreen6} />
+      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={mode === "dark" ? imgIphone12ProScreen6Dark : imgIphone12ProScreen6} />
     </div>
   );
 }
@@ -10245,11 +10292,12 @@ function Highlights5() {
 }
 
 function Iphone12ProScreen5() {
+  const { mode } = useContext(HiFiThemeContext);
   return (
     <div className="absolute h-[340.429px] left-[10px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.244px_0px] mask-size-[157.403px_340.429px] top-[8.79px] w-[157.159px]" style={{ maskImage: `url("${imgIphone12ProScreen}")` }} data-name="iphone-12-pro--screen">
       <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgIphone12ProScreen2} />
       <div className="absolute h-[340px] left-[-0.51px] top-[0.21px] w-[157.5px]" data-name="Furniture – 1 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFurniture12} />
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={mode === "dark" ? imgFurniture12Dark : imgFurniture12} />
       </div>
     </div>
   );
@@ -10784,9 +10832,10 @@ function Highlights6() {
 }
 
 function Iphone12ProScreen6() {
+  const { mode } = useContext(HiFiThemeContext);
   return (
     <div className="absolute h-[340.429px] left-[10px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.244px_0px] mask-size-[157.403px_340.429px] top-[8.79px] w-[157.159px]" style={{ maskImage: `url("${imgIphone12ProScreen}")` }} data-name="iphone-12-pro--screen">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgIphone12ProScreen7} />
+      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={mode === "dark" ? imgIphone12ProScreen7Dark : imgIphone12ProScreen7} />
     </div>
   );
 }
@@ -11320,9 +11369,10 @@ function Highlights7() {
 }
 
 function Iphone12ProScreen7() {
+  const { mode } = useContext(HiFiThemeContext);
   return (
     <div className="col-1 h-[340.429px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.244px_0px] mask-size-[157.403px_340.429px] ml-[0.24px] mt-0 relative row-1 w-[157.159px]" style={{ maskImage: `url("${imgIphone12ProScreen3}")` }} data-name="iphone-12-pro--screen">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgIphone12ProScreen8} />
+      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={mode === "dark" ? imgIphone12ProScreen8Dark : imgIphone12ProScreen8} />
     </div>
   );
 }
@@ -11856,9 +11906,10 @@ function Highlights8() {
 }
 
 function Iphone12ProScreen8() {
+  const { mode } = useContext(HiFiThemeContext);
   return (
     <div className="col-1 h-[340.429px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.244px_0px] mask-size-[157.403px_340.429px] ml-[0.24px] mt-0 relative row-1 w-[157.159px]" style={{ maskImage: `url("${imgIphone12ProScreen3}")` }} data-name="iphone-12-pro--screen">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgIphone12ProScreen9} />
+      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={mode === "dark" ? imgIphone12ProScreen9Dark : imgIphone12ProScreen9} />
     </div>
   );
 }
@@ -12392,9 +12443,43 @@ function Highlights9() {
 }
 
 function Iphone12ProScreen9() {
+  const { mode } = useContext(HiFiThemeContext);
   return (
     <div className="col-1 h-[340.429px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.244px_0px] mask-size-[157.403px_340.429px] ml-[0.24px] mt-0 relative row-1 w-[157.159px]" style={{ maskImage: `url("${imgIphone12ProScreen3}")` }} data-name="iphone-12-pro--screen">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgIphone12ProScreen10} />
+      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={mode === "dark" ? imgIphone12ProScreen10Dark : imgIphone12ProScreen10} />
+    </div>
+  );
+}
+
+function Iphone12ProScreenExplore() {
+  const { mode } = useContext(HiFiThemeContext);
+  return (
+    <div className="col-1 h-[340.429px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-0.244px_0px] mask-size-[157.403px_340.429px] ml-[0.24px] mt-0 relative row-1 w-[157.159px]" style={{ maskImage: `url("${imgIphone12ProScreen3}")` }} data-name="iphone-12-pro--screen">
+      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={mode === "dark" ? imgExploreDark : imgExplore} />
+    </div>
+  );
+}
+
+function GroupExploreScreen() {
+  return (
+    <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-[9.76px] mt-[8.79px] place-items-start relative row-1">
+      <Iphone12ProScreenExplore />
+    </div>
+  );
+}
+
+function PhoneExplore() {
+  return (
+    <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-name="iphone-12-pro--silver">
+      <div className="col-1 h-[358px] ml-0 mt-0 relative row-1 w-[176.926px]" data-name="GRAPHITE">
+        <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 176.926 358">
+          <path d={svgPaths.p2a0fb700} fill="var(--fill-0, #353432)" id="GRAPHITE" />
+        </svg>
+      </div>
+      <Shadows9 />
+      <Highlights9 />
+      <GroupExploreScreen />
+      <Group99 />
     </div>
   );
 }
@@ -12511,6 +12596,7 @@ function Frame41() {
   return (
     <div className="content-stretch flex gap-[2px] items-center relative shrink-0">
       <Phone1 />
+      <PhoneExplore />
       <Phone />
       <Iphone12ProSilver />
       <Iphone12ProSilver1 />
@@ -12537,7 +12623,10 @@ function Frame60() {
     <div className="absolute content-stretch flex flex-col gap-[14px] items-end left-[60px] top-[4271.25px] w-[904px]">
       <p className="[word-break:break-word] bg-clip-text bg-gradient-to-r font-extrabold from-[#fe85ea] leading-[1.5] relative shrink-0 text-[32px] text-[transparent] text-center to-[#5102a0] w-full">Hi-Fi Wireframes / UI Design</p>
       <Frame59 />
-      <Frame40 />
+      <HiFiThemeProvider>
+        <HiFiThemeToggle />
+        <Frame40 />
+      </HiFiThemeProvider>
     </div>
   );
 }
@@ -13303,9 +13392,14 @@ export function CaseStudyAsMobile() {
           </div>
         </div>
       </div>
-      <div className="mt-[16px] overflow-x-auto px-[20px]">
-        <Frame40 />
-      </div>
+      <HiFiThemeProvider>
+        <div className="mt-[16px] flex justify-center">
+          <HiFiThemeToggle />
+        </div>
+        <div className="mt-[16px] overflow-x-auto px-[20px]">
+          <Frame40 />
+        </div>
+      </HiFiThemeProvider>
 
       {/* User Testing → Iteration — left, image right */}
       <div className="mx-[20px] mt-[32px] flex flex-col gap-[14px]">
