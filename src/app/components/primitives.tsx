@@ -41,6 +41,7 @@ export function GradientButton({
   href,
   download,
   target,
+  interactive = true,
 }: {
   children: ReactNode;
   className?: string;
@@ -48,8 +49,14 @@ export function GradientButton({
   href?: string;
   download?: string;
   target?: string;
+  /** Set false to render a purely visual pill (e.g. inside a card that's already the click target). */
+  interactive?: boolean;
 }) {
   const classes = `inline-flex cursor-pointer items-center justify-center gap-[10px] rounded-[40px] bg-gradient-to-r from-[#fad89e] to-[#f29bfd] px-[20px] py-[10px] text-[#543976] shadow-[0_0_4px_0_rgba(0,0,0,0.04),0_4px_8px_0_rgba(0,0,0,0.06)] transition-shadow duration-200 hover:shadow-[0_0_0_2px_#ff99b9,0_0_4px_0_rgba(0,0,0,0.04),0_8px_16px_0_rgba(0,0,0,0.08)] ${className}`;
+
+  if (!interactive) {
+    return <span className={classes}>{children}</span>;
+  }
 
   if (href) {
     return (

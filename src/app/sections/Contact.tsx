@@ -1,8 +1,9 @@
+import { CalendarDays } from "lucide-react";
 import { Container } from "../components/layout/Grid";
 import { GradientButton, GradientText } from "../components/primitives";
 import { ChatMailIcon, MapIcon } from "../components/icons";
 import { DrawPath } from "../components/DrawPath";
-import { CONTACT_EMAIL } from "../content/site";
+import { CALENDLY_URL, CONTACT_EMAIL } from "../content/site";
 
 /**
  * Same curve family as `HERO_CURVE_DESKTOP`, vertically compressed to fit the
@@ -97,14 +98,24 @@ export function ContactSection() {
               Let's build meaningful products together
             </GradientText>
           </h2>
-          <GradientButton
-            href={`mailto:${CONTACT_EMAIL}`}
-            target="_blank"
-            className="w-full text-[20px] sm:w-auto md:text-[24px]"
-          >
-            Get in touch
-            <ChatMailIcon className="size-[26px] text-[#543976] md:size-[30px]" />
-          </GradientButton>
+          <div className="flex w-full flex-col items-center gap-[16px] sm:w-auto sm:flex-row sm:justify-center">
+            <GradientButton
+              href={`mailto:${CONTACT_EMAIL}`}
+              target="_blank"
+              className="w-full text-[20px] sm:w-auto md:text-[24px]"
+            >
+              Get in touch
+              <ChatMailIcon className="size-[26px] text-[#543976] md:size-[30px]" />
+            </GradientButton>
+            <GradientButton
+              href={CALENDLY_URL}
+              target="_blank"
+              className="w-full text-[20px] sm:w-auto md:text-[24px]"
+            >
+              Schedule a call
+              <CalendarDays className="size-[26px] text-[#543976] md:size-[30px]" />
+            </GradientButton>
+          </div>
         </div>
       </Container>
     </section>
