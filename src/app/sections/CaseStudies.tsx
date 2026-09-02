@@ -121,7 +121,11 @@ function CaseStudyCard({
   onViewWork: () => void;
 }) {
   return (
-    <div className="relative mx-auto h-[416px] w-full max-w-[400px] overflow-hidden rounded-[20px] border border-[#fad89e] bg-[rgba(229,217,230,0.24)] p-[16px] backdrop-blur-[7.5px] md:h-[408px] md:max-w-[746px] md:rounded-[30px] md:border-[1.5px] md:p-[32px] md:backdrop-blur-[11.25px] lg:h-[588px] lg:max-w-[1096px] lg:rounded-[40px] lg:border-2 lg:p-[40px] lg:backdrop-blur-[15px]">
+    <button
+      type="button"
+      onClick={onViewWork}
+      className="group relative mx-auto block h-[416px] w-full max-w-[400px] cursor-pointer overflow-hidden rounded-[20px] border border-[#fad89e] bg-[rgba(229,217,230,0.24)] p-[16px] text-left backdrop-blur-[7.5px] transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-[6px] hover:border-[#f7aef8] hover:shadow-[0_16px_40px_0_rgba(155,114,206,0.35)] focus-visible:-translate-y-[6px] focus-visible:border-[#f7aef8] focus-visible:shadow-[0_16px_40px_0_rgba(155,114,206,0.35)] focus-visible:outline-none active:translate-y-[-2px] active:duration-100 md:h-[408px] md:max-w-[746px] md:rounded-[30px] md:border-[1.5px] md:p-[32px] md:backdrop-blur-[11.25px] lg:h-[588px] lg:max-w-[1096px] lg:rounded-[40px] lg:border-2 lg:p-[40px] lg:backdrop-blur-[15px]"
+    >
       <span className="absolute right-0 top-0 rounded-bl-[20px] bg-[#f7aef8] px-[16px] py-[10px] text-[0.875rem] text-[#543976] md:text-[0.75rem] lg:text-[16px]">
         {duration}
       </span>
@@ -184,14 +188,17 @@ function CaseStudyCard({
             ))}
           </div>
           <GradientButton
-            className="mt-[4px] text-[0.8125rem] md:absolute md:bottom-[20px] md:right-[22px] md:mt-0 md:text-[0.75rem] lg:bottom-[36px] lg:right-[28px] lg:text-[16px]"
-            onClick={onViewWork}
+            interactive={false}
+            className="mt-[4px] text-[0.8125rem] transition-shadow duration-300 group-hover:shadow-[0_0_0_2px_#ff99b9,0_0_4px_0_rgba(0,0,0,0.04),0_8px_16px_0_rgba(0,0,0,0.08)] md:absolute md:bottom-[20px] md:right-[22px] md:mt-0 md:text-[0.75rem] lg:bottom-[36px] lg:right-[28px] lg:text-[16px]"
           >
-            View work ➤
+            View work{" "}
+            <span className="inline-block transition-transform duration-300 group-hover:translate-x-[4px]">
+              ➤
+            </span>
           </GradientButton>
         </div>
       </div>
-    </div>
+    </button>
   );
 }
 

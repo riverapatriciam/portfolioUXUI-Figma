@@ -11,6 +11,7 @@ export const CV_DOWNLOAD_NAME = "Patricia Rivera - CV.pdf";
 export const CONTACT_EMAIL = "riverapatriciam20@gmail.com";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/riverapatriciam/";
 export const WHATSAPP_URL = "https://wa.link/s0diwh";
+export const CALENDLY_URL = "https://calendly.com/riverapatriciam/let-s-connect";
 
 export const VIDEO_LUH_URL = "/videos/level-up-habits-preview.mp4";
 export const VIDEO_AS_URL = "/videos/after-story-preview.mp4";
