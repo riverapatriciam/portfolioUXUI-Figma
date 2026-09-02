@@ -1,25 +1,40 @@
 import type { CaseStudyId } from "../router";
+import cvPdf from "../assets/Patricia-Rivera-CV-EN.pdf";
+import videoLuh from "../assets/level-up-habits-preview.mp4";
+import videoAs from "../assets/after-story-preview.mp4";
+import videoCove from "../assets/cove-preview.mp4";
+import imgMockupLuh from "../assets/Mockup-luh.svg";
+import imgMockupAf from "../assets/Mockup-AF.svg";
+import imgMockupCove from "../assets/Mockup-cove.svg";
 
 /**
  * Every piece of editable site content that isn't prose inside a section:
  * contact/social URLs, nav structure, skills, stats and the career timeline.
  * Change things here — no need to touch the components that render them.
+ *
+ * Video/mockup/CV assets are imported from `../assets` (Vite-processed,
+ * content-hashed filenames) rather than referenced as `public/` paths —
+ * `public/` files keep a stable URL forever, which collides with
+ * Cloudflare's `immutable, max-age=1y` caching on static assets: updating
+ * the file without changing its URL leaves the CDN serving the old bytes
+ * indefinitely. A hashed filename changes the URL whenever the content
+ * does, so the new version is never blocked by a stale cache entry.
  */
 
-export const CV_PDF_URL = "/cv/Patricia-Rivera-CV-EN.pdf";
+export const CV_PDF_URL = cvPdf;
 export const CV_DOWNLOAD_NAME = "Patricia Rivera - CV.pdf";
 export const CONTACT_EMAIL = "riverapatriciam20@gmail.com";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/riverapatriciam/";
 export const WHATSAPP_URL = "https://wa.link/s0diwh";
 export const CALENDLY_URL = "https://calendly.com/riverapatriciam/let-s-connect";
 
-export const VIDEO_LUH_URL = "/videos/level-up-habits-preview.mp4";
-export const VIDEO_AS_URL = "/videos/after-story-preview.mp4";
-export const VIDEO_COVE_URL = "/videos/cove-preview.mp4";
+export const VIDEO_LUH_URL = videoLuh;
+export const VIDEO_AS_URL = videoAs;
+export const VIDEO_COVE_URL = videoCove;
 
-export const IMG_MOCKUP_LUH = "/img/Mockup-luh.svg";
-export const IMG_MOCKUP_AF = "/img/Mockup-AF.svg";
-export const IMG_MOCKUP_COVE = "/img/Mockup-cove.svg";
+export const IMG_MOCKUP_LUH = imgMockupLuh;
+export const IMG_MOCKUP_AF = imgMockupAf;
+export const IMG_MOCKUP_COVE = imgMockupCove;
 
 export const NAV_LINKS: { label: string; href: string }[] = [
   { label: "Projects", href: "#case-studies" },
