@@ -1,6 +1,7 @@
 import { Sparkle } from "lucide-react";
 import { Container } from "./layout/Grid";
 import { CONTACT_EMAIL, LINKEDIN_URL, WHATSAPP_URL } from "../content/site";
+import { OPEN_CONSENT_EVENT } from "../analytics/consent";
 import { GradientText } from "./primitives";
 import { LinkedinIcon, WhatsappIcon } from "./icons";
 
@@ -33,6 +34,13 @@ export function Footer() {
       </Container>
       <Container className="flex flex-col items-center justify-between gap-[8px] border-t border-white/20 py-[14px] text-center text-[12px] font-medium md:flex-row md:text-[14px]">
         <p className="text-[#3e2859]">© 2026 Patricia Rivera. All rights reserved.</p>
+        <button
+          type="button"
+          onClick={() => window.dispatchEvent(new Event(OPEN_CONSENT_EVENT))}
+          className="text-[#3e2859] underline underline-offset-2 transition-colors hover:text-[#543976]"
+        >
+          Cookie settings
+        </button>
         <p className="text-[#3e2859]">
           Designed & Built with{" "}
           <GradientText className="from-[#ff99b9] to-[#fff08f]">passion</GradientText>
