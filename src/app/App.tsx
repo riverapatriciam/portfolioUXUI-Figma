@@ -1,6 +1,10 @@
 import { useEffect, lazy, Suspense, type ReactNode } from "react";
 import Home from "./pages/HomePage";
 import { useRouter } from "./router";
+import { ConsentBanner } from "./components/ConsentBanner";
+import { getConsent } from "./analytics/consent";
+import { startClarity } from "./analytics/clarity";
+import { loadCloudflareAnalytics } from "./analytics/cloudflare";
 
 const AfterStory = lazy(() => import("./pages/case-studies/AfterStory"));
 const LevelUpHabits = lazy(() => import("./pages/case-studies/LevelUpHabits"));
@@ -22,6 +26,13 @@ export default function App() {
     document.body.style.backgroundColor = "#fff3ff";
   }, []);
 
+  useEffect(() => {
+    // Cloudflare beacon is cookieless → loads for everyone. Clarity only
+    // resumes if this visitor already accepted on a previous visit.
+    loadCloudflareAnalytics();
+    if (getConsent() === "accepted") startClarity();
+  }, []);
+
   const caseStudyProps = {
     onBack: () => goTo("home"),
     onOpenCaseStudy: openCaseStudy,
@@ -33,15 +44,18 @@ export default function App() {
   else if (page === "case-study-as") caseStudyElement = <AfterStory {...caseStudyProps} />;
   else if (page === "case-study-cove") caseStudyElement = <Cove {...caseStudyProps} />;
 
-  if (caseStudyElement) {
-    return <Suspense fallback={<CaseStudyFallback />}>{caseStudyElement}</Suspense>;
-  }
-
   return (
-    <Home
-      onOpenCaseStudy={openCaseStudy}
-      scrollToId={pendingScroll}
-      onScrolled={clearPendingScroll}
-    />
+    <>
+      {caseStudyElement ? (
+        <Suspense fallback={<CaseStudyFallback />}>{caseStudyElement}</Suspense>
+      ) : (
+        <Home
+          onOpenCaseStudy={openCaseStudy}
+          scrollToId={pendingScroll}
+          onScrolled={clearPendingScroll}
+        />
+      )}
+      <ConsentBanner />
+    </>
   );
 }
