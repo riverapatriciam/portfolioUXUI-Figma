@@ -4,7 +4,6 @@ import { useRouter } from "./router";
 import { ConsentBanner } from "./components/ConsentBanner";
 import { getConsent } from "./analytics/consent";
 import { startClarity } from "./analytics/clarity";
-import { loadCloudflareAnalytics } from "./analytics/cloudflare";
 
 const AfterStory = lazy(() => import("./pages/case-studies/AfterStory"));
 const LevelUpHabits = lazy(() => import("./pages/case-studies/LevelUpHabits"));
@@ -29,7 +28,6 @@ export default function App() {
   useEffect(() => {
     // Cloudflare beacon is cookieless → loads for everyone. Clarity only
     // resumes if this visitor already accepted on a previous visit.
-    loadCloudflareAnalytics();
     if (getConsent() === "accepted") startClarity();
   }, []);
 
