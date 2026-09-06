@@ -26,8 +26,9 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    // Cloudflare beacon is cookieless → loads for everyone. Clarity only
-    // resumes if this visitor already accepted on a previous visit.
+    // Resume Clarity only if this visitor already accepted on a previous
+    // visit. (Cloudflare Web Analytics is injected at the edge by the RUM
+    // setting — no code here.)
     if (getConsent() === "accepted") startClarity();
   }, []);
 

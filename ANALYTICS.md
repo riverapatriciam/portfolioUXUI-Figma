@@ -11,32 +11,40 @@ Cloudflare also has a separate **Traffic Analytics** page (requests, bandwidth, 
 
 ---
 
-## One-time setup
+## How each one is wired
 
-### 1. Cloudflare Web Analytics
+### Cloudflare Web Analytics — no code
 
-1. `dash.cloudflare.com` → your domain → **Analytics & Logs → Web Analytics** → **Add a site**.
-2. Enter the domain. It shows a `<script … data-cf-beacon='{"token":"XXXX"}'>` snippet.
-3. Copy the **token** (the `XXXX`) into `.env` as `VITE_CF_BEACON_TOKEN`.
+Injected at the edge. Cloudflare dashboard → **Analytics & Logs → Web Analytics → Manage site** (`riverapatriciam.com`) → **Real User Measurements (RUM)** → **Enable** ("the JS snippet will be automatically injected"). That's it — the `beacon.min.js` script appears in the served HTML automatically, no env var, no repo change.
 
-### 2. Microsoft Clarity
+> Some visitors (ad blockers, Brave, filtering DNS) block `static.cloudflareinsights.com` — you'll see `ERR_CONNECTION_REFUSED` for `beacon.min.js` in _your own_ console. That's expected and unavoidable; it loads fine for everyone else. The beacon also makes two requests (loader + versioned script) — that's one beacon, not two.
+
+### Microsoft Clarity — one build variable
+
+The Clarity project id lives in the deploy pipeline, not in the repo:
+
+**Cloudflare → Workers & Pages → `portfoliouxui-figma` → Settings → Build → Variables and secrets**
+
+| Name                      | Value                  | Type     |
+| ------------------------- | ---------------------- | -------- |
+| `VITE_CLARITY_PROJECT_ID` | the 10-char Clarity id | Variable |
+
+Vite inlines any `VITE_`-prefixed variable at build time, so `import.meta.env.VITE_CLARITY_PROJECT_ID` becomes the id in the bundle. When it's unset (local `npm run dev` without a `.env`), every function in `clarity.ts` is a no-op — nothing loads.
+
+**Changing this variable does not rebuild the site.** After adding or editing it, trigger a build: **New deployment** in the dashboard, or push any commit to `main`.
+
+---
+
+## First-time Clarity setup
 
 1. Sign in at `clarity.microsoft.com` → **New project** → name it, category "Portfolio", platform "Web".
-2. **Settings → Overview** → copy the **Clarity project id** (10 characters) into `.env` as `VITE_CLARITY_PROJECT_ID`.
-3. **Settings → Setup → Cookie consent** → turn **ON**. The site only calls `clarity("consent")` after the visitor clicks _Accept_, so this keeps Clarity from buffering anything before that.
-4. **Settings → Masking** → set to **Balanced** (or Strict). Masks text in replays so no personal data is recorded.
-5. Optional — **Settings → Team** → invite people if you ever want to show the recordings.
+2. **Settings → Overview** → copy the **Clarity project id** (10 chars).
+3. **Settings → Setup → Cookie consent** → turn **ON**. The site only calls `clarity("consent")` after the visitor clicks _Accept_, so this stops Clarity buffering anything before consent.
+4. **Settings → Masking** → **Balanced** (or Strict). Masks text in replays so no personal data is recorded.
+5. Put the id in the Cloudflare build variable above → **New deployment**.
+6. Verify in a browser with **no ad blocker**: load the site → _Accept_ → DevTools **Network**, filter `clarity` → requests to `clarity.ms` return 200, cookies `_clck` / `_clsk` appear. Your session shows in Clarity → **Recordings** within ~2 min.
 
-### 3. Build with the values
-
-```bash
-cp .env.example .env      # then paste the two values in
-npm run build             # bakes them into dist/
-```
-
-Then commit `dist/` and deploy as usual. `.env` is git-ignored; the values aren't secret but they don't belong in history.
-
-Locally without `.env`, both tools are silently disabled — the site runs normally.
+For local dev with Clarity active, `cp .env.example .env` and paste the id there.
 
 ---
 
@@ -73,6 +81,6 @@ Clarity records **every** click already, so you rarely need code. To make key co
 ## Consent — how it works in code
 
 - `src/app/analytics/consent.ts` — stores `accepted` / `rejected` in `localStorage`.
+- `src/app/analytics/clarity.ts` — injects the Clarity tag **only after `Accept`** and calls `clarity("consent")`; `stopClarity()` withdraws it.
 - `src/app/components/ConsentBanner.tsx` — the banner. `Accept` and `Decline` are both one click. `Decline` never loads Clarity; switching from `Accept` to `Decline` calls `clarity("consent", false)` and reloads.
 - Footer **"Cookie settings"** re-opens the banner so a choice can be changed at any time (GDPR: consent must be as easy to withdraw as to give).
-- `src/app/analytics/cloudflare.ts` loads on every page view (cookieless, no consent needed). To be maximally conservative you could move that call into the `Accept` branch too.
