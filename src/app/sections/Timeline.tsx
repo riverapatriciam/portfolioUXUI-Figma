@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Container } from "../components/layout/Grid";
 import { TIMELINE } from "../content/site";
 
@@ -50,49 +51,46 @@ export function TimelineSection() {
           ))}
         </div>
 
-        {/* Tablet/Desktop: three columns (dates | dotted line+dots | descriptions).
-            Tablet reuses desktop's distribution (not the mobile stack), just at
-            smaller type sizes and without desktop's asymmetric 170/100 padding.
-            `items-stretch` (not the literal `align-items:flex-start` from the
-            Figma spec) — the three columns each distribute their own 4 items
-            via internal `justify-between`, which only lines dots up with their
-            matching text row if all three columns share the same height. */}
-        <div className="hidden md:mx-auto md:flex md:w-full md:max-w-[746px] md:items-stretch md:justify-between lg:max-w-none lg:items-stretch lg:justify-between lg:pl-[170px] lg:pr-[100px]">
-          <div className="flex flex-col justify-between gap-[24px]">
-            {TIMELINE.map((item) => (
-              <div key={item.role} className="flex flex-col gap-[14px]">
-                <p className="text-[24px] font-bold text-[#3e2859] lg:text-[32px] lg:font-extrabold">
-                  {item.role}
-                </p>
-                <p className="text-[16px] text-[#543976] lg:text-[18px]">{item.period}</p>
-              </div>
-            ))}
-          </div>
-          <div className="relative z-0 flex flex-col items-center justify-between">
-            {/* top/bottom insets (half the 48px dot) instead of the literal
-                685px spec height — stretches to reach exactly the first and
-                last dot's center regardless of how tall the real text content
-                renders (685px alone overshot past the last dot here). `z-0`
-                on this wrapper for the same reason as the mobile line above:
-                without it, `-z-10` escapes past this column and hides fully
-                behind the page's own background section. */}
-            <div className="timeline-line absolute left-[24px] top-[24px] bottom-[24px] -z-10 w-[3px]" />
-            {TIMELINE.map((item) => (
-              <TimelineDot key={item.role} />
-            ))}
-          </div>
-          <div className="flex flex-col justify-between gap-[24px]">
-            {TIMELINE.map((item) => (
-              <div key={item.role} className="flex flex-col gap-[14px]">
-                <p className="text-[24px] font-bold text-[#3e2859] lg:text-[32px] lg:font-extrabold">
-                  {item.company}
-                </p>
-                <p className="max-w-[444px] text-[16px] text-[#543976] lg:text-[18px]">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+        {/* Tablet/Desktop: one grid, three tracks (dates | dot+line | text), one
+            grid ROW per entry. Rows — not three independently
+            `justify-between` columns — keep each dot level with its own
+            date and description no matter how long any entry's text is
+            (the old column layout only lined up when all three columns
+            happened to be the same height, which broke as soon as an entry
+            wrapped to more lines than its neighbours). `justify-between`
+            on the grid spreads the fixed tracks across the container like
+            the Figma spec. Row spacing is bottom padding on the cells (not
+            a grid gap) so each dot cell spans its whole row and its line
+            segment reaches the next dot. Tablet reuses desktop's structure
+            at smaller type sizes and without desktop's asymmetric 170/100
+            padding. */}
+        <div className="hidden md:mx-auto md:grid md:w-full md:max-w-[746px] md:grid-cols-[200px_48px_444px] md:justify-between lg:max-w-none lg:grid-cols-[300px_48px_444px] lg:pl-[170px] lg:pr-[100px]">
+          {TIMELINE.map((item, i) => {
+            const last = i === TIMELINE.length - 1;
+            const rowPad = last ? "" : "pb-[48px]";
+            return (
+              <Fragment key={item.role}>
+                <div className={`flex flex-col gap-[14px] ${rowPad}`}>
+                  <p className="text-[24px] font-bold text-[#3e2859] lg:text-[32px] lg:font-extrabold">
+                    {item.role}
+                  </p>
+                  <p className="text-[16px] text-[#543976] lg:text-[18px]">{item.period}</p>
+                </div>
+                <div className="relative z-0 flex flex-col items-center">
+                  <TimelineDot />
+                  {!last && <div className="timeline-line -z-10 w-[3px] flex-1" />}
+                </div>
+                <div className={`flex flex-col gap-[14px] ${rowPad}`}>
+                  <p className="text-[24px] font-bold text-[#3e2859] lg:text-[32px] lg:font-extrabold">
+                    {item.company}
+                  </p>
+                  <p className="max-w-[444px] text-[16px] text-[#543976] lg:text-[18px]">
+                    {item.desc}
+                  </p>
+                </div>
+              </Fragment>
+            );
+          })}
         </div>
       </Container>
     </section>

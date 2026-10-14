@@ -40,8 +40,15 @@ export function AboutSection() {
             (172 = the page's own 60px margin + this row's own 112px inset)
             without pushing the heading above, which stays on the standard
             page margin. `contents` at base/tablet keeps its children (card
-            column, photo column) flowing as if this wrapper wasn't there. */}
-        <div className="contents lg:flex lg:items-start lg:gap-0 lg:pl-[112px]">
+            column, photo column) flowing as if this wrapper wasn't there.
+            `lg:items-end` (not `items-start`) bottom-aligns the photo frame
+            — photo, pills and blur motion — with the last stat. The card
+            overlaps the frame's left pills, which sit from y≈310 down; with
+            top alignment, a card taller than ~310px (it grows with the About
+            copy) hid them. Bottom alignment pushes the frame down by however
+            much taller the card+stats column is than the 778px frame, so the
+            pills clear the card without a hard-coded offset. */}
+        <div className="contents lg:flex lg:items-end lg:gap-0 lg:pl-[112px]">
           {/* Card + stats column — mobile/tablet: plain flow (stats live in the
               separate StatsRow section below). Desktop: becomes its own column
               (via `contents` -> `lg:flex-col`) so the two stack together,
@@ -54,21 +61,26 @@ export function AboutSection() {
                 <GradientText className="from-[#fe85ea] to-[#5102a0]">Patricia ✨</GradientText>
               </p>
               <p className="mt-[16px]">
-                After working as a Frontend Developer, I discovered that what I truly enjoy is
+                I started in Frontend Development, and over time I realised the part I enjoy most
+                happens before the code: understanding people and
                 <GradientText className="from-[#fe85ea] to-[#5102a0] font-bold">
                   {" "}
-                  designing experiences
+                  designing the experience
                 </GradientText>
-                , not just building them.
+                .
               </p>
               <p className="mt-[16px]">
-                Today, I focus on
+                Today I'm a
                 <GradientText className="from-[#fe85ea] to-[#5102a0] font-bold">
                   {" "}
-                  UX/UI Design
-                </GradientText>
-                , combining creativity, empathy, and problem-solving to create products people love
-                using.
+                  UX/UI &amp; Product Designer
+                </GradientText>{" "}
+                focused on Design Systems and accessibility, turning user and business needs into
+                reusable, accessible interfaces.
+              </p>
+              <p className="mt-[16px]">
+                Having built interfaces in React and Web Components, I know how design decisions
+                land in code, which makes the handoff with developers smoother.
               </p>
             </div>
 

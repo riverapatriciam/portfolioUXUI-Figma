@@ -22,10 +22,12 @@ function SkillsTrack({ ariaHidden = false }: { ariaHidden?: boolean }) {
 }
 
 // Repeats per half: the marquee spans the full viewport width (no max-width
-// cap), so a single SkillsTrack (~800px) isn't wide enough to cover wide
+// cap), so a single SkillsTrack (~2000px) isn't wide enough to cover wide
 // desktop screens without the loop exposing empty background near the seam.
-// Each half must stay wider than any realistic viewport.
-const MARQUEE_REPEATS = 5;
+// Each half must stay wider than any realistic viewport. If SKILLS grows,
+// the scroll speed grows with it (fixed duration over a longer track) —
+// scale `--animate-loop-left` in tailwind.css to keep it near ~65px/s.
+const MARQUEE_REPEATS = 3;
 
 export function SkillsMarquee() {
   return (

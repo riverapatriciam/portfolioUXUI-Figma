@@ -19,7 +19,7 @@
 }
 
 @theme inline {
-  --animate-loop-left: loop-left 60s linear infinite;
+  --animate-loop-left: loop-left 90s linear infinite;
 
   @keyframes loop-left {
     from {

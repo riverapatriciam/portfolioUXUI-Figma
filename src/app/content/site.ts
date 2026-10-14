@@ -51,49 +51,63 @@ export const PROJECT_LINKS: { id: CaseStudyId; label: string }[] = [
 export const SKILLS: string[] = [
   "UX/UI Designer",
   "Product Designer",
+  "Design Systems",
+  "Accessibility",
+  "User Research",
+  "Usability Testing",
+  "Prototyping",
+  "Design Tokens",
+  "Atomic Design",
   "Figma",
-  "HTML/CSS",
+  "React",
   "Typescript",
-  "Research",
+  "HTML/CSS",
+  "Developer Handoff",
 ];
 export const SEO_SKILLS = new Set(["UX/UI Designer", "Product Designer"]);
 
 export const STATS: { value: string; label: string }[] = [
   {
-    value: "+4",
+    value: "+6",
     label: "years of experience in digital product development and frontend engineering",
   },
-  { value: "3", label: "Case studies where challenge my UX/UI skills" },
+  { value: "3", label: "Case studies that challenged my UX/UI skills" },
   {
     value: "+6",
-    label: "diferents digital projects as a frontend developer and Web UI developer",
+    label: "different digital projects as a frontend developer and Web UI developer",
   },
 ];
 
 export const TIMELINE: { role: string; period: string; company: string; desc: string }[] = [
   {
+    role: "UX/UI Design Bootcamp",
+    period: "March 2026 - May 2026",
+    company: "Neoland | Madrid",
+    desc: "Intensive training in user research, usability testing, prototyping and Design Sprints, where my three case studies come from.",
+  },
+  {
     role: "Web UI Developer",
     period: "August 2023 - May 2026",
     company: "Globant | Iberia | Openbank",
-    desc: "Bridged design and development by translating UI concepts into scalable and user-friendly web experiences",
+    desc: "Built Design System components with design tokens and Web Components, partnering with UX/UI designers across 4+ product projects to ship consistent, accessible interfaces.",
   },
   {
     role: "Frontend Developer",
     period: "June 2022 - August 2023",
     company: "Venpend",
-    desc: "Developed intuitive interfaces while gaining a deeper understanding of usability, accessibility, and user-centered thinking.",
+    desc: "Led the redesign and frontend of a marketplace management app, improving navigation and building responsive, multilingual interfaces with React and Tailwind CSS.",
   },
   {
-    role: "HR Operation Lead",
+    role: "HR Operations Lead",
     period: "May 2018 - Dec 2021",
-    company: "Improving",
-    desc: "Improved employee experiences through process optimization, stakeholder management, and problem-solving",
+    company: "Leniolabs (now Improving)",
+    desc: "Coordinated solutions between employees, clients and vendors and mentored a new teammate, building the stakeholder and communication skills I bring to cross-functional design work.",
   },
   {
-    role: "System analyst",
+    role: "Database Analyst & Frontend Developer",
     period: "Dec 2015 - May 2018",
     company: "Esvenca",
-    desc: "Connected business goals and technical requirements, building a foundation in problem-solving and systems thinking",
+    desc: "Built responsive web interfaces and data dashboards, working with stakeholders and designers to refine usability and data visualization.",
   },
 ];
 
@@ -102,13 +116,13 @@ export const SCATTERED_PILLS: { label: string; top: number; left: number }[] = [
   { label: "Figma", top: 708, left: 94 },
   { label: "Supernova", top: 643, left: 45 },
   { label: "Token Studio", top: 578, left: 7 },
-  { label: "Design system", top: 513, left: 0 },
-  { label: "Web UI design", top: 448, left: 13 },
+  { label: "Design Systems", top: 513, left: 0 },
+  { label: "Accessibility", top: 448, left: 13 },
   { label: "UX/UI Design", top: 383, left: 38 },
   { label: "Product Designer", top: 318, left: 52 },
-  { label: "Research", top: 23, left: 462 },
-  { label: "Wireframe", top: 82, left: 535 },
+  { label: "User Research", top: 23, left: 462 },
+  { label: "Wireframing", top: 82, left: 535 },
   { label: "Prototyping", top: 151, left: 577 },
-  { label: "Typescript", top: 216, left: 609 },
-  { label: "IA Agents", top: 281, left: 596 },
+  { label: "React", top: 216, left: 609 },
+  { label: "AI Agents", top: 281, left: 596 },
 ];
