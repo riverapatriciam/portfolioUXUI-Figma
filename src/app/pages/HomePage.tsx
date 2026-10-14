@@ -38,10 +38,10 @@ export default function HomePage({
         </div>
         <div className="relative z-0">
           <ScrollDrawLine />
-          <CaseStudiesSection onOpenCaseStudy={onOpenCaseStudy} />
           <AboutSection />
           <StatsRow />
           <TimelineSection />
+          <CaseStudiesSection onOpenCaseStudy={onOpenCaseStudy} />
         </div>
         <ContactSection />
       </main>

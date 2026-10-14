@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="bg-[#c79aff]">
       <Container className="flex flex-wrap items-center justify-center gap-x-[24px] gap-y-[12px] py-[20px] text-center md:justify-between">
         <p className="text-[16px] font-bold text-[#3e2859] md:text-[18px]">
-          UX/UI Designer | Product Designer
+          UX/UI Designer | Product Designer | Design Systems
         </p>
         <div className="flex items-center gap-[16px]">
           <Sparkle className="size-[16px] fill-[#fad89e] text-[#fad89e] md:size-[20px]" />
