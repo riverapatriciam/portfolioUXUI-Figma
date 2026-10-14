@@ -218,18 +218,6 @@ export function CaseStudiesSection({
         </h2>
         <div className="flex flex-col gap-[32px] md:gap-[40px]">
           <CaseStudyCard
-            title="Level Up Habits"
-            description="Helping people with ADHD build habits through AI-powered gamification."
-            meta={[{ label: "Role", value: "Solo UX/UI Designer" }]}
-            tags={["UX Research", "UI Design", "Design Thinking"]}
-            duration="2 weeks"
-            mockupImg={IMG_MOCKUP_LUH}
-            mobileFrameImgs={[imgMobileMockupLuh, imgMobileMockupLuh1]}
-            mobileScreenImg={imgScreenInsertDesignsHere}
-            mobileScreenVideo={VIDEO_LUH_URL}
-            onViewWork={() => onOpenCaseStudy("luh")}
-          />
-          <CaseStudyCard
             title="AfterStory"
             description="Helping anime and manga fans discover stories tailored to their tastes"
             meta={[{ label: "Role", value: "Solo UX/UI Designer" }]}
@@ -255,6 +243,18 @@ export function CaseStudiesSection({
             mobileScreenImg={imgScreenInsertDesignsHere2}
             mobileScreenVideo={VIDEO_COVE_URL}
             onViewWork={() => onOpenCaseStudy("cove")}
+          />
+          <CaseStudyCard
+            title="Level Up Habits"
+            description="Helping people with ADHD build habits through AI-powered gamification."
+            meta={[{ label: "Role", value: "Solo UX/UI Designer" }]}
+            tags={["UX Research", "UI Design", "Design Thinking"]}
+            duration="2 weeks"
+            mockupImg={IMG_MOCKUP_LUH}
+            mobileFrameImgs={[imgMobileMockupLuh, imgMobileMockupLuh1]}
+            mobileScreenImg={imgScreenInsertDesignsHere}
+            mobileScreenVideo={VIDEO_LUH_URL}
+            onViewWork={() => onOpenCaseStudy("luh")}
           />
         </div>
       </Container>

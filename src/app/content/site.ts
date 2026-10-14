@@ -43,9 +43,9 @@ export const NAV_LINKS: { label: string; href: string }[] = [
 ];
 
 export const PROJECT_LINKS: { id: CaseStudyId; label: string }[] = [
-  { id: "luh", label: "Level Up Habits" },
   { id: "as", label: "After Story" },
   { id: "cove", label: "Cove" },
+  { id: "luh", label: "Level Up Habits" },
 ];
 
 export const SKILLS: string[] = [
