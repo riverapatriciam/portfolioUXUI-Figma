@@ -234,7 +234,7 @@ export function CaseStudiesSection({
             description="Designing a mental health support platform focused on reducing anxiety and stress through professional guidance and crisis assistance."
             meta={[
               { label: "Team", value: "4 Designer" },
-              { label: "Role", value: "UI Designer & Prototype Lead" },
+              { label: "Role", value: "UI Designer, Design System & Prototype Lead" },
             ]}
             tags={["Prototyping", "UI Design", "Design Sprint"]}
             duration="1 week"
