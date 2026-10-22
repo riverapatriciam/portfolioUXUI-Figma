@@ -68,7 +68,7 @@ export const SEO_SKILLS = new Set(["UX/UI Designer", "Product Designer"]);
 
 export const STATS: { value: string; label: string }[] = [
   {
-    value: "+6",
+    value: "+4",
     label: "years of experience in digital product development and frontend engineering",
   },
   { value: "3", label: "Case studies that challenged my UX/UI skills" },
